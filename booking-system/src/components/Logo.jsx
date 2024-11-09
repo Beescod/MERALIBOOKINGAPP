@@ -1,10 +1,9 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
 import '../assets/css/Logo.css';
 import LogoImage from '../assets/images/LoagoL.png';
 import LogoImage2 from '../assets/images/LoagoL2.png';
-import { BackgroundBeamsWithCollision } from "@/app/src/components/ui/background-beams-with-collision";
+import { BackgroundBeamsWithCollision } from "../../src/components/ui/background-beams-with-collision";
 
 function Logo() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -23,20 +22,18 @@ function Logo() {
         </div>
         <div className="logo-container">
           <div className="logo-container2">
-          <Image src={LogoImage} className="logo" alt="Logo" priority />
-          <div className="shine-effect"></div>
+            <img src={LogoImage} className="logo" alt="Logo" />
+            <div className="shine-effect"></div>
           </div>
-          <Image
+          <img
             src={LogoImage2}
             className={`animated-logo ${isLoaded ? 'fade-in' : ''}`}
             alt="Animated Logo"
-            priority
           />
         </div>
       </div>
     </BackgroundBeamsWithCollision>
   );
 }
-
 
 export default Logo;

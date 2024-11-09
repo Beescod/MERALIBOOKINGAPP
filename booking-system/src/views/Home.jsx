@@ -1,14 +1,12 @@
 "use client"; // Mark this file as a client component
 
 import React, { useEffect, useState } from 'react';
-import Logo from '../components/Logo';
-import Image from 'next/image';
-import Navbar from '../components/Navbar';
+// import Navbar from '../components/Navbar';
 import '../assets/css/Home.css';
 import MobileBooking from '../components/MobileBooking';
 import Laser from '../assets/images/Laser.jpg';
 import LoagoL from '../assets/images/BDLogo.png';
-import Spabd from '../assets/images/spa-section.jpg';
+// import Spabd from '../assets/images/spa-section.jpg';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
