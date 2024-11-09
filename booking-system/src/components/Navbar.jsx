@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import '../assets/css/Navbar.css';
-import Image from 'next/image';
 import hairdressing from '../assets/images/Hairdressing.jpg';
 // import massages from '../assets/images/Massages.jpg';
 // import Nailservices from '../assets/images/Nail-services.jpeg';
@@ -158,7 +157,7 @@ const Navbar = () => {
 
               <div className="image-container">
                 <div className={`image-wrapper ${animationClass}`}>
-                  <Image src={image} alt="Dynamic" layout="responsive" width={400} />
+                  <img src={image} alt="Dynamic" width={400} />
                 </div>
               </div>
             </div>
@@ -174,7 +173,7 @@ const Navbar = () => {
         <div className="nav-logo" style={{ display: isScrolled ? 'block' : 'none' }}>
           {/* <Image src="/path-to-logo.png" alt="Logo" /> */}
           <a href="/">
-            <Image src={LoagoL} alt="Dynamic" layout="intrinsic" width={400} height={200} />
+            <img src={LoagoL} alt="Dynamic" width={400} height={200} />
           </a>
         </div>
         <div className="nav-links">
