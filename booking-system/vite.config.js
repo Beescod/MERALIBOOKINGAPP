@@ -10,4 +10,7 @@ export default defineConfig({
       '@': path.resolve(new URL('.', import.meta.url).pathname, 'src'), // Resolving to 'src' folder
     },
   },
+  optimizeDeps: {
+    include: ['aeternity'], // Make sure Aeternity is bundled correctly
+  },
 });

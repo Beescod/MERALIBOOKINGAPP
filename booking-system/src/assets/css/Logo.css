@@ -25,6 +25,11 @@ body, html {
   background: rgba(228, 221, 208, 0.8); /* Light background */
 }
 
+.app-container.open .logo {
+  opacity: 1;
+  transform: scale(1); /* Pop the logo from center */
+}
+
 /* White Background Dividers */
 .white-BD {
   position: absolute;
@@ -82,10 +87,6 @@ body, html {
   transition: opacity 1s ease, transform 1s ease;
 }
 
-.app-container.open .logo {
-  opacity: 1;
-  transform: scale(1); /* Pop the logo from center */
-}
 
 /* Animated Logo */
 .animated-logo {
@@ -149,14 +150,15 @@ body, html {
   position: absolute;
   top: 0;
   left: -100%;
-  width: 10%; /* Make the shine line slightly thinner */
+  width: 1%; /* Make the shine line slightly thinner */
   height: 100%;
   background: linear-gradient(
     120deg,
-    rgba(255, 255, 255, 0) 20%, /* Make the transparent area wider */
+    rgba(255, 252, 252, 0) 0%, /* Make the transparent area wider */
     rgba(255, 255, 255, 0.9) 50%, /* Thicker white line */
-    rgba(255, 255, 255, 0) 10%
+    rgba(255, 255, 255, 0) 100%
   );
+  transform: rotate(+45deg);
   animation: shine 1.5s 0s 2;
 }
 

@@ -1,9 +1,9 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../assets/css/Logo.css';
 import LogoImage from '../assets/images/LoagoL.png';
 import LogoImage2 from '../assets/images/LoagoL2.png';
-import { BackgroundBeamsWithCollision } from "../../src/components/ui/background-beams-with-collision";
+import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
 
 function Logo() {
   const [isLoaded, setIsLoaded] = useState(false);
