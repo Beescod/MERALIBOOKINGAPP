@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'; // Import PropTypes
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Logo from './components/Logo';
@@ -10,11 +11,17 @@ function LoadingWrapper({ children, isLoading }) {
   return isLoading ? <Logo /> : children;
 }
 
+// Adding prop types validation for LoadingWrapper component
+LoadingWrapper.propTypes = {
+  children: PropTypes.node.isRequired,  // children can be any renderable node (element, string, etc.)
+  isLoading: PropTypes.bool.isRequired, // isLoading should be a boolean
+};
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 90000); // 3 seconds of loading
+    const timer = setTimeout(() => setIsLoading(false), 9000); // 90 seconds of loading
     return () => clearTimeout(timer);
   }, []);
 

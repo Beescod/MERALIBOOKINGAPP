@@ -14,11 +14,11 @@ function Logo() {
   }, []);
 
   return (
-    <BackgroundBeamsWithCollision>
+    <BackgroundBeamsWithCollision className="BackgroundBeamsWithCollision">
       <div className={`app-container ${isLoaded ? 'open' : ''}`}>
         <div className="white-BD">
-          <div className={`left-section ${isLoaded ? 'slide-out-left' : ''}`}></div>
-          <div className={`right-section ${isLoaded ? 'slide-out-right' : ''}`}></div>
+          <div className="left-section"></div>
+          <div className="right-section"></div>
         </div>
         <div className="logo-container">
           <div className="logo-container2">
