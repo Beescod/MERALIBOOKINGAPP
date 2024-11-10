@@ -7,37 +7,12 @@ import LoagoL from '../assets/images/BDLogo.png';
 // import Spabd from '../assets/images/spa-section.jpg';
 
 const Home = () => {
-  const [showBackground, setShowBackground] = useState(false);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const handleScroll = () => {
-        const scrollPosition = window.scrollY;
-        console.log("Current scroll position:", scrollPosition); // Logs the scroll position
-
-        const scrollBackground = document.querySelector(".scroll-background");
-        if (scrollPosition > 100) { // Adjust scroll threshold as needed
-          setShowBackground(true);
-          console.log("Showing background"); // Log when the background should show
-        } else {
-          setShowBackground(false);
-          console.log("Hiding background"); // Log when the background should hide
-        }
-      };
-
-      window.addEventListener("scroll", handleScroll);
-
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }
-  }, []);
-
-
+  
   return (
     <>
       <div className="selection">
-        {showBackground && <div className="scroll-background" />}
+
         <Navbar />
         <section className="spa-section">
           {/* <Image src={Spabd} alt="Dynamic" layout="intrinsic" width={400} height={200} priority={true} /> */}
@@ -45,7 +20,7 @@ const Home = () => {
           <div className="spa-section-in">
             <div className="spa-section-logo">
               <a href="/">
-              <img src={LoagoL} alt="Dynamic" width={400} height={200} />
+                <img src={LoagoL} alt="Dynamic" width={400} height={200} />
               </a>
             </div>
             <h2>The Spa & Wellbeing</h2>
@@ -58,6 +33,7 @@ const Home = () => {
               <a href="#sports">The Sports</a>
             </nav>
           </div>
+
         </section>
         <section className="mamounia-section">
           <div className="mamounia-image">
@@ -109,7 +85,7 @@ const Home = () => {
         </section>
         <section className="mamounia-section">
           <div className="mamounia-image">
-            <img src={Laser} alt="Dynamic"  width={400} />
+            <img src={Laser} alt="Dynamic" width={400} />
           </div>
           <div className="mamounia-content">
             <h2>Relax and unwind: beauty and wellbeing at La Mamounia Spa</h2>

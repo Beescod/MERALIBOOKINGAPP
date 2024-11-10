@@ -8,7 +8,7 @@ import Facialtreatments from '../assets/images/Facial-treatments.jpg';
 import Aesthetics from '../assets/images/Aesthetics.jpg';
 import Laser from '../assets/images/Laser.jpg';
 import defaultImage from '../assets/images/Default.jpg';
-import LoagoL from '../assets/images/LoagoL.png';
+// import LoagoL from '../assets/images/LoagoL.png';
 
 const Navbar = () => {
   const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
@@ -17,37 +17,21 @@ const Navbar = () => {
   const [image, setImage] = useState(defaultImage);
   const [hoverClass, setHoverClass] = useState("");
   const [animationClass, setAnimationClass] = useState('');
-  const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    console.log("Attaching scroll event listener");
-    const handleScroll = () => {
-      console.log("Scroll event triggered");
-      const scrolled = window.scrollY > 50;
-      setIsScrolled(scrolled);
-      console.log("Is scrolled:", scrolled);
-    };
-  
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      console.log("Removing scroll event listener");
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-  
-
+  //change nav colour when crolling 
+  const [color, setColor] = useState(false); const changeColor = () => { if (window.scrollY >= 40) { setColor(true); } else { setColor(false); } }; useEffect(() => { window.addEventListener('scroll', changeColor); return () => { window.removeEventListener('scroll', changeColor); }; }, []);
 
 
   const handleMouseEnter = (img) => {
-    setAnimationClass('slide-in'); // Add slide-in class
+    setAnimationClass('slide-in');
     setImage(img);
-    setHoverClass('hovered'); // Add hover class
+    setHoverClass('hovered');
   };
 
   const handleMouseLeave = () => {
     setAnimationClass('slide-out');
     setImage(defaultImage);
-    setHoverClass(''); // Remove hover class
+    setHoverClass('');
   };
 
   const updateMenu = () => {
@@ -57,7 +41,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <div className={color ? 'navbar navbar-bg' : 'navbar'}>
       <nav>
         <div className="burger-menu-container" onClick={updateMenu}>
           <div className="burger-menu">
@@ -165,13 +149,12 @@ const Navbar = () => {
         </nav>
       </div>
 
-      <div className={`navbar-container ${isScrolled ? 'navbar-scrolled' : ''}`}>
-        <div className="language-options" style={{ display: isScrolled ? 'none' : 'flex' }}>
+      {/* <div className="navbar">
+        <div className="language-options">
           <a className="text-style" href="#">FR</a>
           <a className="text-style" href="#">/EN</a>
         </div>
-        <div className="nav-logo" style={{ display: isScrolled ? 'block' : 'none' }}>
-          {/* <Image src="/path-to-logo.png" alt="Logo" /> */}
+        <div className="nav-logo">
           <a href="/">
             <img src={LoagoL} alt="Dynamic" width={400} height={200} />
           </a>
@@ -180,7 +163,7 @@ const Navbar = () => {
           <a href="#Magazine" className="text-style2">LE MAGAZINE</a>
           <a href="#Reservations" className="text-style2">RÉSERVER</a>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

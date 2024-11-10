@@ -1,3 +1,21 @@
+/* 
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  transition: transform 0.3s ease;
+  transform: translateY(-100%);
+  z-index: 10;
+}
+
+.top-bar.visible {
+  transform: translateY(0) !important;
+} */
+
+
 /* General Scroll Settings */
 body {
   overflow: auto; /* Make sure overflow is not hidden */
@@ -141,7 +159,7 @@ body {
 @media (max-width: 768px) {
   .spa-section-in {
     max-width: 95%; /* Even more reduced max-width on smaller screens */
-    height: 100px; /* Adjust height for smaller screens */
+    height: 300px; /* Adjust height for smaller screens */
   }
 }
 
@@ -154,6 +172,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1rem; /* Adds some padding for better spacing */
+  width: 100%; /* Make the div fill the container */
 }
 
 @media (max-width: 768px) {
