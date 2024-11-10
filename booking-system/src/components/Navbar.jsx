@@ -8,7 +8,7 @@ import Facialtreatments from '../assets/images/Facial-treatments.jpg';
 import Aesthetics from '../assets/images/Aesthetics.jpg';
 import Laser from '../assets/images/Laser.jpg';
 import defaultImage from '../assets/images/Default.jpg';
-// import LoagoL from '../assets/images/LoagoL.png';
+import LoagoL from '../assets/images/LoagoL.png';
 
 const Navbar = () => {
   const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
@@ -149,21 +149,21 @@ const Navbar = () => {
         </nav>
       </div>
 
-      {/* <div className="navbar">
+      <div className="navbar">
         <div className="language-options">
           <a className="text-style" href="#">FR</a>
           <a className="text-style" href="#">/EN</a>
         </div>
-        <div className="nav-logo">
+        {/* <div className="nav-logo">
           <a href="/">
             <img src={LoagoL} alt="Dynamic" width={400} height={200} />
           </a>
-        </div>
+        </div> */}
         <div className="nav-links">
           <a href="#Magazine" className="text-style2">LE MAGAZINE</a>
           <a href="#Reservations" className="text-style2">RÉSERVER</a>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
