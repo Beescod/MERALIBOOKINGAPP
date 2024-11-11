@@ -152,17 +152,18 @@ body, html {
   position: absolute;
   top: 0;
   left: -100%;
-  width: 1%; /* Make the shine line slightly thinner */
+  width: 5%; /* Increase this value to make the shine line fatter */
   height: 100%;
   background: linear-gradient(
     120deg,
-    rgba(255, 252, 252, 0) 0%, /* Make the transparent area wider */
-    rgba(255, 255, 255, 0.9) 50%, /* Thicker white line */
+    rgba(255, 252, 252, 0) 0%, /* Keep the transparent area */
+    rgba(236, 234, 229, 0.8), /* Adjust color if needed */
     rgba(255, 255, 255, 0) 100%
   );
   transform: rotate(+45deg);
   animation: shine 1.5s 0s 2;
 }
+
 
 @keyframes shine {
   from {

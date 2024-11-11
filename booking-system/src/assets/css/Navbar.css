@@ -18,7 +18,7 @@ body {
   justify-content: space-between;
   padding: 1rem 2rem;
   position: fixed;
-  width: 100%;
+  width: 97%;
   z-index: 100;
   height: 5em;
   transition: background-color 0.3s ease;
@@ -304,6 +304,16 @@ body {
 
 
 .text-style {
+  position: relative;
+  color: #f1eded;
+  /* Initial text color */
+  font-size: 2rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  font-family: serif;
+}
+
+.text-style1 {
   position: relative;
   color: #f1eded;
   /* Initial text color */
@@ -733,17 +743,46 @@ body {
   }
 }
 
-.language-options a {
-  color: #ffffff;
-  /* Text color for language links */
-  font-weight: 500;
-  font-size: 1.2rem;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  font-family: serif;
+/* Navbar Container */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between elements in navbar */
+  padding: 10px 20px;
 }
 
-.language-options a:hover {
+/* Language Options */
+.language-options {
+  display: flex;
+  gap: 2px; /* Space between language links */
+  margin-left: auto; /* Pushes the language options to the right */
+}
+
+.language-options .text-style {
+  font-size: 18px;
+  color: #ffffff; /* Color for the text */
+  text-decoration: none;
+  /* padding: 0 5px;
+  */
+  padding-right: 9px;
+  transition: color 0.3s ease;
+}
+
+.language-options .text-style1 {
+  font-size: 18px;
+  color: #ffffff; /* Color for the text */
+  text-decoration: none;
+  /* padding: 0 5px;
+  */
+  padding-right: 1px;
+  transition: color 0.3s ease;
+}
+
+.language-options .text-style:hover {
+  color: rgba(105, 95, 76, 0.8);
+}
+
+.language-options .text-style1:hover {
   color: rgba(105, 95, 76, 0.8);
 }
 

@@ -19,7 +19,7 @@ const Navbar = () => {
   const [animationClass, setAnimationClass] = useState('');
 
   //change nav colour when crolling 
-  const [color, setColor] = useState(false); const changeColor = () => { if (window.scrollY >= 40) { setColor(true); } else { setColor(false); } }; useEffect(() => { window.addEventListener('scroll', changeColor); return () => { window.removeEventListener('scroll', changeColor); }; }, []);
+  const [color, setColor] = useState(false); const changeColor = () => { if (window.scrollY >= 90) { setColor(true); } else { setColor(false); } }; useEffect(() => { window.addEventListener('scroll', changeColor); return () => { window.removeEventListener('scroll', changeColor); }; }, []);
 
 
   const handleMouseEnter = (img) => {
@@ -151,7 +151,7 @@ const Navbar = () => {
 
       <div className="navbar">
         <div className="language-options">
-          <a className="text-style" href="#">FR</a>
+          <a className="text-style1" href="#">FR</a>
           <a className="text-style" href="#">/EN</a>
         </div>
         {/* <div className="nav-logo">
