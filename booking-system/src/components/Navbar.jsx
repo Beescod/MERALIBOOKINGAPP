@@ -39,15 +39,13 @@ const Navbar = () => {
 
 
   const handleMouseEnter = (img) => {
-    setAnimationClass('slide-in'); // Add slide-in class
     setImage(img);
-    setHoverClass('hovered'); // Add hover class
+    setHoverClass('hovered');
   };
 
   const handleMouseLeave = () => {
-    setAnimationClass('slide-out');
     setImage(defaultImage);
-    setHoverClass(''); // Remove hover class
+    setHoverClass('');
   };
 
   const updateMenu = () => {
@@ -157,7 +155,7 @@ const Navbar = () => {
 
               <div className="image-container">
                 <div className={`image-wrapper ${animationClass}`}>
-                  <img src={image} alt="Dynamic" width={400} />
+                  <img src={image} className="img" alt="Dynamic" width={400} />
                 </div>
               </div>
             </div>
