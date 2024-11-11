@@ -138,21 +138,45 @@ body {
   }
 }
 
-.spa-section-in {
-  max-width: 80%; /* Increase width and make it responsive */
-  width: 900px;  /* Set a fixed max-width for larger screens */
+/* .spa-section-in {
+  max-width: 80%;
+  width: 900px; 
   margin: 0 auto;
   height: 150px;
-  padding: 2rem; /* Optional: Add padding inside the section */
-  box-sizing: border-box; /* Ensure padding does not affect width */
+  padding: 2rem;
+  box-sizing: border-box;
   color: #fff;
+} */
+
+.spa-section-in {
+  max-width: 90%; /* Limit width on larger screens */
+  padding: 20px;
+  margin: 0 auto; /* Center align */
+  text-align: center; /* Center content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+/* Responsive logo */
+.spa-section-logo img {
+  width: 100%; /* Allow the logo to scale */
+  max-width: 300px; /* Set a max-width to keep it manageable */
+  height: auto; /* Keep aspect ratio */
+}
+
+.spa-section-in h2 {
+  font-size: 1.8rem;
+  margin-top: 10px;
+  margin-bottom: 0px;
 }
 
 /* Responsive styling for spa-section-in */
 @media (max-width: 1200px) {
   .spa-section-in {
     max-width: 90%; /* Adjust width for medium screens */
-    height: 120px; /* Adjust height if necessary */
+    height: 300px; /* Adjust height if necessary */
   }
 }
 
@@ -192,8 +216,9 @@ body {
 
 .divider {
   width: 80%;
-  margin: 1rem auto;
-  border: 1px solid #fff;
+  height: 2px;
+  background-color: #ccc;
+  margin: 10px 0;
 }
 
 .spa-section h2 {
@@ -226,11 +251,19 @@ body {
   }
 }
 
-.spa-nav {
+/* .spa-nav {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   margin-top: 1rem;
+} */
+
+.spa-nav {
+  display: flex;
+  flex-wrap: wrap; /* Wrap the nav links when they overflow */
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .spa-nav a {
@@ -239,6 +272,8 @@ body {
   text-decoration: none;
   font-size: 1rem;
 }
+
+
 
 .mamounia-section {
   display: flex;

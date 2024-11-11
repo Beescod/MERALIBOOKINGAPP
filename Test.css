@@ -1,23 +1,79 @@
-.menu {
-  transition: opacity 0.5s ease; /* Smooth transition for visibility change */
+/* Make the container responsive */
+.spa-section-in {
+  max-width: 90%; /* Limit width on larger screens */
+  padding: 20px;
+  margin: 0 auto; /* Center align */
+  text-align: center; /* Center content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
 }
 
-.menu.hidden {
-  display: none; /* Hide the menu by default */
+/* Responsive logo */
+.spa-section-logo img {
+  width: 100%; /* Allow the logo to scale */
+  max-width: 200px; /* Set a max-width to keep it manageable */
+  height: auto; /* Keep aspect ratio */
 }
 
-.menu.visible {
-  display: block; /* Show the menu when active */
-  opacity: 1;
+/* Style the title and divider */
+.spa-section-in h2 {
+  font-size: 1.8rem;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
-.burger-bar {
-  background-color: #333;
-  height: 4px;
-  margin: 5px 0;
-  transition: transform 0.3s ease;
+.divider {
+  width: 80%;
+  height: 2px;
+  background-color: #ccc;
+  margin: 10px 0;
 }
 
-.burger-bar.clicked {
-  background-color: #999; /* Active color for burger menu */
+/* Style the navigation links */
+.spa-nav {
+  display: flex;
+  flex-wrap: wrap; /* Wrap the nav links when they overflow */
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.spa-nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  padding: 5px 10px;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+  .spa-section-in h2 {
+    font-size: 1.5rem;
+  }
+
+  .spa-nav a {
+    font-size: 0.9rem;
+    padding: 4px 8px;
+  }
+
+  .spa-section-logo img {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .spa-section-in h2 {
+    font-size: 1.3rem;
+  }
+
+  .spa-nav a {
+    font-size: 0.8rem;
+    padding: 3px 6px;
+  }
+
+  .spa-section-logo img {
+    max-width: 100px;
+  }
 }
