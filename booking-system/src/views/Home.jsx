@@ -4,6 +4,7 @@ import '../assets/css/Home.css';
 import MobileBooking from '../components/MobileBooking';
 import Laser from '../assets/images/Laser.jpg';
 import LoagoL from '../assets/images/BDLogo.png';
+import Footer from '../components/Footer';
 // import Spabd from '../assets/images/spa-section.jpg';
 
 const Home = () => {
@@ -95,6 +96,7 @@ const Home = () => {
             <p>From the beauty of the surroundings to the harmony and tranquility they exude, everything at La Mamounia is an invitation to soak up the moment.</p>
           </div>
         </section>
+        <Footer/>
         <MobileBooking />
       </div>
     </>

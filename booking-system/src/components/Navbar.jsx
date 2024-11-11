@@ -18,16 +18,20 @@ const Navbar = () => {
   const [hoverClass, setHoverClass] = useState("");
   const [animationClass, setAnimationClass] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  
 
   useEffect(() => {
     console.log("Attaching scroll event listener");
     const handleScroll = () => {
       console.log("Scroll event triggered");
-      const scrolled = window.scrollY > 50;
+      const scrolled = window.scrollY > 90;
       setIsScrolled(scrolled);
       console.log("Is scrolled:", scrolled);
     };
   
+    // Attach the listener
     window.addEventListener('scroll', handleScroll);
     return () => {
       console.log("Removing scroll event listener");
@@ -36,7 +40,9 @@ const Navbar = () => {
   }, []);
   
 
-
+  const toggleMenu = () => {
+    setIsMenuOpen(prev => !prev);
+  };
 
   const handleMouseEnter = (img) => {
     setImage(img);
@@ -54,10 +60,15 @@ const Navbar = () => {
     setIsMenuClicked(!isMenuClicked);
   };
 
+  const handleMenuClick = () => {
+    updateMenu();
+    toggleMenu();
+  };
+
   return (
     <div className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <nav>
-        <div className="burger-menu-container" onClick={updateMenu}>
+      <div className="burger-menu-container" onClick={handleMenuClick}>
           <div className="burger-menu">
             <div className={burgerClass}></div>
             <div className={burgerClass}></div>
@@ -86,7 +97,7 @@ const Navbar = () => {
                     <div className="your">
                       <span className="text-style31">SERVICES</span>
                     </div>
-                    <div className="line"></div>
+                    <div className={`line ${isMenuOpen ? 'animate-line' : ''}`}></div>
                   </div>
                   <div className="right">
                     <span

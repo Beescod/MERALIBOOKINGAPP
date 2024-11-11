@@ -115,7 +115,7 @@ body {
 .spa-section {
   text-align: center;
   padding: 10rem;
-  background: rgba(0, 0, 0, 0.5) url('../images/spa-section.jpg') no-repeat center center;
+  background: rgba(2, 2, 2, 0.5) url('../images/spa-section.jpg') no-repeat center center;
   background-size: cover;
   color: #fff;
   min-height: 100vh;
