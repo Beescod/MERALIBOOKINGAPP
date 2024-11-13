@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../assets/css/MobileBooking.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const MobileBooking = () => {
 
@@ -11,7 +12,7 @@ const MobileBooking = () => {
                 <a href="#Magazine" className="MAGAZINE-text">LE MAGAZINE</a>
             </div>
             <div className="RÉSERVER-div">
-                <a href="#Reservations" className="RÉSERVER-text">RÉSERVER</a>
+                <a href="#Reservations" className="RÉSERVER-text"><FontAwesomeIcon icon="fa-thin fa-calendar-lines-pen" />BOOK</a>
             </div>
         </div>
     );

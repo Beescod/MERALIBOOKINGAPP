@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es5",                         // Or your desired target
-    "lib": ["dom", "esnext"],                // You can adjust the libraries as needed
-    "jsx": "react-jsx",                     // Ensure JSX is enabled
-    "moduleResolution": "node",              // Enable module resolution
-    "strict": true,                          // Optional: Enable strict mode for more checks
-    "esModuleInterop": true,                 // Optional: To ensure compatibility with ES modules
-    "skipLibCheck": true                     // Optional: Skip checking of declaration files for faster build times
+    "target": "es5",
+    "lib": ["dom", "esnext"],
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    // "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
   }
 }
+
