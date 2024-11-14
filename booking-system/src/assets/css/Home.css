@@ -1,73 +1,31 @@
-/* 
-.top-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background-color: black;
-  transition: transform 0.3s ease;
-  transform: translateY(-100%);
-  z-index: 10;
-}
-
-.top-bar.visible {
-  transform: translateY(0) !important;
-} */
-
-
 /* General Scroll Settings */
 body {
-  overflow: auto; /* Make sure overflow is not hidden */
-  scroll-behavior: smooth; /* Smooth scrolling motion */
+  /* overflow: auto;
+  scroll-behavior: smooth; */
   height: 100vh; /* Full viewport height */
-  background-color: #e1d9ca; /* Background color for the body */
+  background-color: #e1d9ca;
   margin: 0;
   font-family: Arial, sans-serif;
-}
-
-/* Home.css */
-
-.scroll-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100px; /* Adjust height as needed */
-  background-color: black;
-  transform: translateY(-50%);
-  transition: transform 0.5s ease-in-out;
-  z-index: 999;
-}
-
-/* When scrolled down, make it visible */
-.scroll-background.visible {
-  transform: translateY(0);
-}
-
-
-.selection .scroll-background {
-  transform: translateY(0); /* Slide in effect */
 }
 
 
 /* Custom Scrollbars */
 ::-webkit-scrollbar {
-  width: 8px; /* Smaller scrollbar width */
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #e1d9ca; /* Track color (background of the scrollbar) */
+  background: #e1d9ca;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #c5bda5; /* Color of the scrollbar thumb */
-  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+  background-color: #c5bda5;
+  border-radius: 10px;
 }
 
-/* Scrollbar on hover */
+
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #a8a078; /* Darker shade when hovering over the thumb */
+  background-color: #a8a078; 
 }
 
 /* Styling the container that should scroll */
@@ -76,13 +34,6 @@ body {
   overflow-y: auto;
   background-color: #e1d9ca;
   text-align: center;
-}
-
-/* Optional: For better mobile scrolling */
-@media (max-width: 768px) {
-  .selection {
-    overflow-y: scroll; /* Ensure scrolling is enabled on small screens */
-  }
 }
 
 
@@ -113,17 +64,34 @@ body {
 }
 
 .spa-section {
+  position: relative;
   text-align: center;
   padding: 10rem;
-  background: rgba(2, 2, 2, 0.5) url('../images/spa-section.jpg') no-repeat center center;
+  background: url('../images/spa-section.jpg') no-repeat center center;
   background-size: cover;
   color: #fff;
   min-height: 100vh;
-  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.spa-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Transparent black overlay */
+  z-index: 1;
+}
+
+.spa-section-in {
+  position: relative;
+  z-index: 2; /* Ensure content is above the overlay */
+}
+
 
 /* Responsive styling for the spa-section */
 @media (max-width: 1200px) {
@@ -260,7 +228,7 @@ body {
 
 .spa-nav {
   display: flex;
-  flex-wrap: wrap; /* Wrap the nav links when they overflow */
+  flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
   margin-top: 10px;
@@ -271,6 +239,7 @@ body {
   font-weight: bold;
   text-decoration: none;
   font-size: 1rem;
+  font-family: sans-serif;
 }
 
 

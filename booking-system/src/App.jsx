@@ -1,11 +1,17 @@
 import PropTypes from 'prop-types'; // Import PropTypes
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import 'font-awesome/css/font-awesome.min.css';
+
 import Logo from './components/Logo';
 import './App.css';
 import HomePage from './views/Home';
 // import AboutPage from './views/About';
 // import ContactPage from './views/Contact';
+import Navbar from '../src/components/Navbar';
+import BackToTopButton from '../src/components/BackToTopButton';
+import Footer from '../src/components/Footer';
+import MobileBooking from '../src/components/MobileBooking';
 
 function LoadingWrapper({ children, isLoading }) {
   return isLoading ? <Logo /> : children;
@@ -37,7 +43,11 @@ function App() {
           path="/"
           element={
             <LoadingWrapper isLoading={isLoading}>
+              <Navbar />
               <HomePage />
+              <BackToTopButton/>
+              <Footer/>
+              <MobileBooking/>
             </LoadingWrapper>
           }
         />

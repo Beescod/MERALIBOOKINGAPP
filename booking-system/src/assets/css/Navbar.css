@@ -20,13 +20,14 @@ body {
   position: fixed;
   width: 97%;
   z-index: 100;
-  height: 5em;
+  height: 70px;
   transition: background-color 0.3s ease;
 }
 
+
 .navbar.scrolled {
   background-color: black;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.7s ease;
 }
 
 /* Navbar Container */
