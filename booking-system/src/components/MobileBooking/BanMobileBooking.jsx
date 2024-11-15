@@ -1,6 +1,5 @@
 // import React, { useState } from 'react';
 import './MobileBooking.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const MobileBooking = () => {
 
