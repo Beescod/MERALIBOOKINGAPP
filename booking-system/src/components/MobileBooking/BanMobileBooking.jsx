@@ -11,7 +11,7 @@ const MobileBooking = () => {
                 <a href="#Magazine" className="MAGAZINE-text">LE MAGAZINE</a>
             </div>
             <div className="RÉSERVER-div">
-                <a href="#Reservations" className="RÉSERVER-text"><FontAwesomeIcon icon="fa-thin fa-calendar-lines-pen" />BOOK</a>
+                <a href="#Reservations" className="RÉSERVER-text">BOOK</a>
             </div>
         </div>
     );
