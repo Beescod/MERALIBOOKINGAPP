@@ -1,75 +1,91 @@
-import PropTypes from 'prop-types'; // Import PropTypes
-import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import 'font-awesome/css/font-awesome.min.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar copy/Navbar";
+import Hero from "./components/Hero/Hero";
+import Products from "./components/Products/Products";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import TopProducts from "./components/TopProducts/TopProducts";
+import Banner from "./components/Banner/Banner";
+import Subscribe from "./components/Subscribe/Subscribe";
+import Testimonials from "./components/Testimonials/Testimonials";
+import Footer from "./components/Footer/Footer";
+import Popup from "./components/Popup/Popup";
+import MobileBooking from "./components/MobileBooking/BanMobileBooking";
+import Logo from "./components/Logo"; // Import the loading page
 
-import Logo from './components/Logo';
-import './App.css';
-import HomePage from './views/Home';
-// import AboutPage from './views/About';
-// import ContactPage from './views/Contact';
-import Navbar from '../src/components/Navbar';
-import BackToTopButton from '../src/components/BackToTopButton';
-import Footer from '../src/components/Footer';
-import MobileBooking from '../src/components/MobileBooking';
+const App = () => {
+    const [orderPopup, setOrderPopup] = useState(false);
+    const [isLoading, setIsLoading] = useState(true); // Loading state
 
-function LoadingWrapper({ children, isLoading }) {
-  return isLoading ? <Logo /> : children;
-}
+    const handleOrderPopup = () => {
+        setOrderPopup(!orderPopup);
+    };
 
-// Adding prop types validation for LoadingWrapper component
-LoadingWrapper.propTypes = {
-  children: PropTypes.node.isRequired,  // children can be any renderable node (element, string, etc.)
-  isLoading: PropTypes.bool.isRequired, // isLoading should be a boolean
+    useEffect(() => {
+        // Initialize AOS
+        AOS.init({
+            offset: 100,
+            duration: 800,
+            easing: "ease-in-sine",
+            delay: 100,
+        });
+        AOS.refresh();
+
+        // Set a timer to hide the loading page
+        const timer = setTimeout(() => setIsLoading(false), 2000); // 2 seconds loading
+        return () => clearTimeout(timer);
+    }, []);
+
+    // Show loading page while `isLoading` is true
+    if (isLoading) {
+        return <Logo />;
+    }
+
+    return (
+        <Router>
+            <div className="bg-white dark:bg-gray-900 dark:text-white duration-200">
+                <Navbar handleOrderPopup={handleOrderPopup} />
+
+                {/* Define Routes */}
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <>
+                                <Hero handleOrderPopup={handleOrderPopup} />
+                                <Products />
+                                <TopProducts handleOrderPopup={handleOrderPopup} />
+                                <Banner />
+                                <Subscribe />
+                                <Products />
+                                <Testimonials />
+                                {/* Add MobileBooking */}
+                                <MobileBooking />
+                            </>
+                        }
+                    />
+                    <Route
+                        path="/about"
+                        element={
+                            <>
+                                <Hero handleOrderPopup={handleOrderPopup} />
+                                <Products />
+                                <TopProducts handleOrderPopup={handleOrderPopup} />
+                                <Banner />
+                                <Subscribe />
+                                <Products />
+                                <Testimonials />
+                            </>
+                        }
+                    />
+                </Routes>
+
+                <Footer />
+                <Popup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
+            </div>
+        </Router>
+    );
 };
-
-function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 9000); // 90 seconds of loading
-    return () => clearTimeout(timer);
-  }, []);
-
-  return (
-    <Router
-      future={{
-        v7_startTransition: true,
-        v7_relativeSplatPath: true,
-      }}
-    >
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <LoadingWrapper isLoading={isLoading}>
-              <Navbar />
-              <HomePage />
-              <BackToTopButton/>
-              <Footer/>
-              <MobileBooking/>
-            </LoadingWrapper>
-          }
-        />
-        {/* <Route
-          path="/about"
-          element={
-            <LoadingWrapper isLoading={isLoading}>
-              <AboutPage />
-            </LoadingWrapper>
-          }
-        />
-        <Route
-          path="/contact"
-          element={
-            <LoadingWrapper isLoading={isLoading}>
-              <ContactPage />
-            </LoadingWrapper>
-          }
-        /> */}
-      </Routes>
-    </Router>
-  );
-}
 
 export default App;

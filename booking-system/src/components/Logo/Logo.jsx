@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from 'react';
-import '../assets/css/Logo.css';
-import LogoImage from '../assets/images/LoagoL.png';
-import LogoImage2 from '../assets/images/LoagoL2.png';
-import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
+import './Logo.css';
+import LogoImage from '../../assets/images/LoagoL.png';
+import LogoImage2 from '../../assets/images/LoagoL2.png';
+// import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
 
 function Logo() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -14,7 +14,7 @@ function Logo() {
   }, []);
 
   return (
-    <BackgroundBeamsWithCollision className="BackgroundBeamsWithCollision">
+    <div className="BackgroundBeamsWithCollision">
       <div className={`app-container ${isLoaded ? 'open' : ''}`}>
         <div className="white-BD">
           <div className="left-section"></div>
@@ -32,7 +32,7 @@ function Logo() {
           />
         </div>
       </div>
-    </BackgroundBeamsWithCollision>
+</div>
   );
 }
 

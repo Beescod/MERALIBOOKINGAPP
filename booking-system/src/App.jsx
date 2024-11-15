@@ -12,6 +12,7 @@ import Testimonials from "./components/Testimonials/Testimonials";
 import Footer from "./components/Footer/Footer";
 import Popup from "./components/Popup/Popup";
 import MobileBooking from "./components/MobileBooking/BanMobileBooking"; // Import MobileBooking
+// import Logo from "./components/Logo/Logo";
 
 const App = () => {
     const [orderPopup, setOrderPopup] = React.useState(false);
@@ -43,6 +44,7 @@ const App = () => {
                         path="/"
                         element={
                             <>
+                                
                                 <Hero handleOrderPopup={handleOrderPopup} />
                                 <Products />
                                 <TopProducts handleOrderPopup={handleOrderPopup} />
