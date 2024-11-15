@@ -70,7 +70,7 @@ body {
 
 .nav-logo {
   height: 40px;
-  position: absolute;
+  /* position: absolute; */
   left: 50%;
   top: 20%;
   transform: translate(-50%, -50%);
@@ -91,20 +91,7 @@ body {
 }
 
 /* Adjust .nav-logo styles for mobile screens */
-@media (max-width: 600px) {
-  .nav-logo {
-    position: absolute; /* Position the logo absolutely within the navbar */
-    right: 80px; /* Add right padding */
-    top: 30%; /* Center vertically within the navbar */
-    transform: translateY(-50%); /* Adjust for proper vertical centering */
-    display: block; /* Ensure it's visible */
-  }
 
-  .nav-logo img {
-    width: 100px; /* Adjust the size if necessary */
-    height: 40px; /* Maintain aspect ratio */
-  }
-}
 
 @keyframes openFromMiddle {
   0% {
@@ -126,6 +113,7 @@ body {
 .nav-logo-i {
   animation: popIn 0.7s ease-out forwards;
 }
+
 
 /* Burger Menu */
 .burger-menu-container {

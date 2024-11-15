@@ -11,10 +11,12 @@ import Subscribe from "./components/Subscribe/Subscribe";
 import Testimonials from "./components/Testimonials/Testimonials";
 import Footer from "./components/Footer/Footer";
 import Popup from "./components/Popup/Popup";
-// import About from "./pages/About";
+import MobileBooking from "./components/MobileBooking/BanMobileBooking"; // Import MobileBooking
 
 const App = () => {
     const [orderPopup, setOrderPopup] = React.useState(false);
+    
+    
 
     const handleOrderPopup = () => {
         setOrderPopup(!orderPopup);
@@ -48,24 +50,31 @@ const App = () => {
                                 <Subscribe />
                                 <Products />
                                 <Testimonials />
+                                {/* Add MobileBooking */}
+                                <MobileBooking />
                             </>
                         }
                     />
                     <Route
                         path="/about"
-                        element={<>
-                            <Hero handleOrderPopup={handleOrderPopup} />
-                            <Products />
-                            <TopProducts handleOrderPopup={handleOrderPopup} />
-                            <Banner />
-                            <Subscribe />
-                            <Products />
-                            <Testimonials />
-                        </>} />
+                        element={
+                            <>
+                                <Hero handleOrderPopup={handleOrderPopup} />
+                                <Products />
+                                <TopProducts handleOrderPopup={handleOrderPopup} />
+                                <Banner />
+                                <Subscribe />
+                                <Products />
+                                <Testimonials />
+                            </>
+                        }
+                    />
                 </Routes>
 
                 <Footer />
                 <Popup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
+
+
             </div>
         </Router>
     );

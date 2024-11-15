@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.MobileBooking {
+  animation: popIn 0.7s ease-out forwards;
+}
+
+  @media (max-width: 868px) { /* Adjust max-width for your preferred breakpoint */
+  .MobileBooking {
+      display: flex;
+      justify-content: space-between;
+      position: fixed; /* Fixed positioning */
+      bottom: 0;       /* Stick to the bottom */
+      width: 100%;
+      max-width: 400px;
+      height: 45px;
+      background-color: white;
+      /* border-radius: 5px 5px 0 0; */
+      overflow: hidden;
+      z-index: 1000;   /* Ensure it stays on top */
+  }
+
+    .MAGAZINE-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        background-color: black;
+    }
+
+    .RÉSERVER-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        background-color: #757C46;
+    }
+
+    .MAGAZINE-text {
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        font-family: serif;
+        animation: popIn 0.7s ease-in forwards;
+    }
+
+    .MAGAZINE-text::after {
+        content: '';
+        position: absolute;
+        background-color: #333;
+        transform: translateX(-50%) scaleX(0);
+        transition: transform 0.3s ease;
+      }
+      
+      .MAGAZINE-text:hover {
+        color: rgba(105, 95, 76, 0.8);
+        /* Change text color on hover */
+      }
+
+    
+    .RÉSERVER-text {
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        font-family: serif;
+        animation: popIn 0.7s ease-in forwards;
+    }
+
+
+    .RÉSERVER-text::after {
+        content: '';
+        position: absolute;
+        background-color: #020202;
+        transform: translateX(-50%) scaleX(0);
+        transition: transform 0.3s ease;
+      }
+      
+      .RÉSERVER-text:hover {
+        color: rgba(28, 26, 21, 0.8);
+        /* Change text color on hover */
+      }
+}
+
+/* Hide MobileBooking on larger screens */
+@media (min-width: 400px) {
+    .MobileBooking {
+        display: none;
+    }
+}

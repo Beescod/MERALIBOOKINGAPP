@@ -1,48 +1,75 @@
-import React, { useState, useEffect } from 'react';
-import Image from "next/image";
-import '../app/assets/css/Home.css';
+import PropTypes from 'prop-types'; // Import PropTypes
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import 'font-awesome/css/font-awesome.min.css';
 
-export default function Home() {
-  const [isScrolled, setIsScrolled] = useState(false);
+import Logo from './components/Logo';
+import './App.css';
+import HomePage from './views/Home';
+// import AboutPage from './views/About';
+// import ContactPage from './views/Contact';
+import Navbar from '../src/components/Navbar';
+import BackToTopButton from '../src/components/BackToTopButton';
+import Footer from '../src/components/Footer';
+import MobileBooking from '../src/components/MobileBooking';
+
+function LoadingWrapper({ children, isLoading }) {
+  return isLoading ? <Logo /> : children;
+}
+
+// Adding prop types validation for LoadingWrapper component
+LoadingWrapper.propTypes = {
+  children: PropTypes.node.isRequired,  // children can be any renderable node (element, string, etc.)
+  isLoading: PropTypes.bool.isRequired, // isLoading should be a boolean
+};
+
+function App() {
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY > 90;
-      setIsScrolled(scrolled);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    const timer = setTimeout(() => setIsLoading(false), 9000); // 90 seconds of loading
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="selection">
-        {/* Your sections go here */}
-        <section className="spa-section">
-          <div className="spa-section-in">
-            <div className="spa-section-logo">
-              <a href="/">
-                {/* <img src={Logo} alt="Dynamic" width={400} height={200} /> */}
-              </a>
-            </div>
-            <h2>The Spa & Wellbeing</h2>
-            <div className="divider"></div>
-            <nav className="spa-nav">
-              <a href="#massages">The Massages</a>
-              <a href="#hammams">The Hammams</a>
-              <a href="#treatments">The Treatments</a>
-              <a href="#salon">The Hairdressing Salon</a>
-              <a href="#sports">The Sports</a>
-            </nav>
-          </div>
-        </section>
-
-        {/* Other sections go here */}
-      </div>
-    </div>
+    <Router
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }}
+    >
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <LoadingWrapper isLoading={isLoading}>
+              <Navbar />
+              <HomePage />
+              <BackToTopButton/>
+              <Footer/>
+              <MobileBooking/>
+            </LoadingWrapper>
+          }
+        />
+        {/* <Route
+          path="/about"
+          element={
+            <LoadingWrapper isLoading={isLoading}>
+              <AboutPage />
+            </LoadingWrapper>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <LoadingWrapper isLoading={isLoading}>
+              <ContactPage />
+            </LoadingWrapper>
+          }
+        /> */}
+      </Routes>
+    </Router>
   );
 }
+
+export default App;
