@@ -208,12 +208,13 @@ body {
   transition: transform 0.5s ease;
   z-index: 99;
   overflow: hidden;
-  /* Prevents any overflow issues */
   padding: 0;
   /* Remove any extra padding */
   margin: 0;
   /* Remove any extra margin */
   font-family: "Roboto", sans-serif;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease; /* Ensure this is present */
 
 }
 
@@ -239,7 +240,7 @@ body {
 }
 
 .menu.visible {
-  transform: translateY(0);
+  transform: translateY(0) !important;
 }
 
 
