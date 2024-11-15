@@ -25,10 +25,10 @@ const Navbar = () => {
   useEffect(() => {
     console.log("Attaching scroll event listener");
     const handleScroll = () => {
-      console.log("Scroll event triggered");
+      // console.log("Scroll event triggered");
       const scrolled = window.scrollY > 90;
       setIsScrolled(scrolled);
-      console.log("Is scrolled:", scrolled);
+      // console.log("Is scrolled:", scrolled);
     };
 
     // Attach the listener

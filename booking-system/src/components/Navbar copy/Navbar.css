@@ -73,6 +73,27 @@ body {
   height: 40px;
 }
 
+.nav-logo img {
+  width: 150px; /* Adjust the size if necessary */
+  height: 50px; /* Maintain aspect ratio */
+}
+
+/* Adjust .nav-logo styles for mobile screens */
+@media (max-width: 600px) {
+  .nav-logo {
+    position: absolute; /* Position the logo absolutely within the navbar */
+    right: 80px; /* Add right padding */
+    top: 30%; /* Center vertically within the navbar */
+    transform: translateY(-50%); /* Adjust for proper vertical centering */
+    display: block; /* Ensure it's visible */
+  }
+
+  .nav-logo img {
+    width: 100px; /* Adjust the size if necessary */
+    height: 40px; /* Maintain aspect ratio */
+  }
+}
+
 @keyframes openFromMiddle {
   0% {
     opacity: 0;
@@ -199,13 +220,15 @@ body {
 
 
 
-.menu.visible {
-  transform: translateY(0);
-}
 
 .menu.hidden {
   transform: translateY(-100%);
 }
+
+.menu.visible {
+  transform: translateY(0);
+}
+
 
 /* Menu Content */
 .menu-content {
