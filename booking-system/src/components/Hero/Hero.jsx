@@ -1,35 +1,33 @@
 import { useState, useEffect } from "react";
 import "./Hero.css";
-import LoagoL from "../../assets/images/LoagoL.png";
+import LoagoL from "../../assets/images/BDLogo.png";
 
 const Hero = () => {
-  const [isLogoVisible, setIsLogoVisible] = useState(true);
+  // const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    let lastScrollY = window.scrollY;
+  // useEffect(() => {
+  //   console.log("Attaching scroll event listener");
+  //   const handleScroll = () => {
+  //     const scrolled = window.scrollY > 90;
+  //     setIsScrolled(scrolled);
+  //   };
 
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY && window.scrollY > 90) {
-        setIsLogoVisible(false); // Scrolling down hides the logo
-      } else {
-        setIsLogoVisible(true); // Scrolling up shows the logo
-      }
-      lastScrollY = window.scrollY;
-    };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     console.log("Removing scroll event listener");
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <div className="selection">
       <section className="spa-section">
         <div className="spa-section-in">
           <div
-            className={`spa-section-logo ${isLogoVisible ? "visible" : "hidden"}`}
+            // className={`spa-section-logo ${isScrolled ? "hidden" : ''}`}
+            className="spa-section-logo"
           >
             <a href="/">
               <img src={LoagoL} alt="Dynamic" width={400} height={200} />
