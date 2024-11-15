@@ -190,7 +190,7 @@ const Navbar = () => {
 
         <div className="nav-links">
           <a href="#Magazine" className="text-style2">LE MAGAZINE</a>
-          <a href="#Reservations" className="text-style2">RÉSERVER</a>
+          <a href="#Reservations" className="text-style2">RESERVE</a>
         </div>
       </div>
     </div>

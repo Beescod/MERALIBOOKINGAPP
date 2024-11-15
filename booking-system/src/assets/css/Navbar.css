@@ -140,7 +140,7 @@ body {
   /* Remove any extra padding */
   margin: 0;
   /* Remove any extra margin */
-  font-family: serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* Media query for responsiveness */
@@ -262,7 +262,7 @@ body {
 /* Text Style */
 .text-style {
   color: #fffefe;
-  font-family: serif;
+  font-family: "Roboto", sans-serif;
   /* Change to your desired text color */
   font-size: 1rem;
   /* Adjust the font size as needed */
@@ -273,7 +273,7 @@ body {
 
 .nav-links a {
   color: white;
-  font-family: serif;
+  font-family: "Roboto", sans-serif;
 }
 
 
@@ -284,7 +284,7 @@ body {
   font-size: 1.5rem;
   transition: color 0.3s ease;
   cursor: pointer;
-  font-family: serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .text-style1 {
@@ -294,7 +294,7 @@ body {
   font-size: 1.5rem;
   transition: color 0.3s ease;
   cursor: pointer;
-  font-family: serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .text-style::after {
@@ -497,7 +497,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   font-size: 2rem;
-  font-family: serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 600;
 }
 
@@ -636,7 +636,7 @@ body {
 }
 
 .text-style312 {
-  font-family: serif;
+  font-family: "Roboto", sans-serif;
   /* Serif font for a classic look */
   margin-right: 10px;
   color: #000000;
@@ -720,7 +720,7 @@ body {
   transition: color 0.3s ease;
   cursor: pointer;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  font-family: serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .text-style31::after {
@@ -767,7 +767,7 @@ body {
   font-size: 1.2rem;
   text-decoration: none;
   transition: color 0.3s ease;
-  font-family: serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .language-options a:hover {

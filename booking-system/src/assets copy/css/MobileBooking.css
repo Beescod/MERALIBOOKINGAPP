@@ -38,7 +38,7 @@ body {
         color: white;
         font-weight: bold;
         text-decoration: none;
-        font-family: serif;
+        font-family: "Roboto", sans-serif;
     }
 
     .MAGAZINE-text::after {
@@ -59,7 +59,7 @@ body {
         color: white;
         font-weight: bold;
         text-decoration: none;
-        font-family: serif;
+        font-family: "Roboto", sans-serif;
     }
 
 
