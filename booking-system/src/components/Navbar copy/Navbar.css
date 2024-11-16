@@ -95,7 +95,7 @@ body {
 
 
 .navbar.scrolled {
-  background-color: black;
+  background-color: #757C46;
   transition: background-color 0.7s ease;
 }
 
@@ -572,9 +572,8 @@ body {
 .burger-line,
 .burger-bar {
   width: 30px;
-  height: 4px;
+  height: 2.5px;
   background-color: #fffdfd;
-  border-radius: 5px;
   transition: all 0.3s ease;
 }
 
@@ -584,7 +583,7 @@ body {
 }
 
 .burger-bar.clicked:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(50deg) translate(10px, 5px);
 }
 
 .burger-bar.clicked:nth-child(2) {
@@ -592,7 +591,7 @@ body {
 }
 
 .burger-bar.clicked:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: rotate(-50deg) translate(10px, -6px);
 }
 
 .right {
