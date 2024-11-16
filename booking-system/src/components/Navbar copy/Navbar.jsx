@@ -10,6 +10,7 @@ import Laser from '../../assets/images/Laser.jpg';
 import defaultImage from '../../assets/images/Default.jpg';
 import BDLogo from '../../assets/images/BDLogo.png';
 
+
 const Navbar = () => {
   const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
   const [menuClass, setMenuClass] = useState("menu hidden");

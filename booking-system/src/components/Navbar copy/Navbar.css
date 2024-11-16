@@ -39,6 +39,41 @@ body {
     transform: translateX(0); /* At the final position */
   }
 }
+
+/* Keyframes for sliding in from the left */
+/* Slide in from the top */
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%); /* Start off-screen from the top */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Final position */
+  }
+}
+
+/* Slide out to the top */
+@keyframes slideOutToTop {
+  0% {
+    opacity: 1;
+    transform: translateY(0); /* Start at the normal position */
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%); /* Move off-screen to the top */
+  }
+}
+
+/* Add utility classes to use these animations */
+.slide-in {
+  animation: slideInFromTop 0.5s ease-out forwards;
+}
+
+.slide-out {
+  animation: slideOutToTop 0.5s ease-in forwards;
+}
+
 .navbar {
   animation: popIn 0.7s ease-out forwards;
 }
@@ -223,10 +258,10 @@ body {
 }
 
 .menu.visible {
-  transform: translateY(0) !important;
+  /* transform: translateY(0) !important;
   opacity: 0;
-  transform: translateX(-100%); /* Start off-screen to the left */
-  animation: slideInFromLeft 0.7s ease-out forwards; /* Smooth animation */
+  transform: translateX(-100%); */
+  animation: slideInFromTop 0.5s ease-out forwards;
 }
 
 /* Menu Content */
