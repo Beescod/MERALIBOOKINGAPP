@@ -16,15 +16,33 @@ body {
   }
 }
 
+/* Keyframes for sliding in */
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); /* Start off-screen to the right */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* At the final position */
+  }
+}
+
+/* Keyframes for sliding in from the left */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%); /* Start off-screen to the left */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* At the final position */
+  }
+}
 .navbar {
   animation: popIn 0.7s ease-out forwards;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 /* Navbar */
 .navbar {
@@ -149,7 +167,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
-  height: 100vh;
+
   background-size: cover;
 }
 
@@ -186,10 +204,8 @@ body {
   top: 0;
   left: 0;
   background-color: rgb(247, 240, 229);
-  height: 100vh;
-  /* Full viewport height */
-  width: 100vw;
-  /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -197,15 +213,29 @@ body {
   transition: transform 0.5s ease;
   z-index: 99;
   overflow: hidden;
-  padding: 0;
-  /* Remove any extra padding */
-  margin: 0;
-  /* Remove any extra margin */
+  padding: 0; /* Remove any extra padding */
+  margin: 0; /* Remove any extra margin */
   font-family: "Roboto", sans-serif;
-  transform: translateY(-100%);
-  transition: transform 0.5s ease; /* Ensure this is present */
-
 }
+
+.menu.hidden {
+  transform: translateY(-100%);
+}
+
+.menu.visible {
+  transform: translateY(0) !important;
+  opacity: 0;
+  transform: translateX(-100%); /* Start off-screen to the left */
+  animation: slideInFromRight 0.7s ease-out forwards; /* Smooth animation */
+}
+
+/* Menu Content */
+.menu-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+
 
 /* Media query for responsiveness */
 @media (max-width: 1024px),
@@ -217,26 +247,6 @@ body {
     width: 100vw;
     /* Ensure full width on all smaller screens */
   }
-}
-
-
-
-
-
-
-.menu.hidden {
-  transform: translateY(-100%);
-}
-
-.menu.visible {
-  transform: translateY(0) !important;
-}
-
-
-/* Menu Content */
-.menu-content {
-  flex: 1;
-  padding: 2rem;
 }
 
 .close-button {
@@ -425,19 +435,8 @@ body {
 
 .text-style2:hover::after {
   transform: translateX(-50%) scaleX(1);
-  /* Scale the line to full width while centered */
   background-color: rgba(114, 101, 76, 0.8);
-  /* Change line color to match text */
 }
-
-
-
-
-
-
-
-
-
 
 
 .full-container {
@@ -445,7 +444,7 @@ body {
   /* flex-direction: column; */
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
+  /* height: 100vh; */
   width: 100%;
 }
 
@@ -484,6 +483,7 @@ body {
 
   display: flex;
   align-items: center;
+  
 }
 
 .line-container {
@@ -517,6 +517,7 @@ body {
   height: 0;
   background: black;
   transform: translateY(-50%);
+  animation: growLine 1s forwards;
 }
 
 .animate-line::before {
@@ -700,6 +701,7 @@ body {
   transition: color 0.3s ease;
   cursor: pointer;
   transition: transform 0.3s ease, opacity 0.3s ease;
+  animation: popIn 0.7s ease-out forwards;
 }
 
 .text-style312 {
@@ -783,12 +785,15 @@ body {
   margin-right: 10px;
   font-size: 1.2rem;
   color: #000000;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-  cursor: pointer;
-  transition: transform 0.3s ease, opacity 0.3s ease;
   font-family: "Roboto", sans-serif;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideInFromRight 0.7s ease-out forwards;
 }
+
+
+
 
 .text-style31::after {
   content: '';
@@ -803,6 +808,19 @@ body {
   /* Change text color on hover */
 }
 
+.text-style319 {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  color: #000000;
+  font-family: "Roboto", sans-serif;
+
+  opacity: 0;
+  transform: translateX(-100%); /* Start off-screen to the left */
+  animation: slideInFromLeft 0.7s ease-out forwards; /* Smooth animation */
+}
+
+
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -814,7 +832,7 @@ body {
   }
 }
 
-/* Keep other nav links visible on desktop */
+
 @media (min-width: 769px) {
   .nav-links {
     display: flex;
@@ -831,7 +849,7 @@ body {
   color: #ffffff;
   /* Text color for language links */
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-decoration: none;
   transition: color 0.3s ease;
   font-family: "Roboto", sans-serif;

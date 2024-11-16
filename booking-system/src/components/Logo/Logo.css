@@ -169,17 +169,17 @@ body {
   }
 }
 
-.shine-effect {
+/* .shine-effect {
   content: '';
   position: absolute;
   top: 0;
   left: -100%;
-  width: 5%; /* Increase this value to make the shine line fatter */
+  width: 5%; 
   height: 100%;
   background: linear-gradient(
     120deg,
-    rgba(255, 252, 252, 0) 0%, /* Keep the transparent area */
-    rgba(236, 234, 229, 0.8), /* Adjust color if needed */
+    rgba(255, 252, 252, 0) 0%,
+    rgba(236, 234, 229, 0.8),
     rgba(255, 255, 255, 0) 100%
   );
   transform: rotate(+45deg);
@@ -188,7 +188,7 @@ body {
 
 .shine-active .shine-effect {
   animation: slideToRight 1s 1.2s ease-in-out forwards;
-}
+} */
 
 
 @keyframes slideToRight {

@@ -23,18 +23,13 @@ const Navbar = () => {
 
 
   useEffect(() => {
-    console.log("Attaching scroll event listener");
     const handleScroll = () => {
-      // console.log("Scroll event triggered");
       const scrolled = window.scrollY > 90;
       setIsScrolled(scrolled);
-      // console.log("Is scrolled:", scrolled);
     };
 
-    // Attach the listener
     window.addEventListener('scroll', handleScroll);
     return () => {
-      console.log("Removing scroll event listener");
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
@@ -95,7 +90,7 @@ const Navbar = () => {
                 <div className="your2">
                   <div className="line-container">
                     <div className="your">
-                      <span className="text-style31">SERVICES</span>
+                      <span className="text-style319">SERVICES</span>
                     </div>
                     <div className={`line ${isMenuOpen ? 'animate-line' : ''}`}></div>
                   </div>
