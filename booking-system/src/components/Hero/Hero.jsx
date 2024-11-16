@@ -35,19 +35,19 @@ const Hero = () => {
           </div>
           <h2 className="TheSpa">The Spa & Wellbeing</h2>
 
-          <div className="line"></div>
+          <div className="Heroline"></div>
 
           <nav className="spa-nav">
-            <a href="#hammams" className="text-style31">
+            <a href="#hammams" className="text-style001">
               <span className="icon">◆</span> The Hammams
             </a>
-            <a href="#treatments" className="text-style31">
+            <a href="#treatments" className="text-style001">
               <span className="icon">◆</span> The Treatments
             </a>
-            <a href="#salon" className="text-style31">
+            <a href="#salon" className="text-style001">
               <span className="icon">◆</span> The Hairdressing Salon
             </a>
-            <a href="#sports" className="text-style31">
+            <a href="#sports" className="text-style001">
               <span className="icon">◆</span> The Sports
             </a>
           </nav>

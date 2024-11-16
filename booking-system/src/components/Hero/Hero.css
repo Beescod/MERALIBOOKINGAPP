@@ -115,7 +115,7 @@ body {
 }
 
 .hero-button {
-  background: linear-gradient(to right, #007bff, #6610f2);
+  background: Herolinear-gradient(to right, #007bff, #6610f2);
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 999px;
@@ -242,7 +242,7 @@ body {
 }
 
 
-.text-style31 {
+.text-style001 {
   margin-right: 10px;
   font-size: 1.6rem;
   color: #ffffff;
@@ -250,21 +250,21 @@ body {
   cursor: pointer;
   opacity: 0;
   transform: translateX(100%);
-  animation: slideInFromRight 0.7s ease-out forwards;
+  animation: popIn 0.7s ease-out forwards;
   transition: transform 0.5s ease, color 0.5s ease;
 }
 
 
-.line {
+.Heroline {
   position: relative;
-  width: 300px; /* Adjust the length of the line */
+  width: 300px; /* Adjust the length of the Heroline */
   height: 1px;
-  background: transparent; /* Hide the main line */
+  background: transparent; /* Hide the main Heroline */
   margin: 30px 40px;
   overflow: hidden; /* Ensures animation stays within bounds */
 }
 
-.line::before {
+.Heroline::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -276,7 +276,7 @@ body {
   animation: growLine 1s forwards;
 }
 
-.animate-line::before {
+.animate-Heroline::before {
   animation: growLine 1s forwards;
 }
 
@@ -291,15 +291,16 @@ body {
 
 
 
-.text-style31::after {
+.text-style001::after {
   content: '';
   position: absolute;
   background-color: #333;
   transform: translateX(-50%) scaleX(0);
   transition: transform 0.3s ease;
+  animation: popIn 0.7s ease-out forwards;
 }
 
-.text-style31:hover {
+.text-style001:hover {
   color: #d0b581; /* Change text color on hover */
   transform: scale(1.1) translateY(-5px); /* Slightly enlarge and lift the text */
 }
@@ -317,7 +318,7 @@ body {
   margin-bottom: 0px;
 }
 
-.text-style31 .icon {
+.text-style001 .icon {
   font-size: 0.9rem;
   color: #d0b581; /* Diamond color */
 }
@@ -333,20 +334,20 @@ body {
     animation: popIn 0.7s ease-out forwards;
     margin-top: 10px;
     margin-bottom: 0px;
-    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    white-space: nowrap; /* Prevents text from wrapping to the next Heroline */
   }
   
 
-  .line {
+  .Heroline {
     position: relative;
-    width: 250px; /* Adjust the length of the line */
+    width: 250px; /* Adjust the length of the Heroline */
     height: 1px;
-    background: transparent; /* Hide the main line */
+    background: transparent; /* Hide the main Heroline */
     margin: 30px 40px;
     overflow: hidden; /* Ensures animation stays within bounds */
   }
 
-  .text-style31 {
+  .text-style001 {
   margin-right: 10px;
   font-size: 1.6rem;
   color: #ffffff;
@@ -362,16 +363,16 @@ body {
 }
 
 @media (max-width: 768px) {
-  .line {
+  .Heroline {
     position: relative;
-    width: 200px; /* Adjust the length of the line */
+    width: 200px; /* Adjust the length of the Heroline */
     height: 1px;
-    background: transparent; /* Hide the main line */
+    background: transparent; /* Hide the main Heroline */
     margin: 0px 40px 30px 40px;
     overflow: hidden; /* Ensures animation stays within bounds */
   }
 
-  .text-style31 {
+  .text-style001 {
     margin-right: 10px;
     font-size: 0.9rem;
     color: #ffffff;
@@ -392,6 +393,6 @@ body {
     animation: popIn 0.7s ease-out forwards;
     margin-top: 10px;
     margin-bottom: 0px;
-    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    white-space: nowrap; /* Prevents text from wrapping to the next Heroline */
   }
 }

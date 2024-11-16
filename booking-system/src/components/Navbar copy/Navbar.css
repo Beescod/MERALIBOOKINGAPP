@@ -226,7 +226,7 @@ body {
   transform: translateY(0) !important;
   opacity: 0;
   transform: translateX(-100%); /* Start off-screen to the left */
-  animation: slideInFromRight 0.7s ease-out forwards; /* Smooth animation */
+  animation: slideInFromLeft 0.7s ease-out forwards; /* Smooth animation */
 }
 
 /* Menu Content */
