@@ -252,6 +252,7 @@ body {
   transform: translateX(100%);
   animation: popIn 0.7s ease-out forwards;
   transition: transform 0.5s ease, color 0.5s ease;
+  white-space: nowrap;
 }
 
 
@@ -342,7 +343,7 @@ body {
     position: relative;
     width: 250px; /* Adjust the length of the Heroline */
     height: 1px;
-    background: transparent; /* Hide the main Heroline */
+    background: #ffffff; /* Hide the main Heroline */
     margin: 30px 40px;
     overflow: hidden; /* Ensures animation stays within bounds */
   }
@@ -350,14 +351,6 @@ body {
   .text-style001 {
   margin-right: 10px;
   font-size: 1.6rem;
-  color: #ffffff;
-  font-family: "Crimson Text", serif;
-  cursor: pointer;
-  opacity: 0;
-  transform: translateX(100%);
-  animation: slideInFromRight 0.7s ease-out forwards;
-  transition: transform 0.5s ease, color 0.5s ease;
-  white-space: nowrap;
 }
   
 }
@@ -375,13 +368,7 @@ body {
   .text-style001 {
     margin-right: 10px;
     font-size: 0.9rem;
-    color: #ffffff;
-    font-family: "Crimson Text", serif;
-    cursor: pointer;
-    opacity: 0;
-    transform: translateX(100%);
-    animation: slideInFromRight 0.7s ease-out forwards;
-    transition: transform 0.5s ease, color 0.5s ease;
+
   }
   .TheSpa {
     margin-right: 10px;
