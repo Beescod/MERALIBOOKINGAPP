@@ -5,6 +5,7 @@ import Img3 from "../../assets/women/women3.jpg";
 import Img4 from "../../assets/women/women4.jpg";
 import { FaStar } from "react-icons/fa6";
 
+
 const ProductsData = [
   {
     id: 1,
@@ -85,7 +86,8 @@ const Products = () => {
                   <h3 className="font-semibold">{data.title}</h3>
                   <p className="text-sm text-gray-600">{data.color}</p>
                   <div className="flex items-center gap-1">
-                    <FaStar className="text-yellow-400" />
+                  <FaStar style={{ color: '#B8C6A2' }} />
+
                     <span>{data.rating}</span>
                   </div>
                 </div>

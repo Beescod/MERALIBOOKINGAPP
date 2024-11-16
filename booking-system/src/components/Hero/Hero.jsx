@@ -33,14 +33,25 @@ const Hero = () => {
               <img src={LoagoL} alt="Dynamic" width={400} height={200} />
             </a>
           </div>
-          <h2>The Spa & Wellbeing</h2>
-          <div className="divider"></div>
+          <h2 className="TheSpa">The Spa & Wellbeing</h2>
+
+          <div className="line"></div>
+
           <nav className="spa-nav">
-            <a href="#hammams">The Hammams</a>
-            <a href="#treatments">The Treatments</a>
-            <a href="#salon">The Hairdressing Salon</a>
-            <a href="#sports">The Sports</a>
+            <a href="#hammams" className="text-style31">
+              <span className="icon">◆</span> The Hammams
+            </a>
+            <a href="#treatments" className="text-style31">
+              <span className="icon">◆</span> The Treatments
+            </a>
+            <a href="#salon" className="text-style31">
+              <span className="icon">◆</span> The Hairdressing Salon
+            </a>
+            <a href="#sports" className="text-style31">
+              <span className="icon">◆</span> The Sports
+            </a>
           </nav>
+
         </div>
       </section>
     </div>

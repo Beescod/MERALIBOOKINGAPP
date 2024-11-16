@@ -1,194 +1,397 @@
 body {
-    margin: 0;
-    font-family: "Roboto", sans-serif;
+  margin: 0;
+  font-family: "Crimson Text", serif;
+}
+
+/* Add this to your CSS file or global stylesheet */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes for sliding in */
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+    /* Start off-screen to the right */
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    /* At the final position */
+  }
+}
+
+/* Keyframes for sliding in from the left */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+    /* Start off-screen to the left */
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    /* At the final position */
+  }
+}
 
 .hero-container {
-    position: relative;
-    overflow: hidden;
-    min-height: 550px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f7f7f7;
-    color: #000;
-    transition: color 0.2s, background-color 0.2s;
-  }
-  
-  .hero-container.dark {
-    background-color: #1a1a1a;
-    color: #fff;
-  }
-  
-  .background-pattern {
-    position: absolute;
-    height: 700px;
-    width: 700px;
-    background-color: rgba(0, 123, 255, 0.4);
-    top: -50%;
-    right: 0;
-    border-radius: 48px;
-    transform: rotate(45deg);
-    z-index: -1;
-  }
-  
-  .hero-content {
-    padding-bottom: 2rem;
-  }
-  
+  position: relative;
+  overflow: hidden;
+  min-height: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  color: #000;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.hero-container.dark {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.background-pattern {
+  position: absolute;
+  height: 700px;
+  width: 700px;
+  background-color: rgba(0, 123, 255, 0.4);
+  top: -50%;
+  right: 0;
+  border-radius: 48px;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.hero-content {
+  padding-bottom: 2rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
   .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
   }
-  
-  @media (min-width: 640px) {
-    .hero-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
   .text-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    text-align: center;
+    text-align: left;
   }
-  
-  @media (min-width: 640px) {
-    .text-content {
-      text-align: left;
-    }
-  }
-  
-  .hero-title {
-    font-size: clamp(1.5rem, 4vw, 3rem);
-    font-weight: bold;
-  }
-  
-  .hero-description {
-    font-size: clamp(0.9rem, 2.5vw, 1.25rem);
-  }
-  
-  .hero-button {
-    background: linear-gradient(to right, #007bff, #6610f2);
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 999px;
-    transition: transform 0.2s;
-  }
-  
-  .hero-button:hover {
-    transform: scale(1.05);
-  }
-  
-  .image-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .hero-image {
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.2s;
-  }
-  
-  .hero-image:hover {
-    transform: scale(1.05);
-  }
+}
+
+.hero-title {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: bold;
+}
+
+.hero-description {
+  font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+}
+
+.hero-button {
+  background: linear-gradient(to right, #007bff, #6610f2);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  transition: transform 0.2s;
+}
+
+.hero-button:hover {
+  transform: scale(1.05);
+}
+
+.image-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.2s;
+}
+
+.hero-image:hover {
+  transform: scale(1.05);
+}
+
+
+
+.selection {
+  overflow-y: auto;
+  background-image: url('../../assets/images/spa-section.jpg');
+  background-size: cover;
+  /* Ensures the background image covers the full container */
+  background-position: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+
+@media (max-width: 1024px) {
   .selection {
-    overflow-y: auto;
-    background-image: url('../../assets/images/spa-section.jpg');
-    background-size: cover;    /* Ensures the background image covers the full container */
-    background-position: center; /* Centers the image */
-    text-align: center;
-    min-height: 100vh;
+    min-height: 80vh;
   }
+}
 
-  
-  @media (max-width: 1024px) {
-    .selection {
-      min-height: 80vh;
-    }
+@media (max-width: 768px) {
+  .selection {
+    min-height: 60vh;
+    background-attachment: scroll;
+    /* For mobile, it's common to set background-attachment to scroll */
   }
-  
-  @media (max-width: 768px) {
-    .selection {
-      min-height: 60vh;
-      background-attachment: scroll; /* For mobile, it's common to set background-attachment to scroll */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .selection {
-      min-height: 50vh;
-      background-position: top;
-    }
-  }
+}
 
-  .spa-section {
-    position: relative;
-    text-align: center;
-    padding: 10rem;
-    background-size: cover;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media (max-width: 480px) {
+  .selection {
+    min-height: 50vh;
+    background-position: top;
   }
+}
 
-  .spa-section::before {
+.spa-section {
+  position: relative;
+  text-align: center;
+  padding: 10rem;
+  background-size: cover;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spa-section::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Transparent black overlay */
+  background: rgba(46, 46, 46, 0.5);
+  /* Transparent black overlay */
   z-index: 1;
 }
 
 .spa-section-in {
   position: relative;
-  z-index: 2; /* Ensure content is above the overlay */
+  z-index: 2;
+  /* Ensure content is above the overlay */
 }
 
 /* Responsive styling for the spa-section */
 @media (max-width: 1200px) {
   .spa-section {
-    padding: 6rem; /* Reduce padding for medium screens */
+    padding: 6rem;
+    /* Reduce padding for medium screens */
   }
 }
 
 @media (max-width: 768px) {
   .spa-section {
-    padding: 3rem; /* Further reduce padding for smaller screens */
+    padding: 3rem;
+    /* Further reduce padding for smaller screens */
   }
 }
 
+
 .spa-section-in {
-    position: relative;
-    z-index: 2; /* Ensure content is above the overlay */
-  }
+  position: relative;
+  z-index: 2;
+  /* Ensure content is above the overlay */
+}
 
-  .spa-section-in {
-    max-width: 90%; /* Limit width on larger screens */
-    padding: 20px;
-    margin: 0 auto; /* Center align */
-    text-align: center; /* Center content */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #fff;
-  }
+.spa-section-in {
+  max-width: 90%;
+  /* Limit width on larger screens */
+  padding: 20px;
+  margin: 0 auto;
+  /* Center align */
+  text-align: center;
+  /* Center content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
 
-  .spa-section-in h2 {
+
+.text-style31 {
+  margin-right: 10px;
+  font-size: 1.6rem;
+  color: #ffffff;
+  font-family: "Crimson Text", serif;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideInFromRight 0.7s ease-out forwards;
+  transition: transform 0.5s ease, color 0.5s ease;
+}
+
+
+.line {
+  position: relative;
+  width: 300px; /* Adjust the length of the line */
+  height: 1px;
+  background: transparent; /* Hide the main line */
+  margin: 30px 40px;
+  overflow: hidden; /* Ensures animation stays within bounds */
+}
+
+.line::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgb(255, 255, 255);
+  /* transform: translateY(-50%); */
+  animation: growLine 1s forwards;
+}
+
+.animate-line::before {
+  animation: growLine 1s forwards;
+}
+
+@keyframes growLine {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 280px;
+  }
+}
+
+
+
+.text-style31::after {
+  content: '';
+  position: absolute;
+  background-color: #333;
+  transform: translateX(-50%) scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.text-style31:hover {
+  color: #d0b581; /* Change text color on hover */
+  transform: scale(1.1) translateY(-5px); /* Slightly enlarge and lift the text */
+}
+
+
+.TheSpa {
+  margin-right: 10px;
+  font-size: 2.8rem;
+  color: #ffffff;
+  font-family: "Crimson Text", serif;
+  opacity: 0;
+  transform: translateX(100%);
+  animation: popIn 0.7s ease-out forwards;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.text-style31 .icon {
+  font-size: 0.9rem;
+  color: #d0b581; /* Diamond color */
+}
+
+@media (max-width: 1200px) {
+  .TheSpa {
+    margin-right: 10px;
     font-size: 1.8rem;
+    color: #ffffff;
+    font-family: "Crimson Text", serif;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: popIn 0.7s ease-out forwards;
     margin-top: 10px;
     margin-bottom: 0px;
-    font-family: "Roboto", sans-serif;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
   }
   
+
+  .line {
+    position: relative;
+    width: 250px; /* Adjust the length of the line */
+    height: 1px;
+    background: transparent; /* Hide the main line */
+    margin: 30px 40px;
+    overflow: hidden; /* Ensures animation stays within bounds */
+  }
+
+  .text-style31 {
+  margin-right: 10px;
+  font-size: 1.6rem;
+  color: #ffffff;
+  font-family: "Crimson Text", serif;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideInFromRight 0.7s ease-out forwards;
+  transition: transform 0.5s ease, color 0.5s ease;
+  white-space: nowrap;
+}
   
+}
+
+@media (max-width: 768px) {
+  .line {
+    position: relative;
+    width: 200px; /* Adjust the length of the line */
+    height: 1px;
+    background: transparent; /* Hide the main line */
+    margin: 0px 40px 30px 40px;
+    overflow: hidden; /* Ensures animation stays within bounds */
+  }
+
+  .text-style31 {
+    margin-right: 10px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    font-family: "Crimson Text", serif;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideInFromRight 0.7s ease-out forwards;
+    transition: transform 0.5s ease, color 0.5s ease;
+  }
+  .TheSpa {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-family: "Crimson Text", serif;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: popIn 0.7s ease-out forwards;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+  }
+}

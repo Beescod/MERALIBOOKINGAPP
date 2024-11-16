@@ -63,10 +63,10 @@ const TopProducts = ({ handleOrderPopup }) => {
               <div className="p-4 text-center">
                 {/* star rating */}
                 <div className="w-full flex items-center justify-center gap-1">
-                  <FaStar className="text-yellow-500" />
-                  <FaStar className="text-yellow-500" />
-                  <FaStar className="text-yellow-500" />
-                  <FaStar className="text-yellow-500" />
+                <FaStar style={{ color: '#B8C6A2' }} />
+                <FaStar style={{ color: '#B8C6A2' }} />
+                <FaStar style={{ color: '#B8C6A2' }} />
+                <FaStar style={{ color: '#B8C6A2' }} />
                 </div>
                 <h1 className="text-xl font-bold">{data.title}</h1>
                 <p className="text-gray-500 group-hover:text-white duration-300 text-sm line-clamp-2">
