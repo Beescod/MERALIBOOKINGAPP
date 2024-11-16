@@ -22,6 +22,7 @@ function Logo() {
         </div>
         <div className="logo-container">
           <div className="logo-container2">
+            <span></span>
             <img src={LogoImage} className="logo" alt="Logo" />
             <div className="shine-effect"></div>
           </div>

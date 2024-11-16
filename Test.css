@@ -1,34 +1,37 @@
-.MobileBooking {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #fff;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 0;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+.logo-container2 {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
 }
 
-.MobileBooking a {
-  text-decoration: none;
-  font-size: 14px;
-  color: #333;
-  font-weight: bold;
+.logo {
+  display: block;
+  width: 100%; /* Make sure the image is responsive */
+  height: auto;
 }
 
-.MAGAZINE-div, .RÉSERVER-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.shine-effect {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(45deg);
+  animation: shine 2s infinite;
 }
 
-/* Responsive design for mobile */
-@media (min-width: 768px) {
-  .MobileBooking {
-      display: none; /* Hide on tablets and larger screens */
+@keyframes shine {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 100%;
   }
 }

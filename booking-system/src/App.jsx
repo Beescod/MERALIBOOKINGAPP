@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar copy/Navbar";
 import Hero from "./components/Hero/Hero";
@@ -11,19 +11,19 @@ import Subscribe from "./components/Subscribe/Subscribe";
 import Testimonials from "./components/Testimonials/Testimonials";
 import Footer from "./components/Footer/Footer";
 import Popup from "./components/Popup/Popup";
-import MobileBooking from "./components/MobileBooking/BanMobileBooking"; // Import MobileBooking
-// import Logo from "./components/Logo/Logo";
+import MobileBooking from "./components/MobileBooking/BanMobileBooking";
+import Logo from "./components/Logo/Logo"; // Import the loading page
 
 const App = () => {
-    const [orderPopup, setOrderPopup] = React.useState(false);
-    
-    
+    const [orderPopup, setOrderPopup] = useState(false);
+    const [isLoading, setIsLoading] = useState(true); // Loading state
 
     const handleOrderPopup = () => {
         setOrderPopup(!orderPopup);
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
+        // Initialize AOS
         AOS.init({
             offset: 100,
             duration: 800,
@@ -31,7 +31,16 @@ const App = () => {
             delay: 100,
         });
         AOS.refresh();
+
+        // Set a timer to hide the loading page
+        const timer = setTimeout(() => setIsLoading(false), 9000); // 2 seconds loading
+        return () => clearTimeout(timer);
     }, []);
+
+    // Show loading page while `isLoading` is true
+    if (isLoading) {
+        return <Logo />;
+    }
 
     return (
         <Router>
@@ -44,7 +53,6 @@ const App = () => {
                         path="/"
                         element={
                             <>
-                                
                                 <Hero handleOrderPopup={handleOrderPopup} />
                                 <Products />
                                 <TopProducts handleOrderPopup={handleOrderPopup} />
@@ -75,8 +83,6 @@ const App = () => {
 
                 <Footer />
                 <Popup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
-
-
             </div>
         </Router>
     );

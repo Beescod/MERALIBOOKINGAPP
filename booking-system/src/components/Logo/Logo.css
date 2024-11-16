@@ -1,13 +1,7 @@
-/* Reset and Basic Styles */
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body, html {
+  font-family: "Roboto", sans-serif;
   height: 100%;
-  overflow: hidden;
 }
 
 /* App Container */
@@ -80,7 +74,6 @@ body, html {
   align-items: center;
   gap: 20px;
   z-index: 2;
-  
 }
 
 .logo {
@@ -136,15 +129,44 @@ body, html {
   z-index: 1;
 }
 
-.logo-container2 {
+/* .logo-container2 {
   position: relative;
   display: inline-block;
   overflow: hidden;
+} */
+.logo-container2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%; /* Adjust size as needed */
+  height: auto;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.logo {
+  width: 60%; /* Adjust size as needed */
+  height: auto;
+  max-width: 100%;
 }
 
 .logo-image {
   position: relative;
   z-index: 1;
+}
+
+
+
+
+
+@keyframes shine {
+  from {
+    left: -30%;
+  }
+  to {
+    left: 70%;
+  }
 }
 
 .shine-effect {
@@ -163,18 +185,6 @@ body, html {
   transform: rotate(+45deg);
   animation: shine 1.5s 0s 2;
 }
-
-
-@keyframes shine {
-  from {
-    left: -100%;
-  }
-  to {
-    left: 100%;
-  }
-}
-
-
 
 .shine-active .shine-effect {
   animation: slideToRight 1s 1.2s ease-in-out forwards;
@@ -221,7 +231,7 @@ body, html {
 }
 
 .app-container.open .logo {
-  animation: pop-out 0.8s ease-out; /* Apply pop-out animation */
+  animation: pop-out 0.9s ease-out; /* Apply pop-out animation */
 }
 
 /* Background Beams with Collision */
