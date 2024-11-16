@@ -3,22 +3,22 @@ import "./Hero.css";
 import LoagoL from "../../assets/images/BDLogo.png";
 
 const Hero = () => {
-  // const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // useEffect(() => {
-  //   console.log("Attaching scroll event listener");
-  //   const handleScroll = () => {
-  //     const scrolled = window.scrollY > 90;
-  //     setIsScrolled(scrolled);
-  //   };
+  useEffect(() => {
+    console.log("Attaching scroll event listener");
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 50;
+      setIsScrolled(scrolled);
+    };
 
 
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => {
-  //     console.log("Removing scroll event listener");
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      console.log("Removing scroll event listener");
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
 
   return (
@@ -26,8 +26,8 @@ const Hero = () => {
       <section className="spa-section">
         <div className="spa-section-in">
           <div
-            // className={`spa-section-logo ${isScrolled ? "hidden" : ''}`}
-            className="spa-section-logo"
+            className={`spa-section-logo ${isScrolled ? "hidden" : ''}`}
+            // className="spa-section-logo"
           >
             <a href="/">
               <img src={LoagoL} alt="Dynamic" width={400} height={200} />

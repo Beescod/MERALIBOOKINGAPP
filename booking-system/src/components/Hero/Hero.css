@@ -383,3 +383,20 @@ body {
     white-space: nowrap; /* Prevents text from wrapping to the next Heroline */
   }
 }
+
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.spa-section-logo {
+  transition: opacity 0.5s ease, height 0.5s ease;
+}

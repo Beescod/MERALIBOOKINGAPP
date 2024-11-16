@@ -67,7 +67,7 @@ const Navbar = () => {
         <div className="burger-menu-container" onClick={handleMenuClick}>
           <div className="burger-menu">
             <div className={burgerClass}></div>
-            <div className="burger-bar" style={{ width: '20px' }}></div>
+            <div className="burger-bar middle-bar" style={{ width: '20px' }}></div>
             <div className={burgerClass}></div>
           </div>
           <span className="menu-label text-style">Menu</span>

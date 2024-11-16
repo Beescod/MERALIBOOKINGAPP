@@ -224,7 +224,10 @@ body {
   font-size: 1rem;
   padding-left: 0.5rem;
   font-weight: 600;
+  font-family: "Crimson Text", serif;
 }
+
+
 
 
 @media (max-width: 768px) {
@@ -422,12 +425,12 @@ body {
 }
 
 .text-style:hover {
-  color: rgba(105, 95, 76, 0.8);
+  color: #d0b581;
   /* Change text color on hover */
 }
 
 .text-style:hover::after {
-  background-color: rgba(114, 101, 76, 0.8);
+  background-color: #d0b581;
 }
 
 
@@ -464,12 +467,12 @@ body {
 }
 
 .text-style2:hover {
-  color: rgba(105, 95, 76, 0.8);
+  color: #d0b581;
   /* Change text color on hover */
 }
 
 .text-style2:hover::after {
-  transform: translateX(-50%) scaleX(1);
+  transform: #d0b581;
   background-color: rgba(114, 101, 76, 0.8);
 }
 
@@ -575,6 +578,30 @@ body {
   height: 2.5px;
   background-color: #fffdfd;
   transition: all 0.3s ease;
+}
+
+.burger-line,
+.burger-bar {
+  width: 30px;
+  height: 2.5px;
+  background-color: #fffdfd;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect on individual burger bars */
+.burger-menu-container:hover .burger-bar {
+  background-color: #d0b581; /* Change color of burger bar when hovering */
+}
+
+
+.middle-bar {
+  width: 20px; /* Width of the middle bar */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Hover effect on the middle bar */
+.middle-bar:hover {
+  transform: translateX(10px);
 }
 
 .burger-line.open {
@@ -758,13 +785,13 @@ body {
 }
 
 .text-style3:hover {
-  color: rgba(105, 95, 76, 0.8);
+  color: #d0b581;
   /* Change text color on hover */
 }
 
 .text-style:hover::after {
   position: absolute;
-  background-color: #333;
+  background-color: #d0b581;
   transform: translateX(-50%) scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -838,7 +865,7 @@ body {
 }
 
 .text-style31:hover {
-  color: rgba(105, 95, 76, 0.8);
+  color: #d0b581;
   /* Change text color on hover */
 }
 
@@ -890,7 +917,7 @@ body {
 }
 
 .language-options a:hover {
-  color: rgba(105, 95, 76, 0.8);
+  color: #d0b581;
 }
 
 .navbar-container .language-options {
