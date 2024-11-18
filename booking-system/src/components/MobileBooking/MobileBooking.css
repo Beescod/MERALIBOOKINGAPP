@@ -18,7 +18,7 @@ body {
   animation: popIn 0.7s ease-out forwards;
 }
 
-  @media (max-width: 868px) { /* Adjust max-width for your preferred breakpoint */
+  @media (max-width: 1068px) { /* Adjust max-width for your preferred breakpoint */
   .MobileBooking {
       display: flex;
       justify-content: space-between;

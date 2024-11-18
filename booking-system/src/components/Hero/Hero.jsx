@@ -45,6 +45,12 @@ const Hero = () => {
               <a href="#sports" className="text-style001">
                 <span className="icon">◆</span> The Sports
               </a>
+              <a href="#sports" className="text-style001">
+                <span className="icon">◆</span> The Sports
+              </a>
+              <a href="#sports" className="text-style001">
+                <span className="icon">◆</span> The Sports
+              </a>
             </nav>
           </div>
         </div>

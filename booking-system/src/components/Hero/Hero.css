@@ -253,20 +253,30 @@ body {
 }
 
 /* For tablets */
+/* For tablets */
 @media (max-width: 768px) {
   .spa-section-in {
-    gap: 0px; /* 70px gap for tablets */
-    padding: 0px;
+    gap: 30px; /* Adjusted for tablets */
+    padding: 0px 15px; /* Add some horizontal padding for smaller screens */
   }
 }
 
-/* For desktops (larger screens) */
+/* For desktops */
 @media (min-width: 1024px) {
   .spa-section-in {
     gap: 100px; /* 100px gap for desktops */
-    padding: 30px;
+    padding: 30px; /* Increased padding for desktops */
   }
 }
+
+/* For ultra-wide screens */
+@media (min-width: 1769px) {
+  .spa-section-in {
+    gap: 500px; /* Larger gap for ultra-wide screens */
+    padding: 50px; /* Increased padding for ultra-wide screens */
+  }
+}
+
 
 .thetext {
   max-width: 90%;
