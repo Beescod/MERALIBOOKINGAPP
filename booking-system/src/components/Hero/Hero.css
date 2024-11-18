@@ -152,7 +152,6 @@ body {
   background-position: center;
   text-align: center;
   min-height: 100vh;
-  overflow: hidden;
 }
 
 
@@ -186,7 +185,6 @@ body {
   align-items: center;
   background-size: cover;
   color: #fff;
-  overflow: hidden;
 }
 
 
@@ -244,7 +242,30 @@ body {
   justify-content: flex-end; /* Align children to the bottom */
   align-items: center;
   text-align: center;
-  overflow: hidden;
+  gap: 5vw; /* Adjust the value for more or less space */
+}
+
+@media (max-width: 480px) {
+  .spa-section-in {
+    gap: 0px; /* 30px gap for small screens */
+    padding: 0px;
+  }
+}
+
+/* For tablets */
+@media (max-width: 768px) {
+  .spa-section-in {
+    gap: 0px; /* 70px gap for tablets */
+    padding: 0px;
+  }
+}
+
+/* For desktops (larger screens) */
+@media (min-width: 1024px) {
+  .spa-section-in {
+    gap: 100px; /* 100px gap for desktops */
+    padding: 30px;
+  }
 }
 
 .thetext {
@@ -261,7 +282,6 @@ body {
   padding: 20px;
   bottom: 0; /* Fix the text at the bottom */
   left: 0;
-  overflow: hidden;
 }
 
 
@@ -418,6 +438,7 @@ body {
   opacity: 1;
   transform: scale(1); /* Original size */
   transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 3;
 }
 
 
@@ -450,14 +471,23 @@ body {
 
 .spa-section-logo.visible {
   animation: zoomIn 0.7s forwards;  /* Increased duration */
+  z-index: 3;
 }
 
 
 .spa-section-logo img {
   width: 100%;
-  max-width: 300px; /* Ensure the image does not exceed 300px */
-  height: auto; /* Keep the aspect ratio intact */
-  object-fit: contain; /* Prevent any stretching or distortion */
-  image-rendering: crisp-edges; /* Improve image clarity */
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  image-rendering: crisp-edges;
   z-index: 3;
+  padding: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .spa-section-logo img {
+    padding-top: 40px; /* Increase space at the top for smaller screens */
+  }
 }
