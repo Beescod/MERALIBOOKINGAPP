@@ -21,7 +21,7 @@ const Hero = () => {
     <div className="selection">
       <section className="spa-section">
         <div className="spa-section-in">
-          <div className={`spa-section-logo ${isScrolled ? "hidden" : "visible"}`}>
+          <div className={`spa-section-logo ${isScrolled ? "hidden1" : "visible"}`}>
             <a href="/">
               <img src={LoagoL} alt="Dynamic" width={300} height={150} />
             </a>
