@@ -105,7 +105,6 @@ body {
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  max-width: 1200px;
   margin: auto;
   gap: 1em;
 }
@@ -123,9 +122,9 @@ body {
 
 .nav-logo {
   height: 40px;
-  /* position: absolute; */
+  position: absolute;
   left: 50%;
-  top: 20%;
+  top: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
@@ -133,10 +132,15 @@ body {
 }
 
 .nav-logo img {
-  width: 100px; /* Adjust size as necessary */
+  width: 100px;
   height: auto;
-  filter: brightness(0) invert(20); /* Makes the logo white */
+  transition: filter 0.3s ease;
 }
+
+.nav-logo img:hover {
+  filter: brightness(2); /* Brightens on hover */
+}
+
 .nav-logo a {
   font-weight: bold;
   color: white; /* Ensure the link text is white */
@@ -158,14 +162,14 @@ body {
 }
 
 /* Add this class for when the animation should run */
-.open-from-middle {
-  animation: openFromMiddle 0.5s ease-out forwards;
-}
-
-
 .nav-logo-i {
-  animation: popIn 0.7s ease-out forwards;
+  animation: openFromMiddle 0.7s ease-out forwards;
 }
+
+
+/* .nav-logo-i {
+  animation: popIn 0.7s ease-out forwards;
+} */
 
 
 /* Burger Menu */
@@ -358,6 +362,12 @@ body {
   .nav-links {
     display: none;
   }
+  .nav-logo {
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
 
   .menu.visible .nav-links {
     display: flex;
@@ -370,6 +380,12 @@ body {
   .right-image {
     display: block;
   }
+  .nav-logo {
+    height: 40px;
+    position: absolute;
+    top: 50%;
+  }
+
 }
 
 

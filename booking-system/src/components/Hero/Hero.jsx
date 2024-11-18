@@ -6,52 +6,47 @@ const Hero = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    console.log("Attaching scroll event listener");
     const handleScroll = () => {
-      const scrolled = window.scrollY > 50;
+      const scrolled = window.scrollY > 90;
       setIsScrolled(scrolled);
     };
 
-
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      console.log("Removing scroll event listener");
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
 
   return (
     <div className="selection">
       <section className="spa-section">
         <div className="spa-section-in">
-          <div
-            className={`spa-section-logo ${isScrolled ? "hidden" : ''}`}
-            // className="spa-section-logo"
-          >
+          <div className={`spa-section-logo ${isScrolled ? "hidden" : "visible"}`}>
             <a href="/">
-              <img src={LoagoL} alt="Dynamic" width={400} height={200} />
+              <img src={LoagoL} alt="Dynamic" width={300} height={150} />
             </a>
           </div>
-          <h2 className="TheSpa">The Spa & Wellbeing</h2>
 
-          <div className="Heroline"></div>
+          <div className="thetext">
+            <h2 className="TheSpa">The Spa & Wellbeing</h2>
 
-          <nav className="spa-nav">
-            <a href="#hammams" className="text-style001">
-              <span className="icon">◆</span> The Hammams
-            </a>
-            <a href="#treatments" className="text-style001">
-              <span className="icon">◆</span> The Treatments
-            </a>
-            <a href="#salon" className="text-style001">
-              <span className="icon">◆</span> The Hairdressing Salon
-            </a>
-            <a href="#sports" className="text-style001">
-              <span className="icon">◆</span> The Sports
-            </a>
-          </nav>
+            <div className="Heroline"></div>
 
+            <nav className="spa-nav">
+              <a href="#hammams" className="text-style001">
+                <span className="icon">◆</span> The Hammams
+              </a>
+              <a href="#treatments" className="text-style001">
+                <span className="icon">◆</span> The Treatments
+              </a>
+              <a href="#salon" className="text-style001">
+                <span className="icon">◆</span> The Hairdressing Salon
+              </a>
+              <a href="#sports" className="text-style001">
+                <span className="icon">◆</span> The Sports
+              </a>
+            </nav>
+          </div>
         </div>
       </section>
     </div>
