@@ -260,9 +260,9 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.menu.hidden {
+/* .menu.hidden {
   transform: translateY(-100%);
-}
+} */
 
 .menu.visible {
   /* transform: translateY(0) !important;
