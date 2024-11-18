@@ -1,0 +1,110 @@
+.products {
+    margin-top: 3.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .spa-container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+    height: 85;
+  }
+
+  .products-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .products-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    -webkit-text-size-adjust: 100%;
+    font-weight: 400;
+    color: #757C46;
+    line-height: 1.28;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    padding: 5vh 6vw;
+    text-align: center;
+  }
+
+  
+  
+  .products-subtitle {
+    font-size: 1rem;
+    color: var(--primary-color); /* Define this variable in your global CSS */
+  }
+  
+  .products-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.25rem;
+    justify-items: center;
+    width: 100%;
+  }
+  
+  .products-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .products-image {
+    height: 220px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+  
+  .products-info {
+    text-align: center;
+  }
+  
+  .products-title {
+    font-weight: 600;
+  }
+  
+  .products-color {
+    font-size: 0.875rem;
+    color: #666;
+  }
+  
+  .products-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .products-icon {
+    color: #b8c6a2; /* Adjust this as needed */
+  }
+  
+  .products-footer {
+    margin-top: 2.5rem;
+  }
+  
+  .products-button {
+    background-color: var(--primary-color); /* Use your brand color here */
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .products-button:hover {
+    background-color: var(--primary-dark-color); /* Adjust for hover effect */
+  }
+  

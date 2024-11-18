@@ -6,7 +6,7 @@ const BannerImg = {
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
-  height: "50vh", // Adjust the height as needed
+  height: "85vh", // Adjust the height as needed
   width: "100%",
 };
 

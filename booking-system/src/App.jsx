@@ -55,12 +55,12 @@ const App = () => {
                             <>
                                 <Hero handleOrderPopup={handleOrderPopup} />
                                 <Products />
+                                <Subscribe />
                                 <TopProducts handleOrderPopup={handleOrderPopup} />
                                 <Banner />
-                                <Subscribe />
+
                                 <Products />
                                 <Testimonials />
-                                {/* Add MobileBooking */}
                                 <MobileBooking />
                             </>
                         }
