@@ -60,10 +60,6 @@
     overflow: hidden; /* Hide overflow */
   }
   
-  .gap-4 {
-    gap: 1rem; /* Gap between flex items */
-  }
-  
   .group {
     display: inline-block; /* Grouped element for hover effect */
   }
@@ -155,6 +151,7 @@
     align-items: center;
     padding-left: 40px; 
     font-family: Arial, sans-serif;
+    width: 700%;
   }
   
   .brands-section2 {
@@ -165,6 +162,14 @@
     padding-left: 40px; 
     font-family: Arial, sans-serif;
   }
+
+  .flexgap-4 {
+    display: flex;
+    gap: 1rem;
+    width: 200%; /* Adjust the width to fit both sections side by side */
+    justify-content: space-between; /* Ensure proper spacing between the items */
+}
+
   /* Text Section */
   .brands-text {
     flex: 1; /* Takes up equal space */
@@ -231,3 +236,46 @@
     position: sticky;
     
   } 
+
+  
+
+
+
+  .group {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    overflow: hidden; /* Hide overflow */
+    display: flex; /* Ensure content centers properly */
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    background-color: #edf2f7; /* Default background color */
+  }
+  
+  .group img {
+    object-fit: cover; /* Cover the entire box */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+  }
+  
+  .absolute {
+    position: absolute;
+    inset: 0; /* Stretch to fill container */
+  }
+  
+  .group-hover\:scale-110:hover {
+    transform: scale(1.1); /* Hover scaling */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+  }
+  
+  .text-content {
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.5); /* Optional dark overlay */
+    color: white;
+    font-size: 4rem; /* Adjust font size */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  

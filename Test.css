@@ -1,72 +1,36 @@
-/* Container for the entire section */
-.brands-section1 {
-  display: flex;
-  flex-wrap: wrap; /* Ensures content wraps on smaller screens */
-  gap: 20px;
-  align-items: center;
-  padding-left: 40px; 
-  font-family: Arial, sans-serif;
+.group {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  overflow: hidden; /* Hide overflow */
+  display: flex; /* Ensure content centers properly */
+  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal centering */
+  background-color: #edf2f7; /* Default background color */
 }
 
-.brands-section2 {
-  display: flex;
-  flex-wrap: wrap; /* Ensures content wraps on smaller screens */
-  gap: 20px;
-  align-items: center;
-  padding-left: 40px; 
-  font-family: Arial, sans-serif;
-}
-/* Text Section */
-.brands-text {
-  flex: 1; /* Takes up equal space */
-  max-width: 600px; /* Ensures text container doesn’t get too wide */
-  text-align: left; /* Aligns text to the left */
+.group img {
+  object-fit: cover; /* Cover the entire box */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
 }
 
-.brands-logo img {
-  display: block;
-  margin: 0 auto 20px; /* Centers the logo and adds bottom margin */
-  max-width: 80px; /* Adjusts the logo size */
-  height: auto; /* Maintains aspect ratio */
+.absolute {
+  position: absolute;
+  inset: 0; /* Stretch to fill container */
 }
 
-/* Title Styling */
-.brands-title {
-  font-size: 2.5em; /* Makes the title prominent */
-  color: #762c31; /* Matches the heading color */
-  font-family: "Crimson Text", serif; /* Elegant font for the title */
-  text-align: center; /* Centers the title */
-  margin-bottom: 20px;
+.group-hover\:scale-110:hover {
+  transform: scale(1.1); /* Hover scaling */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
 }
 
-/* Paragraph Styling */
-.brands-description {
-  font-size: 1.1em;
-  line-height: 1.6; /* Improves readability */
-  color: #333; /* Text color */
-  margin-bottom: 15px;
-}
-
-/* Image Section */
-.brands-image {
-  flex: 1; /* Takes up equal space */
-  display: flex;
-  justify-content: center; /* Centers the image horizontally */
-  align-items: center; /* Centers the image vertically */
-}
-
-.brands-image img {
-  max-width: 100%; /* Ensures the image is responsive */
-  height: auto; /* Maintains aspect ratio */
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .brands-section {
-    flex-direction: column; /* Stacks content vertically */
-  }
-
-  .brands-title {
-    font-size: 2em; /* Adjusts title size for smaller screens */
-  }
+.text-content {
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5); /* Optional dark overlay */
+  color: white;
+  font-size: 4rem; /* Adjust font size */
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
 }

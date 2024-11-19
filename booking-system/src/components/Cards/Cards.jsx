@@ -18,6 +18,8 @@ const services = [
 
 const Salon = () => {
   return (
+    <section>
+      
     <div className="salon-container">
       {services.map((service) => (
         <div key={service.id} className="image-container1">
@@ -29,6 +31,7 @@ const Salon = () => {
         </div>
       ))}
     </div>
+    </section>
   );
 };
 

@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(301.2px, 1fr)); /* Fixed-width images */
     gap: 20px;
-    padding: 20px;
+    padding: 40px;
     justify-content: center;
     align-items: center;
   }
@@ -11,8 +11,8 @@
   /* Image Container */
   .image-container1 {
     position: relative;
-    width: 301.2px; /* Fixed width */
-    height: 200.78px; /* Fixed height */
+    /* width: 301.2px; */
+    height: 350.78px; /* Fixed height */
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
