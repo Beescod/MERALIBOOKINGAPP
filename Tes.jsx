@@ -1,77 +1,187 @@
-import React, { useEffect, useRef } from "react";
-import Img1 from "../../assets/images/spa-section.jpg";
-import Img2 from "../../assets/women/women2.jpg";
-import Img3 from "../../assets/women/women3.jpg";
-import LogoImage from '../../assets/images/LoagoL.png';
-import "./Products.css";
+import React from 'react';
+import './brands.css'; // Link to the CSS file
+import LogoImage from "../../assets/images/spa-section.jpg";
+import RightImage from "../../assets//images/product.jpg";
 
-const Products = () => {
-  const descriptionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          descriptionRef.current.classList.add("show");
-        } else {
-          descriptionRef.current.classList.remove("show");
-        }
-      },
-      { threshold: 0.5 } // Adjusts when the animation should start
-    );
-
-    if (descriptionRef.current) {
-      observer.observe(descriptionRef.current);
-    }
-
-    return () => {
-      if (descriptionRef.current) {
-        observer.unobserve(descriptionRef.current);
-      }
-    };
-  }, []);
-
+const BrandsSection = () => {
   return (
-    <div className="spa-products-container">
-      <div className="products-header">
-        <p className="products-subtitle">Relax in the best spa in Marrakech</p>
-      </div>
-      <div className="spa-container">
-        {/* Main Image */}
-        <div className="spa-container-image">
-          <img src={Img1} alt="Spa of La Mamounia" />
+    <div>
+      <div className="brands-section1">
+        {/* Text Content */}
+        <div className="brands-text">
+          <div className="brands-logo">
+            <img src={LogoImage} alt="Logo" />
+          </div>
+          <h1 className="brands-title">The brands of the spa</h1>
+          <p className="brands-description">
+            The prestigious brands Valmont, Augustinus Bader, and MarocMaroc offer
+            the best of their expertise for targeted care that combines cutting-edge
+            scientific research and sweet sensoryism.
+          </p>
+          <p className="brands-description">
+            Complementing this experience of total well-being, our team of
+            hairdressers, beauticians, barbers, and nail-artists bring their
+            precious know-how for last perfection touches.
+          </p>
         </div>
 
-        {/* Scroll-triggered Description */}
-        <div ref={descriptionRef} className="spa-description">
-          <a>
-            <img src={LogoImage} alt="Dynamic" width={300} height={150} />
-          </a>
-          <h1>Dreaming, relaxing: beauty and well-being at the spa of La Mamounia</h1>
-          <p>
-            Spread over 2,500 m², the spa of La Mamounia is an extraordinary experience to live in its sumptuous setting of the Thousand and One Nights.
-          </p>
-          <p>
-            If everything in La Mamounia, by the beauty of the place, the harmony and the sweetness that reign there, incites to enjoy every moment, the spa is the place where time can...
-          </p>
-          <p data-aos="fade-up" className="products-subtitle">
-          Relax in the best spa in Marrakech
-        </p>
-        <p data-aos="fade-up" className="products-subtitle">
-          Relax in the best spa in Marrakech
-        </p>
-          <div className="spa-container-image">
-          <img src={Img1} alt="Spa of La Mamounia" />
-          <div className="shine-effect"></div>
+        {/* Image Content */}
+        <div className="brands-image">
+          <img src={RightImage} alt="Spa Products" />
         </div>
-        <div className="spa-container-image">
-          <img src={Img1} alt="Spa of La Mamounia" />
-          <div className="shine-effect"></div>
+      </div>
+      <div className="brands-section2">
+        {/* Text Content */}
+        <div className="brands-text">
+          <div className="brands-logo">
+            <img src={LogoImage} alt="Logo" />
+          </div>
+          <h1 className="brands-title">The brands of the spa</h1>
+          <nav className="spa-nav">
+            <a href="#hammams" className="brands-section-brands-section-text-style001">
+              <span className="icon">◆</span> The Hammams
+            </a>
+            <a href="#treatments" className="brands-section-text-style001">
+              <span className="icon">◆</span> The Treatments
+            </a>
+            <a href="#salon" className="brands-section-text-style001">
+              <span className="icon">◆</span> The Hairdressing Salon
+            </a>
+            <a href="#sports" className="brands-section-text-style001">
+              <span className="icon">◆</span> The Sports
+            </a>
+            <a href="#sports" className="brands-section-text-style001">
+              <span className="icon">◆</span> The Sports
+            </a>
+            <a href="#sports" className="brands-section-text-style001">
+              <span className="icon">◆</span> The Sports
+            </a>
+          </nav>
         </div>
+
+        {/* Image Content */}
+        <div className="brands-image">
+          <img src={RightImage} alt="Spa Products" />
         </div>
       </div>
     </div>
   );
 };
 
-export default Products;
+export default BrandsSection;
+
+
+
+
+import { motion, useTransform, useScroll } from "framer-motion";
+import { useRef } from "react";
+import React from "react";
+import "./brands.css"; // Link to the CSS file
+import LogoImage from "../../assets/images/spa-section.jpg";
+import RightImage from "../../assets/images/product.jpg";
+
+const HorizontalScrollCarousel = () => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
+
+  return (
+    <section ref={targetRef} className="targetRef">
+      <div className="targetRef-sticky sticky top-0 flex h-screen items-center overflow-hidden">
+        <motion.div style={{ x }} className="flex gap-4">
+          {cards.map((card) => (
+            <Card card={card} key={card.id} />
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+const Card = ({ card }) => {
+  return (
+    <div>
+      <div className="brands-section1">
+        {/* Text Content */}
+        <div className="brands-text">
+          <div className="brands-logo">
+            <img src={LogoImage} alt="Logo" />
+          </div>
+          <h1 className="brands-title">The brands of the spa</h1>
+          <p className="brands-description">
+            The prestigious brands Valmont, Augustinus Bader, and MarocMaroc offer
+            the best of their expertise for targeted care that combines cutting-edge
+            scientific research and sweet sensoryism.
+          </p>
+          <p className="brands-description">
+            Complementing this experience of total well-being, our team of
+            hairdressers, beauticians, barbers, and nail-artists bring their
+            precious know-how for last perfection touches.
+          </p>
+        </div>
+
+        {/* Image Content */}
+        <div className="brands-image">
+          <img src={RightImage} alt="Spa Products" />
+        </div>
+      </div>
+
+      <div className="brands-section2">
+        {/* Text Content */}
+        <div className="brands-text">
+          <div className="brands-logo">
+            <img src={LogoImage} alt="Logo" />
+          </div>
+          <h1 className="brands-title">The brands of the spa</h1>
+          <nav className="spa-nav">
+            <a href="#hammams" className="brands-section-text-style001">
+              <span className="icon">◆</span> The Hammams
+            </a>
+            <a href="#treatments" className="brands-section-text-style001">
+              <span className="icon">◆</span> The Treatments
+            </a>
+            <a href="#salon" className="brands-section-text-style001">
+              <span className="icon">◆</span> The Hairdressing Salon
+            </a>
+            <a href="#sports" className="brands-section-text-style001">
+              <span className="icon">◆</span> The Sports
+            </a>
+          </nav>
+        </div>
+
+        {/* Image Content */}
+        <div className="brands-image">
+          <img src={RightImage} alt="Spa Products" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default HorizontalScrollCarousel;
+
+const cards = [
+  {
+    url: "../../assets/images/product.jpg",
+    title: "Title 1",
+    id: 1,
+  },
+  {
+    url: "/imgs/abstract/2.jpg",
+    title: "Title 2",
+    id: 2,
+  },
+  {
+    url: "/imgs/abstract/3.jpg",
+    title: "Title 3",
+    id: 3,
+  },
+  {
+    url: "/imgs/abstract/4.jpg",
+    title: "Title 4",
+    id: 4,
+  },
+];

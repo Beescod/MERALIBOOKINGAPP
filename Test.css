@@ -1,163 +1,72 @@
-.spa-products-container {
-  width: 100%;
+/* Container for the entire section */
+.brands-section1 {
+  display: flex;
+  flex-wrap: wrap; /* Ensures content wraps on smaller screens */
+  gap: 20px;
+  align-items: center;
+  padding-left: 40px; 
+  font-family: Arial, sans-serif;
 }
 
-.spa-container {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 85%;
-    display: grid;
-    grid-template-columns: 1fr 0.4fr; 
-    position: relative;
-    overflow: hidden;
+.brands-section2 {
+  display: flex;
+  flex-wrap: wrap; /* Ensures content wraps on smaller screens */
+  gap: 20px;
+  align-items: center;
+  padding-left: 40px; 
+  font-family: Arial, sans-serif;
+}
+/* Text Section */
+.brands-text {
+  flex: 1; /* Takes up equal space */
+  max-width: 600px; /* Ensures text container doesn’t get too wide */
+  text-align: left; /* Aligns text to the left */
+}
+
+.brands-logo img {
+  display: block;
+  margin: 0 auto 20px; /* Centers the logo and adds bottom margin */
+  max-width: 80px; /* Adjusts the logo size */
+  height: auto; /* Maintains aspect ratio */
+}
+
+/* Title Styling */
+.brands-title {
+  font-size: 2.5em; /* Makes the title prominent */
+  color: #762c31; /* Matches the heading color */
+  font-family: "Crimson Text", serif; /* Elegant font for the title */
+  text-align: center; /* Centers the title */
+  margin-bottom: 20px;
+}
+
+/* Paragraph Styling */
+.brands-description {
+  font-size: 1.1em;
+  line-height: 1.6; /* Improves readability */
+  color: #333; /* Text color */
+  margin-bottom: 15px;
+}
+
+/* Image Section */
+.brands-image {
+  flex: 1; /* Takes up equal space */
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+}
+
+.brands-image img {
+  max-width: 100%; /* Ensures the image is responsive */
+  height: auto; /* Maintains aspect ratio */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .brands-section {
+    flex-direction: column; /* Stacks content vertically */
   }
 
-  .spa-container-image {
-    position: relative;
-    height: 100%;
-    width: 100%;
+  .brands-title {
+    font-size: 2em; /* Adjusts title size for smaller screens */
   }
-
-
-  .products-container {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .spa-container-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure the image covers the container */
-  }
-  
-  .products-header {
-    text-align: center;
-    /* margin-bottom: 2.5rem; */
-    -webkit-text-size-adjust: 100%;
-    font-weight: 400;
-    color: #757C46;
-    line-height: 1.28;
-    font-size: 15px;
-    font-family: "Roboto", sans-serif;
-    box-sizing: border-box;
-    position: relative;
-    width: 100%;
-    padding: 5vh 6vw;
-    text-align: center;
-  }
-
-  .spa-description {
-    position: absolute;
-    top: 80%; /* Start at 80% from the top */
-    right: 0;
-    width: 40%; /* Occupy 40% width of the container */
-    background: rgba(228, 221, 208, 0.8);
-    padding: 2rem;
-    border-radius: 1rem;
-    z-index: 2;
-    transform: translateY(0); /* Initial position */
-    transition: transform 0.8s ease, top 0.8s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    
-  }
-  
-
-
-  .spa-description h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .spa-description p {
-    margin-bottom: 1rem;
-    line-height: 1.5;
-    color: #333;
-  }
-
-  .spa-description a img {
-    opacity: 1;
-    transform: scale(1); /* Original size */
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  
-  
-  .spa-description a {
-    opacity: 1;
-    transform: scale(1); /* Original size */
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    z-index: 99;
-    position: relative;
-  }
-  
-  .products-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.25rem;
-    justify-items: center;
-    width: 100%;
-  }
-  
-  .products-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  
-  .products-image {
-    height: 220px;
-    width: 150px;
-    object-fit: cover;
-    border-radius: 0.5rem;
-  }
-  
-  .products-info {
-    text-align: center;
-  }
-  
-  .products-title {
-    font-weight: 600;
-  }
-  
-  .products-color {
-    font-size: 0.875rem;
-    color: #666;
-  }
-  
-  .products-rating {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-  
-  .products-icon {
-    color: #b8c6a2; /* Adjust this as needed */
-  }
-  
-  .products-footer {
-    margin-top: 2.5rem;
-  }
-  
-  .products-button {
-    background-color: var(--primary-color); /* Use your brand color here */
-    color: white;
-    padding: 0.5rem 1.25rem;
-    border: none;
-    border-radius: 0.375rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .products-button:hover {
-    background-color: var(--primary-dark-color); /* Adjust for hover effect */
-  }
-  
+}
