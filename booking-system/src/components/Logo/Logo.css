@@ -89,7 +89,7 @@ body {
   position: absolute;
   top: 100px;
   width: 300px;
-  animation: text-write 3s linear infinite;
+  animation: text-write 5s linear infinite;
 }
 
 @keyframes text-write {
@@ -206,8 +206,8 @@ body {
   opacity: 0;                /* Start with invisible logo */
   transform: scale(0.5);     /* Start at 50% size */
   transition: 
-    opacity 0.8s ease-out,   /* Smoothly fade in */
-    transform 0.8s ease-out, /* Smoothly grow to full size */
+    opacity 0.9s ease-out,   /* Smoothly fade in */
+    transform 0.9s ease-out, /* Smoothly grow to full size */
     box-shadow 0.4s ease-out;/* Shadow fade-in for depth */
 }
 

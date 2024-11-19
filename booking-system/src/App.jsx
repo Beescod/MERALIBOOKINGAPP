@@ -12,7 +12,8 @@ import Testimonials from "./components/Testimonials/Testimonials";
 import Footer from "./components/Footer/Footer";
 import Popup from "./components/Popup/Popup";
 import MobileBooking from "./components/MobileBooking/BanMobileBooking";
-import Logo from "./components/Logo/Logo"; // Import the loading page
+import Logo from "./components/Logo/Logo";
+import Cards from "./components/Cards/Cards";
 
 const App = () => {
     const [orderPopup, setOrderPopup] = useState(false);
@@ -33,7 +34,7 @@ const App = () => {
         AOS.refresh();
 
         // Set a timer to hide the loading page
-        const timer = setTimeout(() => setIsLoading(false), 5000); // 2 seconds loading
+        const timer = setTimeout(() => setIsLoading(false), 4000); // 2 seconds loading
         return () => clearTimeout(timer);
     }, []);
 
@@ -56,12 +57,11 @@ const App = () => {
                                 <Hero handleOrderPopup={handleOrderPopup} />
                                 <Products />
                                 <Subscribe />
-                                <TopProducts handleOrderPopup={handleOrderPopup} />
+                                <Cards />
+                                {/* <TopProducts handleOrderPopup={handleOrderPopup} />
                                 <Banner />
-
-                                <Products />
                                 <Testimonials />
-                                <MobileBooking />
+                                <MobileBooking /> */}
                             </>
                         }
                     />
@@ -81,7 +81,7 @@ const App = () => {
                     />
                 </Routes>
 
-                <Footer />
+                {/* <Footer /> */}
                 <Popup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
             </div>
         </Router>

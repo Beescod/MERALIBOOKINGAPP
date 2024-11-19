@@ -1,0 +1,99 @@
+/* Salon Container */
+.salon-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(301.2px, 1fr)); /* Fixed-width images */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Image Container */
+  .image-container1 {
+    position: relative;
+    width: 301.2px; /* Fixed width */
+    height: 200.78px; /* Fixed height */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .image-container1:hover {
+    transform: scale(1.02); /* Slight zoom effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .salon-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image fills container without distortion */
+    filter: blur(3px) brightness(0.8); /* Blur and dim effect */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .image-container1:hover .salon-image {
+    transform: scale(1.1); /* Zoom out effect */
+    filter: blur(0) brightness(1); /* Remove blur and brighten */
+  }
+  
+  /* Text Overlay */
+  .text-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+  }
+  
+  .text-overlay h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .discover-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #d0b581;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .discover-button::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #d0b581;
+    margin-top: 5px;
+    transition: width 0.3s ease;
+  }
+  
+  .discover-button:hover::after {
+    width: 60%; /* Shorten line on hover */
+  }
+  
+  /* Responsive Design */
+  /* @media (max-width: 768px) {
+    .salon-container {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+  
+    .image-container1 {
+      width: 200px;
+      height: auto;
+    }
+  
+    .text-overlay h1 {
+      font-size: 1.2rem;
+    }
+  
+    .discover-button {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+   */

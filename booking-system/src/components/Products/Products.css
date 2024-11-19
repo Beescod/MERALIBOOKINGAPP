@@ -1,24 +1,39 @@
-.products {
-    margin-top: 3.5rem;
-    margin-bottom: 3rem;
-  }
-  
-  .spa-container {
+.spa-products-container {
+  width: 100%;
+}
+
+.spa-container {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 1rem;
-    height: 85;
+    height: 85%;
+    display: grid;
+    grid-template-columns: 1fr 0.4fr; 
+    position: relative;
+    overflow: hidden;
   }
+
+  .spa-container-image {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
 
   .products-container {
     width: 90%;
     margin: 0 auto;
   }
+
+  .spa-container-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+  }
   
   .products-header {
     text-align: center;
-    margin-bottom: 2.5rem;
+    /* margin-bottom: 2.5rem; */
     -webkit-text-size-adjust: 100%;
     font-weight: 400;
     color: #757C46;
@@ -32,11 +47,56 @@
     text-align: center;
   }
 
+  .spa-description {
+    position: absolute;
+    top: 80%; /* Start at 80% from the top */
+    right: 0;
+    width: 40%; /* Occupy 40% width of the container */
+    background: rgba(228, 221, 208, 0.8);
+    padding: 2rem;
+    border-radius: 1rem;
+    z-index: 2;
+    transform: translateY(0); /* Initial position */
+    transition: transform 0.8s ease, top 0.8s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+  }
   
+  .spa-container:hover .spa-description {
+    top: 20%;
+    transform: translateY(-30%);
+  }
+
+  .spa-description h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .spa-description p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  .spa-description a img {
+    opacity: 1;
+    transform: scale(1); /* Original size */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
   
-  .products-subtitle {
-    font-size: 1rem;
-    color: var(--primary-color); /* Define this variable in your global CSS */
+  .spa-description a:hover img {
+    opacity: 0.8;
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+  
+  .spa-description a {
+    opacity: 1;
+    transform: scale(1); /* Original size */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 99;
+    position: relative;
   }
   
   .products-body {
