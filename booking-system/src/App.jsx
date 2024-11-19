@@ -58,10 +58,10 @@ const App = () => {
                                 <Products />
                                 <Subscribe />
                                 <Cards />
-                                {/* <TopProducts handleOrderPopup={handleOrderPopup} />
+                                <TopProducts handleOrderPopup={handleOrderPopup} />
                                 <Banner />
                                 <Testimonials />
-                                <MobileBooking /> */}
+                                <MobileBooking />
                             </>
                         }
                     />
@@ -81,7 +81,7 @@ const App = () => {
                     />
                 </Routes>
 
-                {/* <Footer /> */}
+                <Footer />
                 <Popup orderPopup={orderPopup} setOrderPopup={setOrderPopup} />
             </div>
         </Router>

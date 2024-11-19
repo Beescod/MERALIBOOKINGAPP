@@ -32,7 +32,6 @@
   
   .image-container1:hover .salon-image {
     transform: scale(1.1); /* Zoom out effect */
-    filter: blur(0) brightness(1); /* Remove blur and brighten */
   }
   
   /* Text Overlay */
@@ -51,6 +50,11 @@
     margin-bottom: 10px;
   }
   
+
+  .discover-button:hover {
+    color: white; 
+  }
+
   .discover-button {
     padding: 10px 20px;
     font-size: 1rem;
@@ -68,12 +72,15 @@
     width: 100%;
     background: #d0b581;
     margin-top: 5px;
-    transition: width 0.3s ease;
+    transition: width 0.3s ease; /* Smooth width transition */
+    margin-left: auto; /* Center alignment starts */
+    margin-right: auto; /* Center alignment ends */
   }
-  
-  .discover-button:hover::after {
-    width: 60%; /* Shorten line on hover */
-  }
+
+
+.discover-button:hover::after {
+  width: 40%; /* Shorten underline from both sides */
+}
   
   /* Responsive Design */
   /* @media (max-width: 768px) {

@@ -23,7 +23,7 @@ const Salon = () => {
         <div key={service.id} className="image-container1">
           <img src={service.image} className="salon-image" alt={service.title} />
           <div className="text-overlay">
-            <h1>{service.title}</h1>
+            <h1 className="text-overlay-title">{service.title}</h1>
             <button className="discover-button">DÉCOUVRIR</button>
           </div>
         </div>
