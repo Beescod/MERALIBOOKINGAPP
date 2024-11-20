@@ -9,17 +9,14 @@ function Logo() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoaded(true), 1000);
+    const timer = setTimeout(() => setIsLoaded(true), 1000); // Delay for sliding effect
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <BackgroundBeamsWithCollision className="BackgroundBeamsWithCollision">
       <div className={`app-container ${isLoaded ? 'open' : ''}`}>
-        <div className="white-BD">
-          <div className="left-section"></div>
-          <div className="right-section"></div>
-        </div>
+
         <div className="logo-container">
           <div className="logo-container2">
             <span></span>
@@ -32,8 +29,12 @@ function Logo() {
             alt="Animated Logo"
           />
         </div>
+        <div className="white-BD">
+          <div className="left-section"></div>
+          <div className="right-section"></div>
+        </div>
       </div>
-</BackgroundBeamsWithCollision>
+    </BackgroundBeamsWithCollision>
   );
 }
 
