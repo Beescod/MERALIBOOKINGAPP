@@ -4,7 +4,7 @@ import { useRef } from "react";
 import './brands.css'; // Link to the CSS file
 import LogoImage from "../../assets/images/LoagoL.png";
 import RightImage from "../../assets/images/product.jpg";
-import LefttImage from "../../assets/images/Lefttimage.jpg";
+// import LefttImage from "../../assets/images/Lefttimage.jpg";
 
 
 const Example = () => {
@@ -96,7 +96,7 @@ const Card = ({ card }) => {
               </nav>
             </div>
             <div className="brands-image">
-              <img src={LefttImage} alt="Spa Products" />
+              <img src={LogoImage} alt="Spa Products" />
             </div>
           </div>
         ) : null}
