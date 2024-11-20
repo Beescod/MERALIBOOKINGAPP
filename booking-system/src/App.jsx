@@ -36,7 +36,7 @@ const App = () => {
         AOS.refresh();
 
         // Set a timer to hide the loading page
-        const timer = setTimeout(() => setIsLoading(false), 40000); // 2 seconds loading
+        const timer = setTimeout(() => setIsLoading(false), 4000); // 2 seconds loading
         return () => clearTimeout(timer);
     }, []);
 
