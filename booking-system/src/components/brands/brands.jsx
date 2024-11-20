@@ -1,9 +1,10 @@
+import React, { useState, useRef } from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
-
+import { FaPlusCircle } from "react-icons/fa";
 import './brands.css'; // Link to the CSS file
 import LogoImage from "../../assets/images/LoagoL.png";
 import RightImage from "../../assets/images/product.jpg";
+import LefttImage from "../../assets/images/product.jpg";
 // import LefttImage from "../../assets/images/Lefttimage.jpg";
 
 
@@ -41,6 +42,12 @@ const HorizontalScrollCarousel = () => {
 };
 
 const Card = ({ card }) => {
+  const [isExpanded, setIsExpanded] = useState(false); // State to toggle visibility
+
+  const toggleNav = () => {
+    setIsExpanded(!isExpanded); // Toggle the state
+  };
+
   return (
     <div
       key={card.id}
@@ -73,30 +80,66 @@ const Card = ({ card }) => {
               <div className="brands-logo">
                 <img src={LogoImage} alt="Logo" />
               </div>
-              <h1 className="brands-title">The brands of the spa</h1>
+              <h1 className="brands-title">Les équipements du spa</h1>
               <nav className="spa-nav1">
                 <a href="#hammams" className="brands-section-text-style001">
-                  <span className="icon">◆</span> The Hammams
+                  <span className="icon">◆</span> 2 hammams traditionnels & 1 hammam privé
                 </a>
                 <a href="#treatments" className="brands-section-text-style001">
-                  <span className="icon">◆</span> The Treatments
+                  <span className="icon">◆</span> 10 cabines multi-traitements (dont 2 duos)
                 </a>
                 <a href="#salon" className="brands-section-text-style001">
-                  <span className="icon">◆</span> The Hairdressing Salon
+                  <span className="icon">◆</span> Salle de relaxation avec service de restauration
+                </a>
+                <a href="#sports" className="brands-section-text-style001">
+                  <span className="icon">◆</span> Barbier et salon de coiffure
+                </a>
+                <a href="#sports" className="brands-section-text-style001">
+                  <span className="icon">◆</span> Onglerie
                 </a>
                 <a href="#sports" className="brands-section-text-style001">
                   <span className="icon">◆</span> The Sports
                 </a>
-                <a href="#sports" className="brands-section-text-style001">
-                  <span className="icon">◆</span> The Sports
-                </a>
-                <a href="#sports" className="brands-section-text-style001">
-                  <span className="icon">◆</span> The Sports
-                </a>
+
+                <motion.nav
+                  className="spa-nav12"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={isExpanded ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <a href="#hammams" className="brands-section-text-style001">
+                    <span className="icon">◆</span> Salle de Sport dans les jardins
+                  </a>
+                  <a href="#treatments" className="brands-section-text-style001">
+                    <span className="icon">◆</span>Salle de coaching, musculation, cardio, fitness, yoga
+                  </a>
+                  <a href="#salon" className="brands-section-text-style001">
+                    <span className="icon">◆</span>Sauna
+                  </a>
+                  <a href="#sports" className="brands-section-text-style001">
+                    <span className="icon">◆</span> 2 courts de tennis en terre battue
+                  </a>
+                  <a href="#sports" className="brands-section-text-style001">
+                    <span className="icon">◆</span>Tennis de table
+                  </a>
+                  <a href="#sports" className="brands-section-text-style001">
+                    <span className="icon">◆</span> Boulodrome
+                  </a>
+                  <h1 className="brands-title2">*L’âge requis pour accéder à la piscine intérieure est de 18 ans et à partir de 16 ans accompagné d’un adulte.</h1>
+                </motion.nav>
+
+                <button
+                  className="toggle-button"
+                  onClick={toggleNav}
+                  aria-expanded={isExpanded}
+                >
+                  <FaPlusCircle size={24} />
+                </button>
+
               </nav>
             </div>
             <div className="brands-image">
-              <img src={LogoImage} alt="Spa Products" />
+              <img src={LefttImage} alt="Spa Products" />
             </div>
           </div>
         ) : null}
