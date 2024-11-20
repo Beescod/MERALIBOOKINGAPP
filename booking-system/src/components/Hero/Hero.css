@@ -206,7 +206,7 @@ body {
   .spa-section {
     position: relative;
     text-align: center;
-    height: 90vh; /* Match .selection height */
+    height: 70vh; /* Match .selection height */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -219,7 +219,7 @@ body {
   .spa-section {
     position: relative;
     text-align: center;
-    height: 50vh; /* Match .selection height */
+    height: 40vh; /* Match .selection height */
     display: flex;
     justify-content: center;
     align-items: center;
