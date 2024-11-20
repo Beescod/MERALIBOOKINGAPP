@@ -214,17 +214,6 @@
     height: auto; /* Maintains aspect ratio */
   }
   
-  /* Mobile Responsiveness */
-  @media (max-width: 768px) {
-    .brands-section {
-      flex-direction: column; /* Stacks content vertically */
-    }
-  
-    .brands-title {
-      font-size: 2em; /* Adjusts title size for smaller screens */
-    }
-  }
-
   .targetRef{
     position: relative;
     height: 300vh;
@@ -277,5 +266,25 @@
     text-transform: uppercase;
     text-align: center;
   }
-  
-  
+
+
+/* General Styles for Mobile */
+@media (max-width: 768px) {
+  /* Remove motion div and apply static layout for mobile */
+  .disable-scroll-for-mobile {
+    transform: none !important; /* Disable horizontal scroll transform */
+    justify-content: center; /* Center align items statically */
+  }
+
+  /* Ensure elements stack vertically */
+  .brands-section1, .brands-section2 {
+    flex-direction: column; /* Stack content vertically */
+    padding: 20px;
+  }
+
+  .brands-image img {
+    width: 100%; /* Make the image responsive */
+    height: auto;
+  }
+}
+
