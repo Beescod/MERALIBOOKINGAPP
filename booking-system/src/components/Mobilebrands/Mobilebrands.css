@@ -1,5 +1,9 @@
 /* Mobilebrands.css */
-
+@media (min-width: 768px) {
+  .mobilebrands{
+    display: none;
+  }
+}
 /* General mobile layout */
 .mobilebrands {
   font-family: Arial, sans-serif;
