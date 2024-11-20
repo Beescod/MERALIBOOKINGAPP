@@ -168,10 +168,6 @@ body {
     background-attachment: scroll;
     /* For mobile, it's common to set background-attachment to scroll */
   }
-
-  .spa-nav {
-    width: 200px;
-  }
 }
 
 @media (max-width: 480px) {
@@ -248,6 +244,8 @@ body {
   align-items: center;
   text-align: center;
   gap: 5vw; /* Adjust the value for more or less space */
+  overflow: hidden; /* Prevent content overflow */
+  box-sizing: border-box; /* Ensure padding and borders are included in width */
 }
 
 @media (max-width: 480px) {
@@ -261,8 +259,7 @@ body {
 /* For tablets */
 @media (max-width: 768px) {
   .spa-section-in {
-    gap: 30px; /* Adjusted for tablets */
-    padding: 0px 15px; /* Add some horizontal padding for smaller screens */
+    padding: 0 10px; /* Add padding for smaller screens */
   }
 }
 
@@ -294,9 +291,14 @@ body {
   color: #fff;
   position: relative;
   z-index: 3;
-  padding: 20px;
   bottom: 0; /* Fix the text at the bottom */
   left: 0;
+    max-width: 100%; /* Ensure the container doesn't exceed the viewport */
+  overflow-wrap: break-word; /* Allow breaking long words */
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal; /* Ensure text wraps */
+  padding: 0 10px; /* Add some padding for spacing on smaller screens */
 }
 
 
@@ -310,13 +312,13 @@ body {
   transform: translateX(100%);
   animation: popIn 0.7s ease-out forwards;
   transition: transform 0.5s ease, color 0.5s ease;
-  white-space: nowrap;
+  white-space: normal; /* Allow text to wrap */
 }
 
 
 .Heroline {
-  position: relative;
-  width: 300px; /* Adjust the length of the Heroline */
+  position: relative;  width: 80%; /* Use percentage width instead of fixed pixels */
+  max-width: 300px; /* Ensure it doesn't get too wide */
   height: 1px;
   background: transparent; /* Hide the main Heroline */
   margin: 30px 40px;
@@ -418,13 +420,13 @@ body {
     position: relative;
     width: 200px; /* Adjust the length of the Heroline */
     height: 1px;
-    margin: 0px 40px 30px 40px;
+    margin: 0px 40px 3px 40px;
     overflow: hidden; /* Ensures animation stays within bounds */
   }
 
   .text-style001 {
     margin-right: 10px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 
   }
   .TheSpa {
