@@ -154,33 +154,22 @@
     background: none;
     border: none;
     cursor: pointer;
-    margin-top: 20px;
     transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
   }
   
   .toggle-button:hover {
     /* transform: rotate(90deg); */
-    color: #d0b581; /* Change the icon color */
+    color: hsl(39, 46%, 66%); /* Change the icon color */
+    /* transform: scale(1.2); */
   }
    
 
 /* General Styles for Mobile */
+/* General Styles for Mobile */
 @media (max-width: 768px) {
-  /* Remove motion div and apply static layout for mobile */
-  .disable-scroll-for-mobile {
-    transform: none !important; /* Disable horizontal scroll transform */
-    justify-content: center; /* Center align items statically */
-  }
-
-  /* Ensure elements stack vertically */
-  .brands-section1, .brands-section2 {
-    flex-direction: column; /* Stack content vertically */
-    padding: 20px;
-  }
-
-  .brands-image img {
-    width: 100%; /* Make the image responsive */
-    height: auto;
-  }
+  .brands {
+display: none;
 }
+}
+
 

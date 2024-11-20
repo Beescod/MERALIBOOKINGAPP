@@ -1,0 +1,116 @@
+/* Mobilebrands.css */
+
+/* General mobile layout */
+.mobilebrands {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+/* Mobile section 1 */
+.mobilebrands-section1, .mobilebrands-section2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.mobilebrands-text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mobilebrands-logo img {
+  width: 100px; /* Adjust logo size */
+  margin-bottom: 20px;
+    display: block;
+    margin: 0 auto 20px; /* Centers the logo and adds bottom margin */
+    max-width: 80px; /* Adjusts the logo size */
+    height: auto; /* Maintains aspect ratio */
+
+}
+
+.mobilebrands-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.mobilebrands-description1, .mobilebrands-description2 {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Landscape Image */
+.mobilebrands-image img {
+  width: 100%; /* Makes image responsive */
+  height: auto; /* Ensures images maintain aspect ratio */
+  max-width: 1000px; /* Optional: ensures images don’t grow too large */
+  max-height: 500px; /* Set max height for landscape effect */
+  object-fit: cover; /* Ensure image covers the area while maintaining aspect ratio */
+}
+
+/* Mobile Navigation */
+.mobilebrands-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.mobilebrands-nav-item {
+  font-size: 1rem;
+  color: #333;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.mobilebrands-nav-item .mobilebrands-icon {
+  margin-right: 10px;
+  font-size: 0.9rem;
+  color: #d0b581;
+}
+
+.mobilebrands-toggle-button {
+  margin-top: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mobilebrands-toggle-button svg {
+  color: #2a9d8f; /* Custom button color */
+  transition: transform 0.3s ease;
+}
+
+.mobilebrands-toggle-button:hover svg {
+  transform: scale(1.2); /* Hover effect */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .mobilebrands-section1, .mobilebrands-section2 {
+    padding: 10px;
+  }
+
+  .mobilebrands-title {
+    font-size: 1.5rem;
+  }
+
+  .mobilebrands-description1, .mobilebrands-description2 {
+    font-size: 0.9rem;
+  }
+  
+  .mobilebrands-nav {
+    width: 100%;
+  }
+  
+  .mobilebrands-nav-item {
+    font-size: 0.9rem;
+  }
+}
