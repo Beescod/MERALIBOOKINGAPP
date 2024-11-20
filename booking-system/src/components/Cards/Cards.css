@@ -12,7 +12,7 @@
   .image-container1 {
     position: relative;
     /* width: 301.2px; */
-    height: 350.78px; /* Fixed height */
+    height: 290.78px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
@@ -26,12 +26,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensure image fills container without distortion */
-    filter: blur(3px) brightness(0.8); /* Blur and dim effect */
+    filter: blur(1px) brightness(0.8); /* Blur and dim effect */
     transition: transform 0.3s ease, filter 0.3s ease;
   }
   
   .image-container1:hover .salon-image {
-    transform: scale(1.1); /* Zoom out effect */
+    filter: blur(4px) brightness(0.8);
+    transform: scale(1.1);
   }
   
   /* Text Overlay */
@@ -81,26 +82,150 @@
 .discover-button:hover::after {
   width: 40%; /* Shorten underline from both sides */
 }
+
+.text-overlay-header {
+  height: 170px; /* Set height */
+  width: 100%; /* Full width */
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  box-sizing: border-box; /* Include padding and borders in width and height */
+  background-image: url('../../assets/images/ProductsBD.jpg'); /* Set background image */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+}
+
+.text-overlay-title1 {
+  margin-bottom: 10px;
+  font-family: "Crimson Text", serif;
+  font-size: 2rem; /* Default font size */
+  color: #474e1f;
+  text-align: center; /* Ensure text is centered */
+  word-wrap: break-word; /* Handle long words */
+  line-height: 1.3; /* Adjust line spacing */
+}
+
+.text-overlay-title1 {
+  margin-bottom: 5px;
+  font-family: "Crimson Text", serif;
+  font-size: 2.5em;
+  color: #474e1f;
+}
+
+.discover-button-header:hover::after {
+  width: 40%; /* Shorten underline from both sides */
+}
+
+
+
   
-  /* Responsive Design */
-  /* @media (max-width: 768px) {
-    .salon-container {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 10px;
-    }
-  
-    .image-container1 {
-      width: 200px;
-      height: auto;
-    }
-  
-    .text-overlay h1 {
-      font-size: 1.2rem;
-    }
-  
-    .discover-button {
-      font-size: 0.9rem;
-      padding: 8px 16px;
-    }
+.discover-button-header {
+  padding: 10px 20px;
+  font-size: 1.2rem; /* Default font size */
+  color: #000000;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.discover-button-header::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #000000;
+  margin-top: 5px;
+  transition: width 0.3s ease; /* Smooth width transition */
+  margin-left: auto; /* Center alignment starts */
+  margin-right: auto; /* Center alignment ends */
+}
+
+.service-5 {
+  background-color: #f0f0f0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(301.2px, 1fr)); /* Fixed-width images */
+  gap: 20px;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .service-title-5 {
+  color: #ff0000;
+} */
+
+/* .service-button-5 {
+  background-color: #ffe0e0;
+} */
+
+.service-6 {
+  background-color: #e0ffe0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(301.2px, 1fr)); /* Fixed-width images */
+  gap: 20px;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 400px;
+}
+
+/* Larger screens (1285px and above) */
+@media (min-width: 1485px) {
+  .salon-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
   }
-   */
+
+  /* Services 5 and 6 span two columns */
+}
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .salon-container {
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .image-container1 {
+      position: relative;
+      /* width: 301.2px; */
+      height: 190.78px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .text-overlay-title1 {
+      margin-bottom: 5px;
+      font-family: "Crimson Text", serif;
+      font-size: 2em;
+      color: #474e1f;
+    }
+    .discover-button-header {
+      padding: 10px 20px;
+      font-size: 1rem; /* Default font size */
+      color: #000000;
+      background: none;
+      cursor: pointer;
+      position: relative;
+      transition: color 0.3s ease, background-color 0.3s ease;
+    }
+    .text-overlay-header {
+      height: 120px; /* Set height */
+      width: 100%; /* Full width */
+      display: flex; /* Use flexbox for centering */
+      flex-direction: column; /* Stack items vertically */
+      justify-content: center; /* Center items horizontally */
+      align-items: center; /* Center items vertically */
+      box-sizing: border-box; /* Include padding and borders in width and height */
+      background-image: url('../../assets/images/ProductsBD.jpg'); /* Set background image */
+      background-size: cover; /* Cover the entire area */
+      background-position: center; /* Center the image */
+      background-repeat: no-repeat; /* Prevent tiling */
+    }
+
+  }
+  

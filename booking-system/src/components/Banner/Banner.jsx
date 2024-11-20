@@ -1,58 +1,51 @@
 import React from "react";
-import BannerImg from "../../assets/women/women2.jpg";
-import { GrSecure } from "react-icons/gr";
-import { IoFastFood } from "react-icons/io5";
-import { GiFoodTruck } from "react-icons/gi";
+import "./Banner.css"; // Link to the CSS file
+import LogoImage from "../../assets/images/LoagoL.png";
+import RightImage from "../../assets/images/product2.jpg";
+import ProductsBD from "../../assets/images/product2.jpg";
 
-const Banner = () => {
+const BrandsSection = () => {
   return (
-    <div className="min-h-[550px] flex justify-center items-center py-12 sm:py-0">
-      <div className="container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
-          {/* image section */}
-          <div data-aos="zoom-in">
-            <img
-              src={BannerImg}
-              alt=""
-              className="max-w-[400px] h-[350px] w-full mx-auto drop-shadow-[-10px_10px_12px_rgba(0,0,0,1)] object-cover"
-            />
+    <div
+      className="brands-wrapper9"
+      style={{
+        backgroundColor: "black", // Set background to black
+        // backgroundImage: `url(${ProductsBD})`,
+        // backgroundSize: "cover",
+        // backgroundPosition: "center",
+        // backgroundRepeat: "no-repeat",
+      }}
+    >
+      <section className="brands-container9">
+        {/* Logo */}
+        <div className="brands-logo9">
+          <img src={LogoImage} alt="Logo" />
+          <h1 className="brands-title9">The brands of the spa</h1>
+        </div>
+
+        {/* Brands Text & Image */}
+        <div className="brands-content9">
+          <div className="brands-text">
+            <p className="brands-description9">
+              The prestigious brands Valmont, Augustinus Bader, and MarocMaroc offer
+              the best of their expertise for targeted care that combines cutting-edge
+              scientific research and sweet sensoryism.
+            </p>
+            <p className="brands-description9">
+              Complementing this experience of total well-being, our team of
+              hairdressers, beauticians, barbers, and nail-artists bring their
+              precious know-how for last perfection touches.
+            </p>
           </div>
 
-          {/* text details section */}
-          <div className="flex flex-col justify-center gap-6 sm:pt-0">
-            <h1 data-aos="fade-up" className="text-3xl sm:text-4xl font-bold">
-              Winter Sale upto 50% Off
-            </h1>
-            <p
-              data-aos="fade-up"
-              className="text-sm text-gray-500 tracking-wide leading-5"
-            >
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque
-              reiciendis inventore iste ratione ex alias quis magni at optio
-            </p>
-            <div className="flex flex-col gap-4">
-              <div data-aos="fade-up" className="flex items-center gap-4">
-                <GrSecure className="text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-violet-100 dark:bg-violet-400" />
-                <p>Quality Products</p>
-              </div>
-              <div data-aos="fade-up" className="flex items-center gap-4">
-                <IoFastFood className="text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-orange-100 dark:bg-orange-400" />
-                <p>Fast Delivery</p>
-              </div>
-              <div data-aos="fade-up" className="flex items-center gap-4">
-                <GiFoodTruck className="text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-green-100 dark:bg-green-400" />
-                <p>Easy Payment method</p>
-              </div>
-              <div data-aos="fade-up" className="flex items-center gap-4">
-                <GiFoodTruck className="text-4xl h-12 w-12 shadow-sm p-4 rounded-full bg-yellow-100 dark:bg-yellow-400" />
-                <p>Get Offers</p>
-              </div>
-            </div>
+          {/* Overlay Image */}
+          <div className="brands-image9">
+            <img src={RightImage} alt="Spa Products" />
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
 
-export default Banner;
+export default BrandsSection;

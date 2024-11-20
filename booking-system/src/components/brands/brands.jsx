@@ -4,7 +4,8 @@ import { useRef } from "react";
 import './brands.css'; // Link to the CSS file
 import LogoImage from "../../assets/images/LoagoL.png";
 import RightImage from "../../assets/images/product.jpg";
-import LefttImage from "../../assets/images/product.jpg";
+import LefttImage from "../../assets/images/Lefttimage.jpg";
+
 
 const Example = () => {
   return (

@@ -59,9 +59,9 @@ const App = () => {
                                 <Products />
                                 <Subscribe />
                                 <Brands />
-                                <Cards />
-                                <TopProducts handleOrderPopup={handleOrderPopup} />
                                 <Banner />
+                                <Cards />
+                                {/* <TopProducts handleOrderPopup={handleOrderPopup} /> */}
                                 <Testimonials />
                                 <MobileBooking />
                             </>

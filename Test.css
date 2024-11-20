@@ -1,36 +1,123 @@
-.group {
+/* Brands Wrapper */
+.brands-wrapper9 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black; /* Black background */
+}
+
+/* Brands Container */
+.brands-container9 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
   position: relative;
-  height: 100vh; /* Full viewport height */
-  width: 100vw; /* Full viewport width */
-  overflow: hidden; /* Hide overflow */
-  display: flex; /* Ensure content centers properly */
-  align-items: center; /* Vertical centering */
-  justify-content: center; /* Horizontal centering */
-  background-color: #edf2f7; /* Default background color */
 }
 
-.group img {
-  object-fit: cover; /* Cover the entire box */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+/* Logo Styling */
+.brands-logo9 img {
+  max-width: 150px;
+  margin-bottom: 20px;
 }
 
-.absolute {
-  position: absolute;
-  inset: 0; /* Stretch to fill container */
-}
-
-.group-hover\:scale-110:hover {
-  transform: scale(1.1); /* Hover scaling */
-  transition: transform 0.3s ease-in-out; /* Smooth transition */
-}
-
-.text-content {
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.5); /* Optional dark overlay */
+/* Content Section (Text and Image) */
+.brands-content9 {
+  display: flex;
+  justify-content: space-between; /* Place text and image side by side */
+  align-items: center;
+  width: 100%;
   color: white;
-  font-size: 4rem; /* Adjust font size */
-  font-weight: bold;
-  text-transform: uppercase;
-  text-align: center;
+  position: relative;
+  padding: 20px;
+}
+
+.brands-text {
+  max-width: 50%;
+}
+
+.brands-title9 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.brands-description9 {
+  font-size: 1rem;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+/* Image Styling for Landscape */
+.brands-image9 {
+  position: relative;
+  width: 50%; /* Ensure it takes half of the content space */
+  max-height: 300px; /* Set a fixed max height to emphasize landscape orientation */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brands-image9 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain content while covering the container */
+  border-radius: 8px; /* Optional: Rounded corners for a clean look */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Shadow effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .brands-container9 {
+    flex-direction: column; /* Stack text and image vertically on smaller screens */
+    padding: 10px;
+  }
+
+  .brands-content9 {
+    flex-direction: column; /* Stack text and image vertically */
+    align-items: center;
+  }
+
+  .brands-text {
+    max-width: 100%; /* Allow text to take full width on smaller screens */
+    margin-bottom: 20px; /* Add margin below text */
+  }
+
+  .brands-title9 {
+    font-size: 1.5rem;
+  }
+
+  .brands-description9 {
+    font-size: 0.9rem;
+  }
+
+  .brands-image9 {
+    width: 90%; /* Use most of the container's width */
+    max-height: 200px; /* Reduce max height for smaller screens */
+  }
+
+  .brands-image9 img {
+    border-radius: 4px; /* Slightly less rounded for smaller images */
+  }
+}
+
+@media (max-width: 480px) {
+  .brands-title9 {
+    font-size: 1.2rem; /* Further reduce font size on very small screens */
+  }
+
+  .brands-description9 {
+    font-size: 0.8rem;
+  }
+
+  .brands-logo9 img {
+    max-width: 120px;
+  }
+
+  .brands-image9 {
+    max-height: 150px; /* Further adjust height for very small screens */
+  }
 }
