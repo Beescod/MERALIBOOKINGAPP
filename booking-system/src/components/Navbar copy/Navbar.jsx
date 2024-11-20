@@ -88,6 +88,31 @@ const Navbar = () => {
           <div className="full-container">
             <div className="your-container">
               <div className="your-container2">
+              <div className="your21">
+                  <div className="line-container1">
+                    <div className="your1">
+                      <span className="text-style3191">ABOUT US</span>
+                    </div>
+                    <div className={`line1 ${isMenuOpen ? 'animate-line1' : ''}`}></div>
+                  </div>
+                  <div className="right">
+                    <span
+                      onMouseEnter={() => handleMouseEnter(Facialtreatments)}
+                      onMouseLeave={handleMouseLeave}
+                      className={`text-style3 ${hoverClass} ${animationClass}`}
+                    >
+                      Our services
+                    </span>
+                    <span
+                      onMouseEnter={() => handleMouseEnter(hairdressing)}
+                      onMouseLeave={handleMouseLeave}
+                      className={`text-style3 ${hoverClass} ${animationClass}`}
+                    >
+                      OUT TEAM
+                    </span>
+                  </div>
+
+                </div>
                 <div className="your2">
                   <div className="line-container">
                     <div className="your">
