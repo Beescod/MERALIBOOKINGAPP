@@ -441,6 +441,15 @@ body {
     margin-bottom: 0px;
     white-space: nowrap; /* Prevents text from wrapping to the next Heroline */
   }
+
+  .text-style001 .icon {
+    font-size: 0.6rem;
+    color: #d0b581; /* Diamond color */
+  }
+
+  .spa-nav {
+gap: 12px;
+  }
 }
 
 
