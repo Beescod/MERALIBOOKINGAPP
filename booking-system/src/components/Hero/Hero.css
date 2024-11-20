@@ -142,9 +142,7 @@ body {
   transform: scale(1.05);
 }
 
-.spa-nav {
-  width: 100%;
-}
+
 
 
 .selection {
@@ -169,6 +167,10 @@ body {
     min-height: 60vh;
     background-attachment: scroll;
     /* For mobile, it's common to set background-attachment to scroll */
+  }
+
+  .spa-nav {
+    width: 200px;
   }
 }
 
