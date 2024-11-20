@@ -34,7 +34,7 @@ const Products = () => {
   return (
     <div className="spa-products-container">
       <div className="products-header">
-        <p className="products-subtitle">Relax in the best spa in Marrakech</p>
+        <p data-aos="fade-up" className="products-subtitle">Relax in the best spa in Marrakech</p>
       </div>
       <div className="spa-container">
         {/* Main Image */}

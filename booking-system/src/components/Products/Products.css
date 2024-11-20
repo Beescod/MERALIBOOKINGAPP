@@ -1,8 +1,11 @@
 .spa-products-container {
   font-family: Arial, sans-serif;
-  padding: 20px;
+  padding: 0px;
   width: 100%;
   margin: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .spa-container {
@@ -11,22 +14,9 @@
   position: relative;
 }
 
+
 .spa-container-image {
-  flex: 1;
-  position: sticky;
-  top: 50px;
-  height: 80vh;
-  overflow: hidden;
-}
-
-/* .spa-container-image {
 display: none;
-} */
-
-.spa-container-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 /* .spa-description {
@@ -106,4 +96,9 @@ display: none;
 .products-subtitle {
   font-size: 1.5em;
   color: #333;
+}
+
+
+.spa-products-right {
+  
 }

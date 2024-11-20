@@ -57,7 +57,7 @@ const App = () => {
                         element={
                             <>
                                 <Hero handleOrderPopup={handleOrderPopup} />
-                                <Products />
+                                {/* <Products handleOrderPopup={handleOrderPopup} /> */}
                                 <Subscribe />
                                 <Brands />
                                 <Mobilebrands />
