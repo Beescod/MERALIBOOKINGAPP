@@ -75,7 +75,7 @@ body {
 }
 
 .navbar {
-  animation: popIn 0.7s ease-out forwards;
+  animation: popIn 1s ease-out forwards;
 }
 
 
@@ -96,7 +96,7 @@ body {
 
 .navbar.scrolled {
   background-color: #757C46;
-  transition: background-color 0.7s ease;
+  transition: background-color 1s ease;
 }
 
 /* Navbar Container */
@@ -163,12 +163,12 @@ body {
 
 /* Add this class for when the animation should run */
 .nav-logo-i {
-  animation: openFromMiddle 0.7s ease-out forwards;
+  animation: openFromMiddle 1s ease-out forwards;
 }
 
 
 /* .nav-logo-i {
-  animation: popIn 0.7s ease-out forwards;
+  animation: popIn 1s ease-out forwards;
 } */
 
 
@@ -855,7 +855,7 @@ body {
   transition: color 0.3s ease;
   cursor: pointer;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  animation: popIn 0.7s ease-out forwards;
+  animation: popIn 01s ease-out forwards;
 }
 
 .text-style312 {
@@ -941,7 +941,7 @@ body {
   cursor: pointer;
   opacity: 0;
   transform: translateX(100%);
-  animation: slideInFromRight 0.7s ease-out forwards;
+  animation: slideInFromRight 1s ease-out forwards;
 }
 
 
@@ -968,7 +968,7 @@ body {
 
   opacity: 0;
   transform: translateX(-100%); /* Start off-screen to the left */
-  animation: slideInFromLeft 0.7s ease-out forwards; /* Smooth animation */
+  animation: slideInFromLeft 1s ease-out forwards; /* Smooth animation */
 }
 
 .text-style3191 {
@@ -977,7 +977,7 @@ body {
   font-family: "Roboto", sans-serif;
   opacity: 0;
   transform: translateX(-100%); /* Start off-screen to the left */
-  animation: slideInFromLeft 0.7s ease-out forwards;
+  animation: slideInFromLeft 1s ease-out forwards;
   letter-spacing: 0.01em; 
 }
 
