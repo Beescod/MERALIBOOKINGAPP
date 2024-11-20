@@ -48,6 +48,7 @@
   color: #555;
   line-height: 1.6;
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 /* Landscape Image */
@@ -99,7 +100,7 @@
 /* Responsiveness */
 @media (max-width: 768px) {
   .mobilebrands-section1, .mobilebrands-section2 {
-    padding: 10px;
+    padding: 20px;
   }
 
   .mobilebrands-title {
