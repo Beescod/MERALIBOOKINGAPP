@@ -1,10 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
 import { FaPlusCircle } from "react-icons/fa";
 import './brands.css'; // Link to the CSS file
 import LogoImage from "../../assets/images/LoagoL.png";
 import RightImage from "../../assets/images/product.jpg";
 import LefttImage from "../../assets/images/product.jpg";
+import AOS from 'aos';
 // import LefttImage from "../../assets/images/Lefttimage.jpg";
 
 
@@ -48,6 +49,14 @@ const Card = ({ card }) => {
   const toggleNav = () => {
     setIsExpanded(!isExpanded); // Toggle the state
   };
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Optional: Animation duration (in ms)
+      offset: 200,    // Optional: Offset (in px) before the animation starts
+      once: true,     // Optional: Whether animation should only happen once
+    });
+  }, []);
 
   return (
     <div

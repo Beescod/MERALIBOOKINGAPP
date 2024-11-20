@@ -1,4 +1,42 @@
-/* Salon Container */
+/* AOS Customization */
+[data-aos="fade-up"] {
+  transform: translateY(2px); /* Start slightly lower */
+  opacity: 0;
+}
+
+[data-aos="fade-up"].aos-animate {
+  transform: translateY(0); /* End position */
+  opacity: 1;
+}
+
+/* Adjustments for fade-left */
+[data-aos="fade-left"] {
+  transform: translateX(-10px);
+  opacity: 0;
+}
+
+[data-aos="fade-left"].aos-animate {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Adjustments for fade-right */
+[data-aos="fade-right"] {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+[data-aos="fade-right"].aos-animate {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+
+
+
+
+
 .salon-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(301.2px, 1fr)); /* Fixed-width images */
