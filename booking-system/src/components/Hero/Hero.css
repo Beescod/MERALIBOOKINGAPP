@@ -82,7 +82,7 @@ body {
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  /* gap: 2rem; */
 }
 
 @media (min-width: 640px) {
@@ -95,7 +95,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  /* gap: 1rem; */
   text-align: center;
 }
 
@@ -155,16 +155,61 @@ body {
   min-height: 100vh;
 }
 
+.video-container {
+  /* position: relative; */
+  display: inline-block;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 4;
+}
+
+.pause-button {
+  cursor: pointer;
+  z-index: 3;
+}
+
+.spa-section.playing .spa-section-in {
+  transition: transform 0.3s ease;
+}
+
+.play-button,
+.pause-button {
+  transition: opacity 0.3s ease;
+}
+
+.video-pause-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  cursor: pointer; /* Makes it clear the icon is clickable */
+  z-index: 2; /* Ensures the icon stays above the video */
+  /* opacity: 0.8;  */
+  transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
+}
+
+.video-pause-icon:hover {
+  opacity: 1; /* Full opacity when hovered */
+}
 
 @media (max-width: 1024px) {
   .selection {
-    min-height: 80vh;
+    min-height: 60vh;
   }
 }
 
 @media (max-width: 768px) {
   .selection {
-    min-height: 50vh;
+    min-height: 40vh;
     background-attachment: scroll;
     /* For mobile, it's common to set background-attachment to scroll */
   }
@@ -235,7 +280,8 @@ body {
   position: relative;
   width: 100%;
   height: 100%; /* Ensure it fills the parent */
-  max-width: 90%;
+  /* max-width: 90%; */
+  max-width: 100%;
   padding: 50px;
   margin: 0 auto;
   display: flex;
@@ -243,14 +289,14 @@ body {
   justify-content: flex-end; /* Align children to the bottom */
   align-items: center;
   text-align: center;
-  gap: 5vw; /* Adjust the value for more or less space */
+  /* gap: 5vw; */
   overflow: hidden; /* Prevent content overflow */
   box-sizing: border-box; /* Ensure padding and borders are included in width */
 }
 
 @media (max-width: 480px) {
   .spa-section-in {
-    gap: 0px; /* 30px gap for small screens */
+    gap: 0px;
     padding: 0px;
   }
 }
@@ -274,7 +320,7 @@ body {
 /* For ultra-wide screens */
 @media (min-width: 1769px) {
   .spa-section-in {
-    gap: 500px; /* Larger gap for ultra-wide screens */
+    gap: 500px;
     padding: 50px; /* Increased padding for ultra-wide screens */
   }
 }
@@ -469,6 +515,8 @@ gap: 12px;
 
 
 
+
+
 @keyframes zoomIn {
   0% {
     transform: scale(0.5);
@@ -499,7 +547,15 @@ gap: 12px;
   animation: zoomIn 0.7s forwards;  /* Increased duration */
   z-index: 3;
 }
-
+.play-video {
+  opacity: 1;
+  transform: scale(1); /* Original size */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 3;
+  animation: zoomIn 0.7s forwards;  /* Increased duration */
+  z-index: 3;
+  cursor: pointer;
+}
 
 .spa-section-logo img {
   width: 100%;
