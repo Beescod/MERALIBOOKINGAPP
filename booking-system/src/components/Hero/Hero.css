@@ -143,11 +143,9 @@ body {
 }
 
 
-
-
 .selection {
   overflow-y: auto;
-  background-image: url('../../assets/images/spa-section.jpg');
+  background-image: url('../../assets/images/Herovideo.mp4');
   background-size: cover;
   /* Ensures the background image covers the full container */
   background-position: center;
@@ -157,7 +155,8 @@ body {
 
 .video-container {
   /* position: relative; */
-  display: inline-block;
+  width: 100%;
+  height: auto;
 }
 
 .background-video {

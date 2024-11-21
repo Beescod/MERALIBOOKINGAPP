@@ -8,6 +8,8 @@ import Herovideo from "../../assets/images/Herovideo.mp4";
 const Hero = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [playStatus, setplayStatus] = useState(false);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,9 +32,27 @@ const Hero = () => {
   };
 
   return (
+
+<div>
+  <background playStatus={playStatus}  hero/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div className="selection">
       <section className={`spa-section ${isPlaying ? "playing" : ""}`}>
         <div className="spa-section-in">
+          
           <div className="video-container">
             {isPlaying && (
               <video
@@ -111,6 +131,7 @@ const Hero = () => {
           )}
         </div>
       </section>
+    </div>
     </div>
   );
 };
