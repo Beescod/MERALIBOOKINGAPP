@@ -464,7 +464,10 @@ gap: 12px;
 }
 
 .spa-nav {
-  animation: slideFromTop 0.7s ease-out forwards; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .spa-section-logo.hidden1 {
@@ -632,6 +635,7 @@ gap: 12px;
   position: absolute;
   top:50%;
   left: 50%;
+  width: 100%;
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
