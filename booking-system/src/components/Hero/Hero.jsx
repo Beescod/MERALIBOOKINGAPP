@@ -13,7 +13,7 @@ const Hero = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY > 90;
+      const scrolled = window.scrollY > 10;
       setIsScrolled(scrolled);
     };
 
@@ -33,7 +33,7 @@ const Hero = () => {
       <div className="hero-background">
         {isPlaying ? (
           <video
-            className="background-video"
+            className="hero-background-video"
             src={Herovideo}
             autoPlay
             loop
@@ -41,7 +41,7 @@ const Hero = () => {
           />
         ) : (
           <img
-            className="background-image"
+            className="hero-background-image"
             src={backgroundImage}
             alt="Background"
           />

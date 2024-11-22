@@ -373,7 +373,7 @@ body {
 }
 
 .text-style001:hover {
-  color: #d0b581; /* Change text color on hover */
+  color: #d0b581;
   transform: scale(1.1) translateY(-5px); /* Slightly enlarge and lift the text */
 }
 
@@ -541,7 +541,14 @@ gap: 12px;
 
 @media (max-width: 768px) {
   .spa-section-logo img {
-    padding-top: 40px; /* Increase space at the top for smaller screens */
+    padding-top: 40px;
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      object-fit: contain;
+      image-rendering: crisp-edges;
+      z-index: 3;
+      padding: 8px 70px 0px 70px;
   }
 }
 
@@ -589,11 +596,11 @@ gap: 12px;
 
 @media (max-width: 480px) {
   .hero-container {
-    min-height: 30vh;
+    min-height: 40vh;
     background-position: top;
   }
   .hero-background {
-    min-height: 20vh;
+    min-height: 30vh;
     background-position: top;
   }
 }
@@ -618,6 +625,8 @@ gap: 12px;
   height: 100%;
   object-fit: cover;
 }
+
+
 
 .content-overlay {
   position: absolute;
@@ -667,7 +676,7 @@ gap: 12px;
 }
 
 .Pause-toggle-button {
-  position: absolute;
+  /* position: absolute; */
   bottom: 10px; /* Adjust the distance from the bottom edge */
   left: 10px;   /* Adjust the distance from the left edge */
   z-index: 5;   /* Ensure it's above other content */
@@ -688,6 +697,6 @@ gap: 12px;
 
 
 .play-toggle-button:hover img {
-  transform: scale(1.1);
+  color: #d0b581;
 }
 
