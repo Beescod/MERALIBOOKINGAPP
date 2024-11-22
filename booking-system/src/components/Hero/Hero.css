@@ -16,6 +16,17 @@ body {
   }
 }
 
+/* Keyframes for Slide from Top */
+@keyframes slideFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%); /* Start completely above the viewport */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at the original position */
+  }
+}
 /* Keyframes for sliding in */
 @keyframes slideInFromRight {
   0% {
@@ -452,6 +463,9 @@ gap: 12px;
   }
 }
 
+.spa-nav {
+  animation: slideFromTop 0.7s ease-out forwards; 
+}
 
 .spa-section-logo.hidden1 {
   opacity: 0;
@@ -462,13 +476,12 @@ gap: 12px;
 
 .spa-section-logo.visible {
   opacity: 1;
-  transform: scale(1); /* Original size */
+  transform: scale(1);
   transition: opacity 0.5s ease, transform 0.5s ease;
+  animation: zoomIn 0.7s forwards;
   z-index: 3;
+  height: 10vh;
 }
-
-
-
 
 
 @keyframes zoomIn {
@@ -497,10 +510,7 @@ gap: 12px;
   animation: zoomOut 0.7s forwards;
 }
 
-.spa-section-logo.visible {
-  animation: zoomIn 0.7s forwards;  /* Increased duration */
-  z-index: 3;
-}
+
 .play-video {
   opacity: 1;
   transform: scale(1); /* Original size */
@@ -521,6 +531,13 @@ gap: 12px;
   padding: 20px;
 }
 
+.spa-section-logo:hover img {
+  transform: scale(0.9); /* Zooms in to 120% */
+  transition: transform 0.3s ease; /* Makes the zoom animation smooth */
+}
+
+
+
 
 @media (max-width: 768px) {
   .spa-section-logo img {
@@ -528,17 +545,10 @@ gap: 12px;
   }
 }
 
-
-/* Hero.css */
 .hero-container {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
-}
-
-.hero-container {
-  position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -553,6 +563,8 @@ gap: 12px;
   color: #fff;
 }
 
+
+
 @media (max-width: 1024px) {
   .hero-container {
     min-height: 60vh;
@@ -564,7 +576,7 @@ gap: 12px;
 
 @media (max-width: 768px) {
   .hero-container {
-    min-height: 40vh;
+    min-height: 50vh;
     background-attachment: scroll;
     /* For mobile, it's common to set background-attachment to scroll */
   }
@@ -590,11 +602,9 @@ gap: 12px;
   position: absolute;
   top: 0;
   left: 0;
-  /* width: 100vw;
-  height: 100vh; */
   transition: opacity 1.5s ease;
   background-size: cover;
-  background-position: center;
+  /* background-position: center; */
   top: 0;
   left: 0;
   width: 100%;
@@ -611,13 +621,22 @@ gap: 12px;
 
 .content-overlay {
   position: absolute;
-  top: 50%;
+  top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
   z-index: 2;
 }
+/* .video-content {
+  position: absolute;
+  top: 93%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+} */
 
 .video-content h1,
 .image-content h1 {
@@ -639,8 +658,36 @@ gap: 12px;
   cursor: pointer;
 }
 
+
+
 .button-icon {
   width: 50px;
   height: 50px;
   filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.7));
 }
+
+.Pause-toggle-button {
+  position: absolute;
+  bottom: 10px; /* Adjust the distance from the bottom edge */
+  left: 10px;   /* Adjust the distance from the left edge */
+  z-index: 5;   /* Ensure it's above other content */
+  background-color: transparent; /* Optional: Make the background transparent */
+  border: none; /* Remove any default button styles */
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.Pause-toggle-button img {
+  width: 50px;  /* Adjust icon size */
+  height: 50px; /* Adjust icon size */
+  transition: transform 0.3s ease; /* Add some interaction effect */
+}
+
+.Pause-toggle-button img:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+
+.play-toggle-button:hover img {
+  transform: scale(1.1);
+}
+

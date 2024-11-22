@@ -50,15 +50,13 @@ const Hero = () => {
       <div className="content-overlay">
         {isPlaying ? (
           <div className="video-content">
-            <h1>Relax & Rejuvenate</h1>
-            <button className="toggle-button" onClick={handlePlayPauseClick}>
-          <img
-            src={isPlaying ? pauseIcon : playIcon}
-            alt={isPlaying ? "Pause" : "Play"}
-            className="button-icon"
-          />
-        </button>
-            <p>Experience the ultimate spa treatment with us.</p>
+            <button className="Pause-toggle-button" onClick={handlePlayPauseClick}>
+              <img
+                src={isPlaying ? pauseIcon : playIcon}
+                alt={isPlaying ? "Pause" : "Play"}
+                className="button-icon"
+              />
+            </button>  
           </div>
         ) : (
           <div className="image-content">
@@ -68,7 +66,7 @@ const Hero = () => {
                   <img src={LoagoL} alt="Dynamic" width={300} height={150} />
                 </a>
               </div>
-              <button className="toggle-button" onClick={handlePlayPauseClick}>
+              <button className="play-toggle-button" onClick={handlePlayPauseClick}>
                 <img
                   src={isPlaying ? pauseIcon : playIcon}
                   className="button-icon"

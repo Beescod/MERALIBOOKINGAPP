@@ -1,91 +1,67 @@
 /* Hero.css */
 .hero-container {
   position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  height: 100vh; /* Set the container to full viewport height */
+  overflow: hidden; /* Prevent content overflow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.background {
+.hero-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  z-index: -1;
+  height: 100%; /* Match the height of the container */
+  z-index: -1; /* Place behind the content */
 }
 
-.background-video,
-.background-image {
+.background-image,
+.background-video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Ensure the image/video covers the container */
 }
 
 .content-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  z-index: 1; /* Place content above the background */
   text-align: center;
-  color: white;
-  z-index: 2;
 }
 
-.video-content h1,
-.image-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+.spa-section-logo {
+  margin-bottom: 20px;
 }
 
-.video-content p,
-.image-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+.hidden1 {
+  opacity: 0;
+  visibility: hidden;
 }
 
-.toggle-button {
-  background-color: transparent;
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.play-toggle-button {
+  background: none;
   border: none;
   cursor: pointer;
 }
 
-.button-icon {
-  width: 50px;
-  height: 50px;
-  filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.7));
+.thetext {
+  color: white;
+  margin-top: 20px;
 }
 
-
-.selection {
-  overflow-y: auto;
-  background-image: url('../../assets/images/spa-section.jpg');
-  background-size: cover;
-  /* Ensures the background image covers the full container */
-  background-position: center;
-  text-align: center;
-  min-height: 100vh;
+.spa-nav {
+  margin-top: 20px;
 }
 
-@media (max-width: 1024px) {
-  .selection {
-    min-height: 60vh;
-  }
-}
-
-@media (max-width: 768px) {
-  .selection {
-    min-height: 40vh;
-    background-attachment: scroll;
-    /* For mobile, it's common to set background-attachment to scroll */
-  }
-}
-
-@media (max-width: 480px) {
-  .selection {
-    min-height: 30vh;
-    background-position: top;
-  }
+.spa-nav a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
 }
