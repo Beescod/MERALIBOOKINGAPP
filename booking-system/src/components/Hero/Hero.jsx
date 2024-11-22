@@ -73,28 +73,28 @@ const Hero = () => {
                 />
               </button>
               <div className="thetext">
-                <h2 className="TheSpa">The Spa & Wellbeing</h2>
+                <h2 className="TheSpa">Le Centre de Beauté & Bien-être</h2>
 
                 <div className="Heroline"></div>
 
                 <nav className="spa-nav">
                   <a href="#hammams" className="text-style001">
-                    <span className="icon">◆</span> The Hammams
+                    <span className="icon">◆</span> Les Massages
                   </a>
                   <a href="#treatments" className="text-style001">
-                    <span className="icon">◆</span> The Treatments
+                    <span className="icon">◆</span> La Coiffure
                   </a>
                   <a href="#salon" className="text-style001">
-                    <span className="icon">◆</span> The Hairdressing Salon
+                    <span className="icon">◆</span> L'Onglerie
                   </a>
                   <a href="#sports" className="text-style001">
-                    <span className="icon">◆</span> The Sports
+                    <span className="icon">◆</span> Les Soins du Visage
                   </a>
                   <a href="#sports" className="text-style001">
-                    <span className="icon">◆</span> The Sports
+                    <span className="icon">◆</span> L'Ésthetique
                   </a>
                   <a href="#sports" className="text-style001">
-                    <span className="icon">◆</span> The Sports
+                    <span className="icon">◆</span> Le Laser
                   </a>
                 </nav>
               </div>
