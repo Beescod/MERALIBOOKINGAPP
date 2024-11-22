@@ -32,7 +32,7 @@ const BrandsSection = () => {
         {/* Logo */}
         <div className="brands-logo9">
           <img src={LogoImage} alt="Logo" />
-          <h1 className="brands-title9" data-aos="fade-in">The brands of the spa</h1>
+          <h1 className="brands-title9" data-aos="fade-in">Les Marques du SPA</h1>
         </div>
 
         {/* Brands Text & Image */}

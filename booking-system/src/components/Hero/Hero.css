@@ -464,7 +464,11 @@ gap: 12px;
 }
 
 .spa-nav {
-  animation: slideFromTop 0.7s ease-out forwards; 
+  animation: slideFromTop 0.7s ease-out forwards;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .spa-section-logo.hidden1 {
@@ -636,6 +640,7 @@ gap: 12px;
   text-align: center;
   color: white;
   z-index: 2;
+  width: 100%;
 }
 /* .video-content {
   position: absolute;
