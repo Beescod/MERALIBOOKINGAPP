@@ -16,6 +16,7 @@ import Logo from "./components/Logo/Logo";
 import Cards from "./components/Cards/Cards";
 import Brands from "./components/brands/brands";
 import Mobilebrands from "./components/Mobilebrands/Mobilebrands";
+import MobileProducts from "./components/MobileProducts/MobileProducts";
 
 const App = () => {
     const [orderPopup, setOrderPopup] = useState(false);
@@ -58,6 +59,7 @@ const App = () => {
                             <>
                                 <Hero handleOrderPopup={handleOrderPopup} />
                                 {/* <Products handleOrderPopup={handleOrderPopup} /> */}
+                                <MobileProducts handleOrderPopup={handleOrderPopup} />
                                 <Subscribe />
                                 <Brands />
                                 <Mobilebrands />

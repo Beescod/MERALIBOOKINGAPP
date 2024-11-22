@@ -1,0 +1,96 @@
+@media only screen and (max-width: 768px) {
+  .Mobile-spa-products-container {
+    font-family: Arial, sans-serif;
+    padding: 0px;
+    width: 100%;
+    margin: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .Mobile-spa-container {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .Mobile-spa-container-image {
+    display: none; /* Hide images for now */
+  }
+
+  .Mobile-spa-description {
+    flex: 1;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: flex-start; /* Align items at the top */
+    text-align: center; /* Center the text */
+    padding: 20px;
+  }
+
+  .Mobile-spa-description.show {
+    opacity: 1; /* Fully visible on scroll */
+    transform: translateY(0); /* Slide up into place */
+  }
+
+  .Mobile-spa-description h1 {
+    font-size: 3em;
+    color: #757C46;
+    margin: 10px 0; /* Reduced margin above and below */
+    font-family: "Crimson Text", serif;
+  }
+
+  .Mobile-spa-description p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  .Mobile-products-header p{
+    text-align: center;
+    -webkit-text-size-adjust: 100%;
+    font-weight: 600;
+    color: #474e1f;
+    line-height: 1.28;
+    font-size: 1.2em;
+    font-family: "Crimson Text", serif;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    padding: 7vh 6vw;
+    text-align: center;
+  }
+
+  .Mobile-products-header p{
+    text-align: center;
+    -webkit-text-size-adjust: 100%;
+    font-weight: 600;
+    color: #474e1f;
+    line-height: 1.28;
+    font-size: 1.2em;
+    font-family: "Crimson Text", serif;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    padding: 2vh 6vw;
+    text-align: center;
+  }
+
+
+  .Mobile-pa-description a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+}
+
+@media only screen and (min-width: 769px) {
+  .Mobile-spa-products-container {
+    display: none; /* Hide the entire container for larger screens */
+  }
+}
