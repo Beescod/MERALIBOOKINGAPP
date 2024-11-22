@@ -91,7 +91,7 @@ const Navbar = () => {
               <div className="your21">
                   <div className="line-container1">
                     <div className="your1">
-                      <span className="text-style3191">ABOUT US</span>
+                      <span className="text-style3191">À Propos de Nous</span>
                     </div>
                     <div className={`line1 ${isMenuOpen ? 'animate-line1' : ''}`}></div>
                   </div>
@@ -101,14 +101,14 @@ const Navbar = () => {
                       onMouseLeave={handleMouseLeave}
                       className={`text-style3 ${hoverClass} ${animationClass}`}
                     >
-                      Our services
+                      Notre Philosophie
                     </span>
                     <span
                       onMouseEnter={() => handleMouseEnter(hairdressing)}
                       onMouseLeave={handleMouseLeave}
                       className={`text-style3 ${hoverClass} ${animationClass}`}
                     >
-                      OUT TEAM
+                      Notre Équipe
                     </span>
                   </div>
 
@@ -126,49 +126,49 @@ const Navbar = () => {
                       onMouseLeave={handleMouseLeave}
                       className={`text-style3 ${hoverClass} ${animationClass}`}
                     >
-                      MASSAGES
+                      Massages et Madérothérapie
                     </span>
                     <span
                       onMouseEnter={() => handleMouseEnter(hairdressing)}
                       onMouseLeave={handleMouseLeave}
                       className={`text-style3 ${hoverClass} ${animationClass}`}
                     >
-                      HAIRDRESSING
+                      Coiffure
                     </span>
                     <span
                       onMouseEnter={() => handleMouseEnter(Facialtreatments)}
                       onMouseLeave={handleMouseLeave}
                       className={`text-style3 ${hoverClass} ${animationClass}`}
                     >
-                      NAIL SERVICES
+                      Onglerie
                     </span>
                     <span
                       onMouseEnter={() => handleMouseEnter(Facialtreatments)}
                       onMouseLeave={handleMouseLeave}
                       className={`text-style3 ${hoverClass} ${animationClass}`}
                     >
-                      Facial treatments
+                      Soins du Visage
                     </span>
                     <span
                       onMouseEnter={() => handleMouseEnter(Facialtreatments)}
                       onMouseLeave={handleMouseLeave}
                       className={`text-style3 ${hoverClass} ${animationClass}`}
                     >
-                      Maderotherapy
+                      Ésthetique
                     </span>
                     <span
                       onMouseEnter={() => handleMouseEnter(Aesthetics)}
                       onMouseLeave={handleMouseLeave}
                       className={`text-style3 ${hoverClass} ${animationClass}`}
                     >
-                      Aesthetics
+                      Laser
                     </span>
                     <span
                       onMouseEnter={() => handleMouseEnter(Laser)}
                       onMouseLeave={handleMouseLeave}
                       className={`text-style3 ${hoverClass} ${animationClass}`}
                     >
-                      Laser
+                      Packs
                     </span>
                   </div>
 
@@ -176,11 +176,11 @@ const Navbar = () => {
                 <div className="menu-options">
                   <div className="menu-item">
                     <span className="line-divider">|</span>
-                    <span className="text-style31">SPECIAL OFFERS</span>
+                    <span className="text-style31">OFFRES SPÉCIALES</span>
                   </div>
                   <div className="menu-item">
                     <span className="line-divider">|</span>
-                    <span className="text-style31">BOUTIQUES</span>
+                    <span className="text-style31">BOUTIQUE</span>
                   </div>
                 </div>
               </div>
@@ -211,7 +211,7 @@ const Navbar = () => {
 
         <div className="nav-links">
           <a href="#Magazine" className="text-style2">LE MAGAZINE</a>
-          <a href="#Reservations" className="text-style2">RESERVE</a>
+          <a href="#Reservations" className="text-style2">RÉSERVER</a>
         </div>
       </div>
     </div>
