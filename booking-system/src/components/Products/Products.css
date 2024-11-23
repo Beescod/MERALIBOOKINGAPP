@@ -49,8 +49,8 @@ display: none;
 }
 
 .spa-logo img {
-  max-width: 150px; /* Responsive max width */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 150px;
+  height: auto;
   margin: auto;
 }
 
@@ -81,11 +81,12 @@ display: none;
   text-align: center;
   /* margin-bottom: 2.5rem; */
   -webkit-text-size-adjust: 100%;
-  font-weight: 700;
-  color: #9c8353;
+  font-weight: 10;
+  color: #474e1f;
   line-height: 1.28;
-  font-size: 2em;
-  font-family: "Crimson Text", serif;
+  font-size: 1.5em;
+  /* font-family: "Crimson Text", serif; */
+  font-family: 'Modern Sans', sans-serif;
   box-sizing: border-box;
   position: relative;
   width: 100%;
@@ -94,8 +95,9 @@ display: none;
 }
 
 .products-subtitle {
-  font-size: 1.5em;
+  font-size: 1em;
   color: #333;
+
 }
 
 

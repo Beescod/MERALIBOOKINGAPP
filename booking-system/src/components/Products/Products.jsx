@@ -1,13 +1,34 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { motion, useTransform, useScroll } from "framer-motion";
 import Img1 from "../../assets/images/spa-section.jpg";
 import Img2 from "../../assets/women/women2.jpg";
 import Img3 from "../../assets/women/women3.jpg";
 import LogoImage from '../../assets/images/LoagoL.png';
 import "./Products.css";
+import AOS from 'aos';
+
+
+
+
+const Example = () => {
+  return (
+    <div className="brands bg-neutral-800">
+      <Products />
+    </div>
+  );
+};
 
 const Products = () => {
   const descriptionRef = useRef(null);
 
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-50%"]);
+  
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
