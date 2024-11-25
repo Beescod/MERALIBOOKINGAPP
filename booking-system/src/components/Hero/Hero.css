@@ -688,7 +688,9 @@ gap: 12px;
   left: 10px;   /* Adjust the distance from the left edge */
   z-index: 5;   /* Ensure it's above other content */
   background-color: transparent; /* Optional: Make the background transparent */
-  border: none; /* Remove any default button styles */
+  border: none; /* Remove any default button styles 
+  */
+  filter: brightness(0) invert(1); /* Make the icon white */
   cursor: pointer; /* Indicate it's clickable */
 }
 
@@ -707,3 +709,33 @@ gap: 12px;
   color: #d0b581;
 }
 
+
+.volume-control-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0; /* Remove extra padding */
+}
+
+.volume-icon{
+  width: 50px; /* Adjust the size of the icons */
+  height: 50px; /* Keep the icons proportional */
+  filter: brightness(0) invert(1); /* Make the icon white */
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.volume-icon{
+  position: absolute;
+  bottom: 10px; /* Adjust the distance from the bottom edge */
+  left: 65px;   /* Adjust the distance from the left edge */
+  z-index: 5;   /* Ensure it's above other content */
+  background-color: transparent; /* Optional: Make the background transparent */
+  border: none; /* Remove any default button styles 
+  */
+  filter: brightness(0) invert(1); /* Make the icon white */
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.volume-icon img:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}

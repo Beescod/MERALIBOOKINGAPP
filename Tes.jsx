@@ -10,46 +10,23 @@ import Herovideo from "../../assets/images/Herovideo.mp4";
 
 const Hero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(0.5);
+  const [isZooming, setIsZooming] = useState(false);
+  const [isVolumeUp, setIsVolumeUp] = useState(false);
   const videoRef = useRef(null);
 
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY > 10;
-      setIsScrolled(scrolled);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   const handlePlayPauseClick = () => {
-    setIsPlaying((prev) => !prev);
-    if (videoRef.current) {
-      if (!isPlaying) {
-        videoRef.current.play();
-      } else {
-        videoRef.current.pause();
-      }
-    }
+    setIsZooming(true); // Trigger the zoom effect
+    setTimeout(() => {
+      setIsPlaying(true); // Start playing after zoom
+      setIsZooming(false); // Reset zoom state
+      videoRef.current?.play();
+    }, 1000); // Match the animation duration
   };
 
-  const handleVolumeUp = () => {
+  const toggleVolume = () => {
     if (videoRef.current) {
-      const newVolume = Math.min(volume + 0.1, 1); // Increment volume, max 1.0
-      setVolume(newVolume);
-      videoRef.current.volume = newVolume;
-    }
-  };
-
-  const handleVolumeDown = () => {
-    if (videoRef.current) {
-      const newVolume = Math.max(volume - 0.1, 0); // Decrement volume, min 0.0
-      setVolume(newVolume);
+      const newVolume = isVolumeUp ? 0 : 1;
+      setIsVolumeUp(!isVolumeUp);
       videoRef.current.volume = newVolume;
     }
   };
@@ -57,37 +34,74 @@ const Hero = () => {
   return (
     <div className="hero-container">
       <div className="hero-background">
-        <video
-          ref={videoRef}
-          className="hero-background-video"
-          src={Herovideo}
-          loop
-          muted={!isPlaying} // Mute when not playing
-          style={{ display: isPlaying ? "block" : "none" }}
-        />
-        <img
-          className="hero-background-image"
-          src={backgroundImage}
-          alt="Background"
-          style={{ display: isPlaying ? "none" : "block" }}
-        />
+        {isPlaying ? (
+          <video
+            ref={videoRef}
+            className="hero-background-video"
+            src={Herovideo}
+            autoPlay
+            loop
+            muted={!isVolumeUp}
+          />
+        ) : (
+          <img
+            className="hero-background-image"
+            src={backgroundImage}
+            alt="Background"
+          />
+        )}
       </div>
       <div className="content-overlay">
-        <div className="video-content">
-          <button className="play-pause-button" onClick={handlePlayPauseClick}>
-            <img
-              src={isPlaying ? pauseIcon : playIcon}
-              alt={isPlaying ? "Pause" : "Play"}
-              className="button-icon"
-            />
-          </button>
-          <button className="volume-control-button" onClick={handleVolumeUp}>
-            <img src={volumeup} alt="Volume Up" className="button-icon" />
-          </button>
-          <button className="volume-control-button" onClick={handleVolumeDown}>
-            <img src={volumedown} alt="Volume Down" className="button-icon" />
-          </button>
-        </div>
+        {!isPlaying && (
+          <div className={`spa-section-in ${isZooming ? "zoom-in" : ""}`}>
+            <div className="spa-section-logo">
+              <a href="/">
+                <img src={LoagoL} alt="Dynamic" width={300} height={150} />
+              </a>
+            </div>
+            <button className="play-toggle-button" onClick={handlePlayPauseClick}>
+              <img src={playIcon} className="button-icon" alt="Play" />
+            </button>
+            <div className="thetext">
+              <h2 className="TheSpa">Le Centre de Beauté & Bien-être</h2>
+              <div className="Heroline"></div>
+              <nav className="spa-nav">
+                <a href="#hammams" className="text-style001">
+                  <span className="icon">◆</span> Les Massages
+                </a>
+                <a href="#treatments" className="text-style001">
+                  <span className="icon">◆</span> La Coiffure
+                </a>
+                <a href="#salon" className="text-style001">
+                  <span className="icon">◆</span> L'Onglerie
+                </a>
+                <a href="#sports" className="text-style001">
+                  <span className="icon">◆</span> Les Soins du Visage
+                </a>
+                <a href="#sports" className="text-style001">
+                  <span className="icon">◆</span> L'Ésthetique
+                </a>
+                <a href="#sports" className="text-style001">
+                  <span className="icon">◆</span> Le Laser
+                </a>
+              </nav>
+            </div>
+          </div>
+        )}
+        {isPlaying && (
+          <div className="video-content">
+            <button className="Pause-toggle-button" onClick={handlePlayPauseClick}>
+              <img src={pauseIcon} alt="Pause" className="button-icon" />
+            </button>
+            <button className="volume-control-button" onClick={toggleVolume}>
+              <img
+                src={isVolumeUp ? volumeup : volumedown}
+                alt={isVolumeUp ? "Volume Up" : "Volume Down"}
+                className="volume-icon"
+              />
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

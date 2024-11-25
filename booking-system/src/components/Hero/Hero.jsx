@@ -10,8 +10,10 @@ import Herovideo from "../../assets/images/Herovideo.mp4";
 
 const Hero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isZooming, setIsZooming] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [volume, setVolume] = useState(0.5);
+  const [volume, setVolume] = useState(0);
+  const [isVolumeUp, setIsVolumeUp] = useState(false);
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -38,18 +40,10 @@ const Hero = () => {
     }
   };
 
-  const handleVolumeUp = () => {
+  const toggleVolume = () => {
     if (videoRef.current) {
-      const newVolume = Math.min(volume + 0.5, 1); // Increment volume, max 1.0
-      setVolume(newVolume);
-      videoRef.current.volume = newVolume;
-    }
-  };
-
-  const handleVolumeDown = () => {
-    if (videoRef.current) {
-      const newVolume = Math.max(volume - 0.5, 0); // Decrement volume, min 0.0
-      setVolume(newVolume);
+      const newVolume = isVolumeUp ? 0 : 1;
+      setIsVolumeUp(!isVolumeUp);
       videoRef.current.volume = newVolume;
     }
   };
@@ -59,12 +53,12 @@ const Hero = () => {
       <div className="hero-background">
         {isPlaying ? (
           <video
-          ref={videoRef}
+            ref={videoRef}
             className="hero-background-video"
             src={Herovideo}
             autoPlay
             loop
-            muted={!isPlaying} // Mute when not playing
+            muted={!isVolumeUp}
             style={{ display: isPlaying ? "block" : "none" }}
           />
         ) : (
@@ -85,13 +79,15 @@ const Hero = () => {
                 alt={isPlaying ? "Pause" : "Play"}
                 className="button-icon"
               />
-            </button>  
-            <button className="volume-control-button" onClick={handleVolumeUp}>
-            <img src={volumeup} alt="Volume Up" className="Pause-toggle-butto" />
-          </button>
-          <button className="volume-control-button" onClick={handleVolumeDown}>
-            <img src={volumedown} alt="Volume Down" className="Pause-toggle-button" />
-          </button>
+              
+            </button>
+            <button className="volume-control-button" onClick={toggleVolume}>
+              <img
+                src={isVolumeUp ? volumeup : volumedown} // Toggle icon based on volume state
+                alt={isVolumeUp ? "Volume Up" : "Volume Down"}
+                className="volume-icon"
+              />
+            </button>
           </div>
         ) : (
           <div className="image-content">
