@@ -18,13 +18,13 @@ body {
   animation: popIn 0.7s ease-out forwards;
 }
 
-  @media (max-width: 1068px) { /* Adjust max-width for your preferred breakpoint */
+  @media (max-width: 412px) { /* Adjust max-width for your preferred breakpoint */
   .MobileBooking {
       display: flex;
       justify-content: space-between;
       position: fixed; /* Fixed positioning */
       bottom: 0;       /* Stick to the bottom */
-      width: 100%;
+      width: 200vh;
       max-width: 400px;
       height: 50px;
       background-color: white;
@@ -98,7 +98,7 @@ body {
 }
 
 /* Hide MobileBooking on larger screens */
-@media (min-width: 400px) {
+@media (min-width: 412px) {
     .MobileBooking {
         display: none;
     }

@@ -1,92 +1,149 @@
-.spa-products-container {
-  font-family: Arial, sans-serif;
-  padding: 0px;
-  width: 100%;
-  margin: auto;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.spa-container {
-  display: flex;
-  align-items: flex-start;
-  position: relative;
-}
 
 
-.spa-container-image {
-display: none;
-}
 
-/* .spa-description {
-  flex: 1;
-  transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease;
-  padding-left: 20px;
-} */
+/* SpaSection.css */
 
-.spa-description {
-  flex: 1;
-  transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center items horizontally */
-  justify-content: flex-start; /* Align items at the top */
-  text-align: center; /* Center the text */
-  padding: 20px;
-}
-
-.spa-description.show {
-  opacity: 1; /* Fully visible on scroll */
-  transform: translateY(0); /* Slide up into place */
-}
-
-.spa-logo {
-  display: block;
-  margin-bottom: 20px; /* Add spacing below the logo */
-}
-
-.spa-logo img {
-  max-width: 150px;
-  height: auto;
-  margin: auto;
-}
-
-.spa-description h1 {
-  font-size: 3em;
-  color: #757C46;
-  margin: 10px 0; /* Reduced margin above and below */
-  font-family: "Crimson Text", serif;
-}
-
-.spa-logo img {
-  display: block;
-  max-width: 150px;
-  height: auto;
-  margin: 0 auto 10px;
-}
-
-
-.spa-description p {
-  font-size: 1em;
-  line-height: 1.5;
-  margin-bottom: 15px;
+/* General Styling */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
   color: #333;
 }
 
+h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c2c2c;
+}
 
-.products-header p{
+p {
+  font-size: 1rem;
+  margin: 0 0 1rem;
+}
+
+.Mobile-products-header p{
   text-align: center;
-  /* margin-bottom: 2.5rem; */
   -webkit-text-size-adjust: 100%;
-  font-weight: 10;
+  font-weight: 600;
   color: #474e1f;
   line-height: 1.28;
-  font-size: 1.5em;
-  /* font-family: "Crimson Text", serif; */
-  font-family: 'Modern Sans', sans-serif;
+  font-size: 1.2em;
+  font-family: "Crimson Text", serif;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  padding: 7vh 6vw;
+  text-align: center;
+}
+
+/* Container for the spa section */
+.pin-spacer {
+  /* padding: 2rem 1rem; */
+}
+
+.panel {
+  display: flex;
+  flex-wrap: wrap;
+  /* margin: 0 auto;
+  max-width: 1200px; */
+}
+
+.panel-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 2rem; */
+}
+
+/* Left Panel Styling */
+.panel-left {
+  flex: 1;
+  max-width: 50%;
+}
+
+.panel-image-1 {
+  position: relative;
+}
+
+.imageResponsive {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.imageResponsive-block {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Right Panel Styling */
+.panel-right {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.panel-inner {
+  padding: 1rem;
+  background: #f8f8f8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.panel-content {
+  margin-bottom: 2rem;
+}
+
+.title2 {
+  font-size: 1.5rem; /* Adjust size for better visibility */
+  color: #757C46; /* Match the maroon color from the image */
+  text-align: center; /* Center-align the text */
+  font-family: "Roboto", sans-serif;
+  line-height: 1; /* Adjust spacing for balanced lines */
+  margin-bottom: 1rem;
+}
+
+.withDecor {
+  position: relative;
+}
+
+.withDecor::before {
+  content: "";
+  display: block;
+  width: 40px; /* Adjust size for your design */
+  height: 5px;
+  background: #757C46; /* Gold-like color */
+  margin: 0 auto 1rem; /* Center the decorative line */
+}
+
+.panel-content-1 p{
+  font-size: 0.9rem; /* Adjust size for better visibility */
+  color: #3F493C; /* Match the maroon color from the image */
+  font-family: 'Modern Sans', sans-serif;          
+  line-height: 1; /* Adjust spacing for balanced lines */
+  margin-bottom: 1rem;
+}
+
+
+
+.featuredText p {
+  font-size: 3rem;
+  color: #C1B5A3;
+  font-family: 'Andi Signature', sans-serif;
+  line-height: 0.7;
+  margin: 0;
+}
+
+.Mobile-products-header1 p{
+  text-align: center;
+  -webkit-text-size-adjust: 100%;
+  font-weight: 400;
+  color: #856e4c;
+  line-height: 1.28;
+  font-size: 1em;
+  font-family: "Roboto", sans-serif;
   box-sizing: border-box;
   position: relative;
   width: 100%;
@@ -94,13 +151,122 @@ display: none;
   text-align: center;
 }
 
-.products-subtitle {
-  font-size: 1em;
-  color: #333;
+/* Second Content Styling */
+.panel-secondContent {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
 
+.secondContent-content {
+  flex: 2;
+}
+
+.isSmallScrollbar {
+  overflow-y: auto;
+  max-height: 300px;
+  padding-right: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #aaa transparent;
+}
+
+.isSmallScrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.isSmallScrollbar::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+}
+
+.secondContent-image {
+  flex: 1;
+}
+
+.linksCollection {
+  margin-top: 1rem;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .panel-left, .panel-right {
+    max-width: 100%;
+    flex: none;
+  }
+
+  .panel-secondContent {
+    flex-direction: column;
+  }
+
+  .isSmallScrollbar {
+    max-height: none;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel-inner {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.spa-container {
+  -webkit-text-size-adjust: 100%;
+  font-family: "Raleway",Arial,sans-serif;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.28;
+  translate: none;
+  rotate: none;
+  scale: none;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: visible;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -886.434, 0, 1);
 }
 
 
-.spa-products-right {
-  
+    
+.linksCollection-link {
+  padding: 10px 2px;
+  font-size: 1.2rem;
+  color: #757C46; /* Default text color */
+  background: none;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease; /* Smooth color transition */
+  text-align: center;
+  display: inline-block; /* Ensure link width matches text width */
 }
+
+.linksCollection-link::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%; /* Full width initially */
+  background: #757C46; /* Default underline color */
+  margin-top: 5px;
+  transition: width 0.3s ease, background-color 0.3s ease; /* Smooth transition for both width and color */
+  margin-left: auto; /* Center alignment starts */
+  margin-right: auto; /* Center alignment ends */
+}
+
+.linksCollection-link:hover {
+  color: #000000; /* Text color changes to black on hover */
+}
+
+.linksCollection-link:hover::after {
+  width: 40px; /* Underline shrinks to 40px on hover */
+  background: #000000; /* Underline color changes to match the text color on hover */
+}
+
+
