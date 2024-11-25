@@ -7,13 +7,13 @@
 }
 
 .text-style001 {
-  font-family: "Crimson Text", serif; /* Keep the font consistent */
+  font-family: 'Modern Sans', sans-serif;
   font-size: 1em; /* Adjust font size */
   color: #474e1f; /* Color for text */
   text-decoration: none; /* Remove underline */
   display: flex; /* Allows alignment with the icon */
-  align-items: center; /* Vertically aligns text with the icon */
-  transition: color 0.3s ease; /* Smooth transition for hover effect */
+  align-items: center;
+  transition: color 0.3s ease;
 }
 
 .text-style001 .icon {
@@ -160,7 +160,7 @@ p {
   color: #474e1f;
   line-height: 1.28;
   font-size: 1.2em;
-  font-family: "Crimson Text", serif;
+  font-family: 'Modern Sans', sans-serif;
   box-sizing: border-box;
   position: relative;
   width: 100%;

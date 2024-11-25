@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Crimson Text", serif;
+  font-family: 'Modern Sans', sans-serif;
 }
 
 /* Add this to your CSS file or global stylesheet */
@@ -319,7 +319,7 @@ body {
   margin-right: 10px;
   font-size: 2em;
   color: #ffffff;
-  font-family: "Crimson Text", serif;
+  font-family: 'Modern Sans', sans-serif;
   cursor: pointer;
   opacity: 0;
   transform: translateX(100%);
@@ -382,9 +382,9 @@ body {
 
 .TheSpa {
   margin-right: 10px;
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   color: #ffffff;
-  font-family: "Crimson Text", serif;
+  font-family: 'Modern Sans', sans-serif;
   opacity: 0;
   transform: translateX(100%);
   animation: popIn 0.7s ease-out forwards;
@@ -400,9 +400,9 @@ body {
 @media (max-width: 1200px) {
   .TheSpa {
     margin-right: 10px;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     color: #ffffff;
-    font-family: "Crimson Text", serif;
+    font-family: 'Modern Sans', sans-serif;
     opacity: 0;
     transform: translateX(100%);
     animation: popIn 0.7s ease-out forwards;
@@ -444,9 +444,9 @@ body {
   }
   .TheSpa {
     margin-right: 10px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #ffffff;
-    font-family: "Crimson Text", serif;
+    font-family: 'Modern Sans', sans-serif;
     opacity: 0;
     transform: translateX(100%);
     animation: popIn 0.7s ease-out forwards;
@@ -683,7 +683,7 @@ gap: 12px;
 }
 
 .Pause-toggle-button {
-  /* position: absolute; */
+  position: absolute;
   bottom: 10px; /* Adjust the distance from the bottom edge */
   left: 10px;   /* Adjust the distance from the left edge */
   z-index: 5;   /* Ensure it's above other content */

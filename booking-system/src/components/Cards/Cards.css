@@ -137,7 +137,7 @@
 
 .text-overlay-title1 {
   margin-bottom: 10px;
-  font-family: "Crimson Text", serif;
+  font-family: 'Modern Sans', sans-serif;
   font-size: 2rem; /* Default font size */
   color: #474e1f;
   text-align: center; /* Ensure text is centered */
@@ -147,7 +147,7 @@
 
 .text-overlay-title1 {
   margin-bottom: 5px;
-  font-family: "Crimson Text", serif;
+  font-family: 'Modern Sans', sans-serif;
   font-size: 2.5em;
   color: #474e1f;
 }
@@ -238,7 +238,7 @@
     }
     .text-overlay-title1 {
       margin-bottom: 5px;
-      font-family: "Crimson Text", serif;
+      font-family: 'Modern Sans', sans-serif;
       font-size: 2em;
       color: #474e1f;
     }

@@ -1,15 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./Hero.css";
 import LoagoL from "../../assets/images/BDLogo.png";
 import playIcon from "../../assets/images/play_icon.png";
 import pauseIcon from "../../assets/images/pause_icon.png";
+import volumeup from "../../assets/images/volumeup.png";
+import volumedown from "../../assets/images/volumedown.png";
 import backgroundImage from "../../assets/images/spa-section.jpg";
 import Herovideo from "../../assets/images/Herovideo.mp4";
 
 const Hero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-
   const [isScrolled, setIsScrolled] = useState(false);
+  const [volume, setVolume] = useState(0.5);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +29,29 @@ const Hero = () => {
 
   const handlePlayPauseClick = () => {
     setIsPlaying((prev) => !prev);
+    if (videoRef.current) {
+      if (!isPlaying) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  };
+
+  const handleVolumeUp = () => {
+    if (videoRef.current) {
+      const newVolume = Math.min(volume + 0.5, 1); // Increment volume, max 1.0
+      setVolume(newVolume);
+      videoRef.current.volume = newVolume;
+    }
+  };
+
+  const handleVolumeDown = () => {
+    if (videoRef.current) {
+      const newVolume = Math.max(volume - 0.5, 0); // Decrement volume, min 0.0
+      setVolume(newVolume);
+      videoRef.current.volume = newVolume;
+    }
   };
 
   return (
@@ -33,17 +59,20 @@ const Hero = () => {
       <div className="hero-background">
         {isPlaying ? (
           <video
+          ref={videoRef}
             className="hero-background-video"
             src={Herovideo}
             autoPlay
             loop
-            muted
+            muted={!isPlaying} // Mute when not playing
+            style={{ display: isPlaying ? "block" : "none" }}
           />
         ) : (
           <img
             className="hero-background-image"
             src={backgroundImage}
             alt="Background"
+            style={{ display: isPlaying ? "none" : "block" }}
           />
         )}
       </div>
@@ -57,6 +86,12 @@ const Hero = () => {
                 className="button-icon"
               />
             </button>  
+            <button className="volume-control-button" onClick={handleVolumeUp}>
+            <img src={volumeup} alt="Volume Up" className="Pause-toggle-butto" />
+          </button>
+          <button className="volume-control-button" onClick={handleVolumeDown}>
+            <img src={volumedown} alt="Volume Down" className="Pause-toggle-button" />
+          </button>
           </div>
         ) : (
           <div className="image-content">

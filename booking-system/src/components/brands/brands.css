@@ -57,7 +57,7 @@
   .brands-title {
     font-size: 2.8em; /* Makes the title prominent */
     color: #474e1f; /* Matches the heading color */
-    font-family: "Crimson Text", serif; /* Elegant font for the title */
+    font-family: 'Modern Sans', sans-serif; /* Elegant font for the title */
     text-align: center; /* Centers the title */
     margin-bottom: 20px;
   }
