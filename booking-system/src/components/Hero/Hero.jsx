@@ -10,11 +10,11 @@ import Herovideo from "../../assets/images/Herovideo.mp4";
 
 const Hero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isZooming, setIsZooming] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [volume, setVolume] = useState(0);
   const [isVolumeUp, setIsVolumeUp] = useState(false);
   const videoRef = useRef(null);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +28,6 @@ const Hero = () => {
     };
   }, []);
 
-
   const handlePlayPauseClick = () => {
     setIsPlaying((prev) => !prev);
     if (videoRef.current) {
@@ -39,6 +38,21 @@ const Hero = () => {
       }
     }
   };
+
+  const handleVideoClick = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        setIsPlaying(true);
+      } else {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      }
+    }
+  };
+
+
+
 
   const toggleVolume = () => {
     if (videoRef.current) {
@@ -54,12 +68,17 @@ const Hero = () => {
         {isPlaying ? (
           <video
             ref={videoRef}
+            onPlay={() => console.log("Video started playing")}
+            onPause={() => console.log("Video paused")}
             className="hero-background-video"
             src={Herovideo}
             autoPlay
             loop
             muted={!isVolumeUp}
+            onClick={handleVideoClick}
             style={{ display: isPlaying ? "block" : "none" }}
+            controls={false}
+            playsInline // Prevent fullscreen behavior
           />
         ) : (
           <img
@@ -75,15 +94,14 @@ const Hero = () => {
           <div className="video-content">
             <button className="Pause-toggle-button" onClick={handlePlayPauseClick}>
               <img
-                src={isPlaying ? pauseIcon : playIcon}
-                alt={isPlaying ? "Pause" : "Play"}
+                src={pauseIcon} // Always use the pauseIcon
+                alt="Pause"      // Set the alt text to "Pause"
                 className="button-icon"
               />
-              
             </button>
             <button className="volume-control-button" onClick={toggleVolume}>
               <img
-                src={isVolumeUp ? volumeup : volumedown} // Toggle icon based on volume state
+                src={isVolumeUp ? volumeup : volumedown}
                 alt={isVolumeUp ? "Volume Up" : "Volume Down"}
                 className="volume-icon"
               />
@@ -99,15 +117,13 @@ const Hero = () => {
               </div>
               <button className="play-toggle-button" onClick={handlePlayPauseClick}>
                 <img
-                  src={isPlaying ? pauseIcon : playIcon}
+                  src={playIcon} // Always use the pauseIcon
                   className="button-icon"
                 />
               </button>
               <div className="thetext">
                 <h2 className="TheSpa">Le Centre de Beauté & Bien-être</h2>
-
                 <div className="Heroline"></div>
-
                 <nav className="spa-nav">
                   <a href="#hammams" className="text-style001">
                     <span className="icon">◆</span> Les Massages

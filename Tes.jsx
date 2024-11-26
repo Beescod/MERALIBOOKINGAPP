@@ -1,26 +1,44 @@
-import { useState, useEffect, useRef } from "react";
-import "./Hero.css";
-import LoagoL from "../../assets/images/BDLogo.png";
-import playIcon from "../../assets/images/play_icon.png";
-import pauseIcon from "../../assets/images/pause_icon.png";
-import volumeup from "../../assets/images/volumeup.png";
-import volumedown from "../../assets/images/volumedown.png";
-import backgroundImage from "../../assets/images/spa-section.jpg";
-import Herovideo from "../../assets/images/Herovideo.mp4";
-
 const Hero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isZooming, setIsZooming] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [volume, setVolume] = useState(0);
   const [isVolumeUp, setIsVolumeUp] = useState(false);
   const videoRef = useRef(null);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 10;
+      setIsScrolled(scrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const handlePlayPauseClick = () => {
-    setIsZooming(true); // Trigger the zoom effect
-    setTimeout(() => {
-      setIsPlaying(true); // Start playing after zoom
-      setIsZooming(false); // Reset zoom state
-      videoRef.current?.play();
-    }, 1000); // Match the animation duration
+    setIsPlaying((prev) => !prev);
+    if (videoRef.current) {
+      if (!isPlaying) {
+        videoRef.current.play();
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  };
+
+  const handleVideoClick = () => {
+    if (videoRef.current) {
+      if (!videoRef.current.paused) {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      } else {
+        videoRef.current.play();
+        setIsPlaying(true);
+      }
+    }
   };
 
   const toggleVolume = () => {
@@ -42,56 +60,27 @@ const Hero = () => {
             autoPlay
             loop
             muted={!isVolumeUp}
+            onClick={handleVideoClick}
+            style={{ display: isPlaying ? "block" : "none" }}
           />
         ) : (
           <img
             className="hero-background-image"
             src={backgroundImage}
             alt="Background"
+            style={{ display: isPlaying ? "none" : "block" }}
           />
         )}
       </div>
       <div className="content-overlay">
-        {!isPlaying && (
-          <div className={`spa-section-in ${isZooming ? "zoom-in" : ""}`}>
-            <div className="spa-section-logo">
-              <a href="/">
-                <img src={LoagoL} alt="Dynamic" width={300} height={150} />
-              </a>
-            </div>
-            <button className="play-toggle-button" onClick={handlePlayPauseClick}>
-              <img src={playIcon} className="button-icon" alt="Play" />
-            </button>
-            <div className="thetext">
-              <h2 className="TheSpa">Le Centre de Beauté & Bien-être</h2>
-              <div className="Heroline"></div>
-              <nav className="spa-nav">
-                <a href="#hammams" className="text-style001">
-                  <span className="icon">◆</span> Les Massages
-                </a>
-                <a href="#treatments" className="text-style001">
-                  <span className="icon">◆</span> La Coiffure
-                </a>
-                <a href="#salon" className="text-style001">
-                  <span className="icon">◆</span> L'Onglerie
-                </a>
-                <a href="#sports" className="text-style001">
-                  <span className="icon">◆</span> Les Soins du Visage
-                </a>
-                <a href="#sports" className="text-style001">
-                  <span className="icon">◆</span> L'Ésthetique
-                </a>
-                <a href="#sports" className="text-style001">
-                  <span className="icon">◆</span> Le Laser
-                </a>
-              </nav>
-            </div>
-          </div>
-        )}
-        {isPlaying && (
+        {isPlaying ? (
           <div className="video-content">
             <button className="Pause-toggle-button" onClick={handlePlayPauseClick}>
-              <img src={pauseIcon} alt="Pause" className="button-icon" />
+              <img
+                src={isPlaying ? pauseIcon : playIcon}
+                alt={isPlaying ? "Pause" : "Play"}
+                className="button-icon"
+              />
             </button>
             <button className="volume-control-button" onClick={toggleVolume}>
               <img
@@ -100,6 +89,46 @@ const Hero = () => {
                 className="volume-icon"
               />
             </button>
+          </div>
+        ) : (
+          <div className="image-content">
+            <div className="spa-section-in">
+              <div className={`spa-section-logo ${isScrolled ? "hidden1" : "visible"}`}>
+                <a href="/">
+                  <img src={LoagoL} alt="Dynamic" width={300} height={150} />
+                </a>
+              </div>
+              <button className="play-toggle-button" onClick={handlePlayPauseClick}>
+                <img
+                  src={isPlaying ? pauseIcon : playIcon}
+                  className="button-icon"
+                />
+              </button>
+              <div className="thetext">
+                <h2 className="TheSpa">Le Centre de Beauté & Bien-être</h2>
+                <div className="Heroline"></div>
+                <nav className="spa-nav">
+                  <a href="#hammams" className="text-style001">
+                    <span className="icon">◆</span> Les Massages
+                  </a>
+                  <a href="#treatments" className="text-style001">
+                    <span className="icon">◆</span> La Coiffure
+                  </a>
+                  <a href="#salon" className="text-style001">
+                    <span className="icon">◆</span> L'Onglerie
+                  </a>
+                  <a href="#sports" className="text-style001">
+                    <span className="icon">◆</span> Les Soins du Visage
+                  </a>
+                  <a href="#sports" className="text-style001">
+                    <span className="icon">◆</span> L'Ésthetique
+                  </a>
+                  <a href="#sports" className="text-style001">
+                    <span className="icon">◆</span> Le Laser
+                  </a>
+                </nav>
+              </div>
+            </div>
           </div>
         )}
       </div>
