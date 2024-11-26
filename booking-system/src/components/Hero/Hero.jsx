@@ -78,7 +78,7 @@ const Hero = () => {
             onClick={handleVideoClick}
             style={{ display: isPlaying ? "block" : "none" }}
             controls={false}
-            playsInline // Prevent fullscreen behavior
+            playsInline
           />
         ) : (
           <img
@@ -89,13 +89,13 @@ const Hero = () => {
           />
         )}
       </div>
-      <div className="content-overlay">
+      <div className="content-overlay" onClick={handleVideoClick}>
         {isPlaying ? (
           <div className="video-content">
             <button className="Pause-toggle-button" onClick={handlePlayPauseClick}>
               <img
-                src={pauseIcon} // Always use the pauseIcon
-                alt="Pause"      // Set the alt text to "Pause"
+                src={pauseIcon}
+                alt="Pause"
                 className="button-icon"
               />
             </button>
