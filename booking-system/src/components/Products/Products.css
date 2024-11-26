@@ -161,6 +161,7 @@ p {
 
 .secondContent-content {
   flex: 2;
+  width: 100%;
 }
 
 .isSmallScrollbar {

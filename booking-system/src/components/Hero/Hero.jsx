@@ -5,7 +5,7 @@ import playIcon from "../../assets/images/play_icon.png";
 import pauseIcon from "../../assets/images/pause_icon.png";
 import volumeup from "../../assets/images/volumeup.png";
 import volumedown from "../../assets/images/volumedown.png";
-import backgroundImage from "../../assets/images/spa-section.jpg";
+import backgroundImage from "../../assets/images/spa-section.png";
 import Herovideo from "../../assets/images/Herovideo.mp4";
 
 const Hero = () => {

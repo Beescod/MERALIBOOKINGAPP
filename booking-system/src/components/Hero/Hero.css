@@ -317,14 +317,14 @@ body {
 
 .text-style001 {
   margin-right: 10px;
-  font-size: 2em;
+  font-size: 1.5em;
   color: #ffffff;
   font-family: 'Modern Sans', sans-serif;
   cursor: pointer;
   opacity: 0;
   transform: translateX(100%);
-  animation: popIn 0.7s ease-out forwards;
-  transition: transform 0.5s ease, color 0.5s ease;
+  animation: popIn 0.9s ease-out forwards;
+  transition: transform 0.9s ease, color 0.5s ease;
   white-space: normal; /* Allow text to wrap */
 }
 
@@ -423,7 +423,7 @@ body {
 
   .text-style001 {
   margin-right: 10px;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 }
   
 }
@@ -444,7 +444,7 @@ body {
   }
   .TheSpa {
     margin-right: 10px;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     color: #ffffff;
     font-family: 'Modern Sans', sans-serif;
     opacity: 0;
@@ -695,14 +695,21 @@ gap: 12px;
 }
 
 .Pause-toggle-button img {
-  width: 50px;  /* Adjust icon size */
-  height: 50px; /* Adjust icon size */
+  width: 45px;  /* Adjust icon size */
+  height: 45px; /* Adjust icon size */
   transition: transform 0.3s ease; /* Add some interaction effect */
 }
+.volume-control-button img {
+  transition: transform 0.3s ease;
+}
 
-.Pause-toggle-button img:hover {
+.Pause-toggle-button:hover {
   transform: scale(1.1); /* Slightly enlarge on hover */
 }
+.volume-control-button img:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
 
 
 .play-toggle-button:hover img {
@@ -718,8 +725,8 @@ gap: 12px;
 }
 
 .volume-icon{
-  width: 50px; /* Adjust the size of the icons */
-  height: 50px; /* Keep the icons proportional */
+  width: 45px; /* Adjust the size of the icons */
+  height: 45px; /* Keep the icons proportional */
   filter: brightness(0) invert(1); /* Make the icon white */
   cursor: pointer; /* Indicate it's clickable */
 }
