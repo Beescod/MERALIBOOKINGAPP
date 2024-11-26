@@ -1,5 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
+import spapiscineinterieure from "../../assets/images/spa-piscine-interieure.jpeg";
+import spaaccueil01 from "../../assets/images/spa-accueil-01.jpeg";
+
 import './Products.css';
 import AOS from 'aos';
 
@@ -70,43 +73,23 @@ const SpaSection = () => {
                       </div>
                       <figure className="imageResponsive landscape backstretch">
                         <img
-                          src="https://mamounia.com/media/cache/jadro_resize/rc/JxNHiQsB1732191891/jadroRoot/medias/653fcee154467/654117df6b4ca/654117ee24e7c/65411801c16b2/spa-accueil-01-.jpeg"
-                          srcSet="https://mamounia.com/media/cache/jadro_resize/rc/JxNHiQsB1732191891/jadroRoot/medias/653fcee154467/654117df6b4ca/654117ee24e7c/65411801c16b2/spa-accueil-01-.jpeg 440w,
-                                  https://mamounia.com/media/cache/jadro_resize/rc/m7wgVhEF1732191891/jadroRoot/medias/653fcee154467/654117df6b4ca/654117ee24e7c/65411801c16b2/spa-accueil-01-.jpeg 640w,
-                                  https://mamounia.com/media/cache/jadro_resize/rc/H6mMp73L1732191891/jadroRoot/medias/653fcee154467/654117df6b4ca/654117ee24e7c/65411801c16b2/spa-accueil-01-.jpeg 800w,
-                                  https://mamounia.com/media/cache/jadro_resize/rc/RRikWyy81732191891/jadroRoot/medias/653fcee154467/654117df6b4ca/654117ee24e7c/65411801c16b2/spa-accueil-01-.jpeg 960w,
-                                  https://mamounia.com/media/cache/jadro_resize/rc/ydktIJVd1732191891/jadroRoot/medias/653fcee154467/654117df6b4ca/654117ee24e7c/65411801c16b2/spa-accueil-01-.jpeg 1380w,
-                                  https://mamounia.com/media/cache/jadro_resize/rc/ZtCHxQzT1732191891/jadroRoot/medias/653fcee154467/654117df6b4ca/654117ee24e7c/65411801c16b2/spa-accueil-01-.jpeg 1860w,
-                                  https://mamounia.com/media/cache/jadro_resize/rc/aYej6rhb1732191891/jadroRoot/medias/653fcee154467/654117df6b4ca/654117ee24e7c/65411801c16b2/spa-accueil-01-.jpeg 2300w"
-                          sizes="(max-width: 449px) 440px,(max-width: 649px) 640px,(max-width: 849px) 800px,(max-width: 1024px) 960px,(max-width: 1439px) 1380px,(max-width: 1919px) 1860px,2300px"
-                          width="2300"
-                          height="2875"
+                          src={spaaccueil01}
                           alt="Hotel Spa Marrakech Hammam et Massages La Mamounia"
-                          className="imageResponsive-block"
+                          className="responsive-rectangle"
                           loading="lazy"
                         />
                       </figure>
                     </div>
                   </div>
-                  <div className="secondContent-image">
-                    <figure className="imageResponsive portrait backstretch">
-                      <img
-                        src="https://mamounia.com/media/cache/jadro_resize/rc/OofRxBI21732191891/jadroRoot/medias/653fcee154467/654117df6b4ca/654117ee24e7c/65411801c16b2/spa-piscine-interieure-07-.jpeg"
-                        srcSet="https://mamounia.com/media/cache/jadro_resize/rc/OofRxBI21732191891/jadroRoot/medias/653fcee154467/654117df6b4ca/654117ee24e7c/65411801c16b2/spa-piscine-interieure-07-.jpeg 440w,
-                                https://mamounia.com/media/cache/jadro_resize/rc/VpTMgm0B1732191891/jadroRoot/medias/653fcee154467/654117df6b4ca/654117ee24e7c/65411801c16b2/spa-piscine-interieure-07-.jpeg 640w,
-                                https://mamounia.com/media/cache/jadro_resize/rc/24pzQSgm1732191891/jadroRoot/medias/653fcee154467/654117df6b4ca/654117ee24e7c/65411801c16b2/spa-piscine-interieure-07-.jpeg 800w,
-                                https://mamounia.com/media/cache/jadro_resize/rc/lyW682Fi1732191891/jadroRoot/medias/653fcee154467/654117df6b4ca/654117ee24e7c/65411801c16b2/spa-piscine-interieure-07-.jpeg 960w,
-                                https://mamounia.com/media/cache/jadro_resize/rc/nEWdTcSZ1732191891/jadroRoot/medias/653fcee154467/654117df6b4ca/654117ee24e7c/65411801c16b2/spa-piscine-interieure-07-.jpeg 1380w,
-                                https://mamounia.com/media/cache/jadro_resize/rc/kdl6RUaA1732191891/jadroRoot/medias/653fcee154467/654117df6b4ca/654117ee24e7c/65411801c16b2/spa-piscine-interieure-07-.jpeg 1860w,
-                                https://mamounia.com/media/cache/jadro_resize/rc/OQV6VsSK1732191891/jadroRoot/medias/653fcee154467/654117df6b4ca/654117ee24e7c/65411801c16b2/spa-piscine-interieure-07-.jpeg 2300w"
-                        sizes="(max-width: 449px) 440px,(max-width: 649px) 640px,(max-width: 849px) 800px,(max-width: 1024px) 960px,(max-width: 1439px) 1380px,(max-width: 1919px) 1860px,2300px"
-                        width="2300"
-                        height="2875"
-                        alt="Hotel Spa Marrakech Hammam et Massages La Mamounia"
-                        className="imageResponsive-block"
-                        loading="lazy"
-                      />
-                    </figure>
+                  <div className="secondContent-content">
+                  <figure className="imageResponsive landscape backstretch">
+                        <img
+                          src={spapiscineinterieure}
+                          alt="Hotel Spa Marrakech Hammam et Massages La Mamounia"
+                          className="responsive-rectangle"
+                          loading="lazy"
+                        />
+                      </figure>
                   </div>
                 </div>
               </div>

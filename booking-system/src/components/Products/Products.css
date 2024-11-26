@@ -37,7 +37,7 @@ p {
   text-align: center;
 }
 
-/* Container for the spa section */
+
 .pin-spacer {
   /* padding: 2rem 1rem; */
 }
@@ -65,7 +65,7 @@ p {
   position: relative;
 }
 
-.imageResponsive {
+/* .imageResponsive {
   width: 100%;
   height: auto;
   overflow: hidden;
@@ -75,7 +75,7 @@ p {
   width: 100%;
   height: auto;
   display: block;
-}
+} */
 
 /* Right Panel Styling */
 .panel-right {
@@ -265,8 +265,20 @@ p {
 }
 
 .linksCollection-link:hover::after {
-  width: 40px; /* Underline shrinks to 40px on hover */
-  background: #000000; /* Underline color changes to match the text color on hover */
+  width: 40px;
+  background: #000000;
 }
 
-
+.backstretch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.responsive-rectangle {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
