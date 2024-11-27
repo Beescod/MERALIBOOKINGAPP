@@ -70,7 +70,7 @@ const Navbar = () => {
 
   const selectLanguage = (language) => {
     console.log(`Selected language: ${language}`);
-    setShowDropdown(false); // Close the dropdown after selection
+    setShowDropdown(false);
   };
 
   return (
