@@ -1,8 +1,16 @@
+import { useState, useEffect, useRef } from "react";
+import "./Hero.css";
+import LoagoL from "../../assets/images/BDLogo.png";
+import playIcon from "../../assets/images/play_icon.png";
+import pauseIcon from "../../assets/images/pause_icon.png";
+import volumeup from "../../assets/images/volumeup.png";
+import volumedown from "../../assets/images/volumedown.png";
+import backgroundImage from "../../assets/images/spa-section.png";
+import Herovideo from "../../assets/images/Herovideo.mp4";
+
 const Hero = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isZooming, setIsZooming] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [volume, setVolume] = useState(0);
   const [isVolumeUp, setIsVolumeUp] = useState(false);
   const videoRef = useRef(null);
 
@@ -31,12 +39,12 @@ const Hero = () => {
 
   const handleVideoClick = () => {
     if (videoRef.current) {
-      if (!videoRef.current.paused) {
-        videoRef.current.pause();
-        setIsPlaying(false);
-      } else {
+      if (videoRef.current.paused) {
         videoRef.current.play();
         setIsPlaying(true);
+      } else {
+        videoRef.current.pause();
+        setIsPlaying(false);
       }
     }
   };
@@ -49,12 +57,25 @@ const Hero = () => {
     }
   };
 
+  const handleImageContentClick = (e) => {
+    // Prevent the video from playing if the logo is clicked
+    if (e.target.closest(".spa-section-logo")) return;
+
+    // Play the video
+    if (!isPlaying && videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
   return (
     <div className="hero-container">
       <div className="hero-background">
         {isPlaying ? (
           <video
             ref={videoRef}
+            onPlay={() => console.log("Video started playing")}
+            onPause={() => console.log("Video paused")}
             className="hero-background-video"
             src={Herovideo}
             autoPlay
@@ -62,6 +83,8 @@ const Hero = () => {
             muted={!isVolumeUp}
             onClick={handleVideoClick}
             style={{ display: isPlaying ? "block" : "none" }}
+            controls={false}
+            playsInline
           />
         ) : (
           <img
@@ -72,13 +95,16 @@ const Hero = () => {
           />
         )}
       </div>
-      <div className="content-overlay">
+      <div
+        className="content-overlay"
+        onClick={handleImageContentClick} // Add click handler to play video
+      >
         {isPlaying ? (
           <div className="video-content">
             <button className="Pause-toggle-button" onClick={handlePlayPauseClick}>
               <img
-                src={isPlaying ? pauseIcon : playIcon}
-                alt={isPlaying ? "Pause" : "Play"}
+                src={pauseIcon}
+                alt="Pause"
                 className="button-icon"
               />
             </button>
@@ -100,8 +126,9 @@ const Hero = () => {
               </div>
               <button className="play-toggle-button" onClick={handlePlayPauseClick}>
                 <img
-                  src={isPlaying ? pauseIcon : playIcon}
+                  src={playIcon}
                   className="button-icon"
+                  alt="Play"
                 />
               </button>
               <div className="thetext">

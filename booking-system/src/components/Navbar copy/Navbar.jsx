@@ -61,6 +61,18 @@ const Navbar = () => {
     toggleMenu();
   };
 
+
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setShowDropdown((prev) => !prev);
+  };
+
+  const selectLanguage = (language) => {
+    console.log(`Selected language: ${language}`);
+    setShowDropdown(false); // Close the dropdown after selection
+  };
+
   return (
     <div className={`navbar ${isScrolled ? 'scrolled' : ''} `}>
       <nav>
@@ -88,7 +100,7 @@ const Navbar = () => {
           <div className="full-container">
             <div className="your-container">
               <div className="your-container2">
-              <div className="your21">
+                <div className="your21">
                   <div className="line-container1">
                     <div className="your1">
                       <span className="text-style3191">À Propos de Nous</span>
@@ -197,8 +209,40 @@ const Navbar = () => {
 
       <div className={`navbar-container ${isScrolled ? 'navbar-scrolled' : ''}`}>
         <div className="language-options" style={{ display: isScrolled ? 'none' : 'flex' }}>
-          <a className="text-style1" href="#">FR</a>
-          <a className="text-style" href="#">/EN</a>
+          <a
+            className="text-style1"
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              toggleDropdown();
+            }}
+          >
+            FR/EN
+          </a>
+          {showDropdown && (
+            <div className="dropdown-menu">
+              <a
+                href="#"
+                className="dropdown-item"
+                onClick={(e) => {
+                  e.preventDefault();
+                  selectLanguage("FR");
+                }}
+              >
+                Français
+              </a>
+              <a
+                href="#"
+                className="dropdown-item"
+                onClick={(e) => {
+                  e.preventDefault();
+                  selectLanguage("EN");
+                }}
+              >
+                English
+              </a>
+            </div>
+          )}
         </div>
         <div
           className={`nav-logo ${isScrolled ? 'open-from-middle' : ''}`}

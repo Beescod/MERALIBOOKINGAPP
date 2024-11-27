@@ -62,6 +62,11 @@ const Hero = () => {
     }
   };
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
+
   return (
     <div className="hero-container">
       <div className="hero-background">
@@ -92,7 +97,7 @@ const Hero = () => {
       <div className="content-overlay" onClick={handleVideoClick}>
         {isPlaying ? (
           <div className="video-content">
-            <button className="Pause-toggle-button" onClick={handlePlayPauseClick}>
+            <button className="Pause-toggle-button" onClick={handleVideoClick}>
               <img
                 src={pauseIcon}
                 alt="Pause"
