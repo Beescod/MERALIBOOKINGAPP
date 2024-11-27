@@ -747,3 +747,63 @@ gap: 12px;
 .volume-icon img:hover {
   transform: scale(1.1); /* Slightly enlarge on hover */
 }
+
+
+/* Pop-out Animation */
+@keyframes popOut {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+
+
+
+
+
+
+/* Fade-in animation for the content overlay */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Apply the fade-in animation to content-overlay */
+.content-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* Assuming this is positioned on top of the video */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s; /* Delay before the animation starts */
+}
+
+/* Optional: Make sure that individual child elements fade in sequentially */
+.content-overlay .image-content, 
+.content-overlay .video-content {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 1s; /* Delay for the content inside content-overlay */
+}
+
+.content-overlay .image-content {
+  animation-delay: 1.5s; /* Optional: Delay for image content */
+}
+
+.content-overlay .video-content {
+  animation-delay: 1.5s; /* Optional: Delay for video content */
+}

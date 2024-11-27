@@ -15,7 +15,6 @@ const Hero = () => {
   const [isVolumeUp, setIsVolumeUp] = useState(false);
   const videoRef = useRef(null);
 
-
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY > 10;
@@ -51,9 +50,6 @@ const Hero = () => {
     }
   };
 
-
-
-
   const toggleVolume = () => {
     if (videoRef.current) {
       const newVolume = isVolumeUp ? 0 : 1;
@@ -65,7 +61,6 @@ const Hero = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
   };
-
 
   return (
     <div className="hero-container">
@@ -94,7 +89,7 @@ const Hero = () => {
           />
         )}
       </div>
-      <div className="content-overlay" onClick={handleVideoClick}>
+      <div className={`content-overlay ${isPlaying ? "fade-in" : ""}`} onClick={handleVideoClick}>
         {isPlaying ? (
           <div className="video-content">
             <button className="Pause-toggle-button" onClick={handleVideoClick}>
@@ -122,7 +117,7 @@ const Hero = () => {
               </div>
               <button className="play-toggle-button" onClick={handlePlayPauseClick}>
                 <img
-                  src={playIcon} // Always use the pauseIcon
+                  src={playIcon} 
                   className="button-icon"
                 />
               </button>
