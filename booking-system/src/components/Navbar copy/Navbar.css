@@ -374,6 +374,7 @@ body {
     flex-direction: column;
     gap: 1.5rem;
   }
+  
 }
 
 @media (min-width: 1024px) {
@@ -534,17 +535,13 @@ body {
 }
 
 .your2 {
-  flex: 1;
   text-align: right;
   padding-right: 10px;
   color: black;
   height: 40vh;
   font-size: 15px;
   font-weight: 300;
-
   display: flex;
-  align-items: center;
-  
 }
 
 .your21 {
@@ -586,7 +583,7 @@ body {
 .line {
   position: relative;
   width: 1px;
-  height: 280px;
+  height: 220px;
   background: transparent; /* Hide the main line */
   margin: 0 40px;
   overflow: hidden; /* Ensures animation stays within bounds */
@@ -693,12 +690,10 @@ body {
   flex-direction: column;
   align-items: flex-start;
   font-size: 2rem;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
 }
 
 .right span {
-  margin: 10px 0;
+  margin: 5px 0;
   cursor: pointer;
 }
 
@@ -723,9 +718,7 @@ body {
   gap: 60px;
   /* Adjust spacing as needed */
   font-family: 'serif';
-  /* Ensure the font matches your design */
   background-color: #f7f0e5;
-  /* Match the background color in your design */
   margin-top: 15px;
 }
 
@@ -764,12 +757,10 @@ body {
 
   .your2 {
     display: flex;
-    align-items: center;
     padding-right: 10px;
     color: black;
-    height: 40vh;
+    height: 35vh;
     font-size: 15px;
-    font-weight: 300;
   }
 
   .your21 {
@@ -817,15 +808,14 @@ body {
   .line {
     width: 1px;
     background: black;
-    height: 280px;
+    height: 230px;
     /* Adjust height to match design */
     margin: 0 20px;
   }
 
   .right {
-    padding-left: 10px;
+    padding-left: 2px;
     font-size: 1rem;
-    /* Adjust font size for readability */
   }
 
 
@@ -836,8 +826,8 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'serif';
-    /* Ensure the font matches your design */
     margin-top: 15px;
+    padding-right: 40px;
   }
 
   .menu-item {
@@ -860,7 +850,6 @@ body {
 
 .text-style312 {
   font-family: "Roboto", sans-serif;
-  /* Serif font for a classic look */
   margin-right: 10px;
   color: #000000;
   font-size: 1.1rem;
@@ -935,9 +924,9 @@ body {
 
 .text-style31 {
   margin-right: 10px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #000000;
-  font-family: "Roboto", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
   cursor: pointer;
   opacity: 0;
   transform: translateX(100%);
@@ -992,6 +981,26 @@ body {
   .language-options {
     display: flex;
     /* Only show language options */
+  }
+
+  .text-style3191 {
+    font-size: 0.9rem;
+    color: #000000;
+    font-family: "Roboto", sans-serif;
+    opacity: 0;
+    transform: translateX(-100%); /* Start off-screen to the left */
+    animation: slideInFromLeft 1s ease-out forwards;
+    letter-spacing: 0.01em; 
+  }
+  .text-style319 {
+    margin-right: 10px;
+    font-size: 0.9rem;
+    color: #000000;
+    font-family: "Roboto", sans-serif;
+  
+    opacity: 0;
+    transform: translateX(-100%); /* Start off-screen to the left */
+    animation: slideInFromLeft 1s ease-out forwards; /* Smooth animation */
   }
 }
 
@@ -1051,7 +1060,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 10;
   width: 70px;
-  text-align: center;
+    text-align: center;
 }
 
 .dropdown-item {
@@ -1066,3 +1075,4 @@ body {
 .dropdown-item:hover {
   background-color: #d0b581;
 }
+

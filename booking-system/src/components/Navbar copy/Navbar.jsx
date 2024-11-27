@@ -178,7 +178,7 @@ const Navbar = () => {
                     <span
                       onMouseEnter={() => handleMouseEnter(Laser)}
                       onMouseLeave={handleMouseLeave}
-                      className={`text-style3 ${hoverClass} ${animationClass}`}
+                      className={`text-style31 ${hoverClass} ${animationClass}`}
                     >
                       Packs
                     </span>
