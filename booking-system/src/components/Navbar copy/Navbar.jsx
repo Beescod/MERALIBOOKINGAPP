@@ -20,6 +20,7 @@ const Navbar = () => {
   const [animationClass, setAnimationClass] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
 
 
@@ -61,8 +62,6 @@ const Navbar = () => {
     toggleMenu();
   };
 
-
-  const [showDropdown, setShowDropdown] = useState(false);
 
   const toggleDropdown = () => {
     setShowDropdown((prev) => !prev);
@@ -218,6 +217,7 @@ const Navbar = () => {
             }}
           >
             FR/EN
+            <span className={`dropdown-icon ${showDropdown ? 'rotated' : ''}`}>V</span>
           </a>
           {showDropdown && (
             <div className="dropdown-menu">

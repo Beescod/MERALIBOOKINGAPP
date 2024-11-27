@@ -1,166 +1,121 @@
-import { useState, useEffect, useRef } from "react";
-import "./Hero.css";
-import LoagoL from "../../assets/images/BDLogo.png";
-import playIcon from "../../assets/images/play_icon.png";
-import pauseIcon from "../../assets/images/pause_icon.png";
-import volumeup from "../../assets/images/volumeup.png";
-import volumedown from "../../assets/images/volumedown.png";
-import backgroundImage from "../../assets/images/spa-section.png";
-import Herovideo from "../../assets/images/Herovideo.mp4";
+import { useState, useEffect } from 'react';
+import './Navbar.css';
+import hairdressing from '../../assets/images/Hairdressing.jpg';
+import massages from '../../assets/images/Massages.jpg';
+import Nailservices from '../../assets/images/Nail-services.jpeg';
+import Facialtreatments from '../../assets/images/Facial-treatments.jpg';
+import Maderotherapy from '../../assets/images/Maderotherapy.jpg';
+import Aesthetics from '../../assets/images/Aesthetics.jpg';
+import Laser from '../../assets/images/Laser.jpg';
+import defaultImage from '../../assets/images/Default.jpg';
+import BDLogo from '../../assets/images/BDLogo.png';
 
-const Hero = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+const Navbar = () => {
+  const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
+  const [menuClass, setMenuClass] = useState("menu hidden");
+  const [isMenuClicked, setIsMenuClicked] = useState(false);
+  const [image, setImage] = useState(defaultImage);
+  const [hoverClass, setHoverClass] = useState("");
+  const [animationClass, setAnimationClass] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isVolumeUp, setIsVolumeUp] = useState(false);
-  const videoRef = useRef(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY > 10;
+      const scrolled = window.scrollY > 90;
       setIsScrolled(scrolled);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-  const handlePlayPauseClick = () => {
-    setIsPlaying((prev) => !prev);
-    if (videoRef.current) {
-      if (!isPlaying) {
-        videoRef.current.play();
-      } else {
-        videoRef.current.pause();
-      }
-    }
+  const toggleDropdown = () => {
+    setShowDropdown(prev => !prev);
   };
 
-  const handleVideoClick = () => {
-    if (videoRef.current) {
-      if (videoRef.current.paused) {
-        videoRef.current.play();
-        setIsPlaying(true);
-      } else {
-        videoRef.current.pause();
-        setIsPlaying(false);
-      }
-    }
-  };
-
-  const toggleVolume = () => {
-    if (videoRef.current) {
-      const newVolume = isVolumeUp ? 0 : 1;
-      setIsVolumeUp(!isVolumeUp);
-      videoRef.current.volume = newVolume;
-    }
-  };
-
-  const handleImageContentClick = (e) => {
-    // Prevent the video from playing if the logo is clicked
-    if (e.target.closest(".spa-section-logo")) return;
-
-    // Play the video
-    if (!isPlaying && videoRef.current) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    }
+  const selectLanguage = (language) => {
+    console.log(`Selected language: ${language}`);
+    setShowDropdown(false);
   };
 
   return (
-    <div className="hero-container">
-      <div className="hero-background">
-        {isPlaying ? (
-          <video
-            ref={videoRef}
-            onPlay={() => console.log("Video started playing")}
-            onPause={() => console.log("Video paused")}
-            className="hero-background-video"
-            src={Herovideo}
-            autoPlay
-            loop
-            muted={!isVolumeUp}
-            onClick={handleVideoClick}
-            style={{ display: isPlaying ? "block" : "none" }}
-            controls={false}
-            playsInline
-          />
-        ) : (
-          <img
-            className="hero-background-image"
-            src={backgroundImage}
-            alt="Background"
-            style={{ display: isPlaying ? "none" : "block" }}
-          />
-        )}
+    <div className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+      <nav>
+        <div className="burger-menu-container" onClick={handleMenuClick}>
+          <div className="burger-menu">
+            <div className={burgerClass}></div>
+            <div className="burger-bar middle-bar" style={{ width: '20px' }}></div>
+            <div className={burgerClass}></div>
+          </div>
+          <span className="menu-label text-style">Menu</span>
+        </div>
+      </nav>
+
+      <div className={menuClass}>
+        <nav className="flex">
+          {/* Other menu content */}
+        </nav>
       </div>
-      <div
-        className="content-overlay"
-        onClick={handleImageContentClick} // Add click handler to play video
-      >
-        {isPlaying ? (
-          <div className="video-content">
-            <button className="Pause-toggle-button" onClick={handlePlayPauseClick}>
-              <img
-                src={pauseIcon}
-                alt="Pause"
-                className="button-icon"
-              />
-            </button>
-            <button className="volume-control-button" onClick={toggleVolume}>
-              <img
-                src={isVolumeUp ? volumeup : volumedown}
-                alt={isVolumeUp ? "Volume Up" : "Volume Down"}
-                className="volume-icon"
-              />
-            </button>
-          </div>
-        ) : (
-          <div className="image-content">
-            <div className="spa-section-in">
-              <div className={`spa-section-logo ${isScrolled ? "hidden1" : "visible"}`}>
-                <a href="/">
-                  <img src={LoagoL} alt="Dynamic" width={300} height={150} />
-                </a>
-              </div>
-              <button className="play-toggle-button" onClick={handlePlayPauseClick}>
-                <img
-                  src={playIcon}
-                  className="button-icon"
-                  alt="Play"
-                />
-              </button>
-              <div className="thetext">
-                <h2 className="TheSpa">Le Centre de Beauté & Bien-être</h2>
-                <div className="Heroline"></div>
-                <nav className="spa-nav">
-                  <a href="#hammams" className="text-style001">
-                    <span className="icon">◆</span> Les Massages
-                  </a>
-                  <a href="#treatments" className="text-style001">
-                    <span className="icon">◆</span> La Coiffure
-                  </a>
-                  <a href="#salon" className="text-style001">
-                    <span className="icon">◆</span> L'Onglerie
-                  </a>
-                  <a href="#sports" className="text-style001">
-                    <span className="icon">◆</span> Les Soins du Visage
-                  </a>
-                  <a href="#sports" className="text-style001">
-                    <span className="icon">◆</span> L'Ésthetique
-                  </a>
-                  <a href="#sports" className="text-style001">
-                    <span className="icon">◆</span> Le Laser
-                  </a>
-                </nav>
-              </div>
+
+      <div className={`navbar-container ${isScrolled ? 'navbar-scrolled' : ''}`}>
+        <div className="language-options" style={{ display: isScrolled ? 'none' : 'flex' }}>
+          <a
+            className="text-style1"
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              toggleDropdown();
+            }}
+          >
+            FR/EN
+            <span className={`dropdown-icon ${showDropdown ? 'rotated' : ''}`}>▼</span>
+          </a>
+          {showDropdown && (
+            <div className="dropdown-menu">
+              <a
+                href="#"
+                className="dropdown-item"
+                onClick={(e) => {
+                  e.preventDefault();
+                  selectLanguage("FR");
+                }}
+              >
+                Français
+              </a>
+              <a
+                href="#"
+                className="dropdown-item"
+                onClick={(e) => {
+                  e.preventDefault();
+                  selectLanguage("EN");
+                }}
+              >
+                English
+              </a>
             </div>
-          </div>
-        )}
+          )}
+        </div>
+        <div
+          className={`nav-logo ${isScrolled ? 'open-from-middle' : ''}`}
+          style={{ display: isScrolled ? 'block' : 'none' }}
+        >
+          <a href="/">
+            <img src={BDLogo} alt="Dynamic" width={100} height={40} className="nav-logo-i" />
+          </a>
+        </div>
+
+        <div className="nav-links">
+          <a href="#Magazine" className="text-style2">LE MAGAZINE</a>
+          <a href="#Reservations" className="text-style2">RÉSERVER</a>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Hero;
+export default Navbar;

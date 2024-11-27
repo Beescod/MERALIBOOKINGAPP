@@ -1,53 +1,39 @@
-.language-options {
-  position: relative;
-  font-family: "Roboto", sans-serif;
+/* For the dropdown icon rotation */
+.dropdown-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
 
-.language-options a.text-style1 {
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 16px;
-  text-decoration: none;
-  font-weight: 500;
-  text-align: center;
+.dropdown-icon.rotated {
+  transform: rotate(180deg);
 }
 
-.language-options a.text-style1:hover {
-  color: #d0b581;
-}
-
+/* Dropdown menu animation */
 .dropdown-menu {
   position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-  width: 100px;
-  text-align: center;
-  border-radius: 4px;
-  overflow: hidden; /* Ensure the dropdown is hidden during animation */
-  max-height: 0; /* Initially collapsed */
-  transition: max-height 0.3s ease-out; /* Smooth expand and collapse */
+  top: 30px; /* Adjust based on your design */
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s ease 0.3s; /* Set transition for opacity */
 }
 
-.dropdown-menu.active {
-  max-height: 100px;
+.language-options a:hover + .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s; /* Show the dropdown immediately */
 }
 
 .dropdown-item {
+  padding: 8px 16px;
   display: block;
-  padding: 10px 0;
-  color: #333;
   text-decoration: none;
+  color: black;
   font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
 }
 
 .dropdown-item:hover {
-  background-color: #d0b581;
-  color: #fff;
+  background-color: #f0f0f0;
 }

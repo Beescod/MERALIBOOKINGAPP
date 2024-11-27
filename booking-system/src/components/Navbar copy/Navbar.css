@@ -695,6 +695,8 @@ body {
 .right span {
   margin: 5px 0;
   cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 .image-container {
@@ -904,7 +906,6 @@ body {
   opacity: 0;
 }
 
-
 .menu-item {
   display: flex;
   align-items: center;
@@ -1019,7 +1020,6 @@ body {
 
 .language-options a {
   color: #000000;
-  font-size: 1rem;
   text-decoration: none;
   transition: color 0.3s ease;
   font-family: "Roboto", sans-serif;
@@ -1053,26 +1053,87 @@ body {
 
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: 30px; /* Adjust based on your design */
   left: 0;
   background: white;
   border: 1px solid #ddd;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 10;
-  width: 70px;
-    text-align: center;
+  text-align: center;
+  transition: opacity 0.3s ease, visibility 0s ease 0.3s; 
+  animation: growLine1 0.5s ease-out forwards;
+}
+@keyframes growLine1 {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 65px;
+  }
 }
 
+/* Pop-out Animation */
+@keyframes popOut {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/* Styling for the dropdown items */
 .dropdown-item {
   display: block;
-  padding: 10px 3px;
+  padding: 5px 1px;
   color: #333;
   text-decoration: none;
   font-size: 14px;
   cursor: pointer;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: popOut 0.5s ease-out forwards;
 }
+
+/* Optional - Add a delay for each dropdown item if you want them to appear one by one */
+.dropdown-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.dropdown-item:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.dropdown-item:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
 
 .dropdown-item:hover {
   background-color: #d0b581;
 }
 
+.dropdown-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-weight: 300;
+  padding-left: 4PX;
+}
+
+.rotated {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-icon.rotated {
+  transform: rotate(180deg); 
+}
+
+.language-options a:hover + .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s; /* Show the dropdown immediately */
+}
