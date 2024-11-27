@@ -24,7 +24,7 @@ const Salon = () => {
   useEffect(() => {
     AOS.init({
       duration: 900,   // Animation duration in ms
-      offset: 200,      // Trigger animation closer to the viewport
+      offset: 150,      // Trigger animation closer to the viewport
       easing: 'ease-in-out', // Smooth animation
       once: true,      // Animation happens only once
     });

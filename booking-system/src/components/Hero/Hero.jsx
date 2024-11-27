@@ -86,13 +86,14 @@ const Hero = () => {
             src={backgroundImage}
             alt="Background"
             style={{ display: isPlaying ? "none" : "block" }}
+            onClick={handleVideoClick}
           />
         )}
       </div>
       <div className={`content-overlay ${isPlaying ? "fade-in" : ""}`} onClick={handleVideoClick}>
         {isPlaying ? (
           <div className="video-content">
-            <button className="Pause-toggle-button" onClick={handleVideoClick}>
+            <button className="Pause-toggle-button">
               <img
                 src={pauseIcon}
                 alt="Pause"

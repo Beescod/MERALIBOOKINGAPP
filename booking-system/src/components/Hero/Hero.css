@@ -634,17 +634,7 @@ gap: 12px;
 
 
 
-.content-overlay {
-  position: absolute;
-  top:50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  z-index: 2;
-}
+
 /* .video-content {
   position: absolute;
   top: 93%;
@@ -765,10 +755,6 @@ gap: 12px;
 
 
 
-
-
-
-/* Fade-in animation for the content overlay */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -778,32 +764,16 @@ gap: 12px;
   }
 }
 
-/* Apply the fade-in animation to content-overlay */
 .content-overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute; /* Assuming this is positioned on top of the video */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  animation: fadeIn 1s ease-out forwards;
-  animation-delay: 0.5s; /* Delay before the animation starts */
+  position: absolute;
+  top:50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  
 }
 
-/* Optional: Make sure that individual child elements fade in sequentially */
-.content-overlay .image-content, 
-.content-overlay .video-content {
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards;
-  animation-delay: 1s; /* Delay for the content inside content-overlay */
-}
-
-.content-overlay .image-content {
-  animation-delay: 1.5s; /* Optional: Delay for image content */
-}
-
-.content-overlay .video-content {
-  animation-delay: 1.5s; /* Optional: Delay for video content */
-}

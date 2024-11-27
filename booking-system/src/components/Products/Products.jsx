@@ -9,16 +9,16 @@ import AOS from 'aos';
 const SpaSection = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1200, // Optional: Animation duration (in ms)
-      offset: 200,    // Optional: Offset (in px) before the animation starts
-      once: true,     // Optional: Whether animation should only happen once
+      duration: 1000,
+      offset: 200,
+      once: true,
     });
   }, []);
 
   return (
     <div className="pin-spacer">
       <div className="Mobile-products-header1">
-        <p data-aos="fade-up" className="Mobile-products-subtitle">
+        <p data-aos="fade-in" className="Mobile-products-subtitle">
           Relaxez-vous dans le meilleur hôtel spa de Marrakech
         </p>
       </div>
@@ -50,21 +50,21 @@ const SpaSection = () => {
             <div className="panel-inner">
               <div className="panel-content">
                 <div className="panel-content-1">
-                  <h2 className="title title2 withDecor" data-aos="fade-up">
+                  <h2 className="title title2 withDecor" data-aos="fade-in">
                     Rêver, se détendre beauté et bien-être au spa de La Mamounia
                   </h2>
-                  <div className="featuredText" data-aos="fade-up">
+                  <div className="featuredText" data-aos="fade-in">
                     <p>Se deployant sur 2 500 m², le spa de La Mamounia est une extraordinaire experience vivre dans son somptueux cadre des Mille et Une Nuits.</p>
                   </div>
                   <p>Si tout à La Mamounia, par la beauté des lieux, l’harmonie et la douceur qui y règnent, incite à profiter de chaque instant, le spa est l’endroit où le temps peut s’arrêter pour quelques heures.</p>
                 </div>
                 <div className="panel-secondContent secondContent contentImgInline">
                   <div className="secondContent-content">
-                    <div className="secondContent-innerText isSmallScrollbar panel-content-1" data-aos="fade-up">
+                    <div className="secondContent-innerText isSmallScrollbar panel-content-1" data-aos="fade-in">
                       <p>Un monde en soi, un monde pour soi où soins experts et délicats massages font voyager dans un rêve de splendeurs orientales.</p>
                       <p>Une luxueuse bulle de raffinement qui comprend deux hammams traditionnels et un hammam privé, dix cabines de soins et massages – dont trois duos, une piscine chauffée, un jacuzzi et un spa privé.</p>
                       <p><strong>Ouvert de 09h00 à 21h00</strong></p>
-                      <div className="itemCollection count-1 isList isButtons linksCollection" data-aos="fade-up">
+                      <div className="itemCollection count-1 isList isButtons linksCollection" data-aos="fade-in">
                         <div className="linksCollection-item">
                           <a target="_blank" href="/media/original/61a0fc96c135f/qr-code-menu-spa-.pdf" className="linksCollection-link isGold btnDefault">
                             <span>Découvrir notre carte du spa</span>

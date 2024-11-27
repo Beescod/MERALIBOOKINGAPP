@@ -1,39 +1,39 @@
-/* For the dropdown icon rotation */
-.dropdown-icon {
-  display: inline-block;
-  transition: transform 0.3s ease;
+/* Fade-in animation for the content overlay */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.dropdown-icon.rotated {
-  transform: rotate(180deg);
-}
-
-/* Dropdown menu animation */
-.dropdown-menu {
-  position: absolute;
-  top: 30px; /* Adjust based on your design */
+/* Apply the fade-in animation to content-overlay */
+.content-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* Assuming this is positioned on top of the video */
+  top: 0;
   left: 0;
-  background-color: white;
-  border: 1px solid #ccc;
+  right: 0;
+  bottom: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s; /* Delay before the animation starts */
+}
+
+/* Optional: Make sure that individual child elements fade in sequentially */
+.content-overlay .image-content, 
+.content-overlay .video-content {
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0s ease 0.3s; /* Set transition for opacity */
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 1s;
 }
 
-.language-options a:hover + .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transition-delay: 0s; /* Show the dropdown immediately */
+.content-overlay .image-content {
+  animation-delay: 1.5s; /* Optional: Delay for image content */
 }
 
-.dropdown-item {
-  padding: 8px 16px;
-  display: block;
-  text-decoration: none;
-  color: black;
-  font-size: 14px;
-}
-
-.dropdown-item:hover {
-  background-color: #f0f0f0;
+.content-overlay .video-content {
+  animation-delay: 1.5s; /* Optional: Delay for video content */
 }
