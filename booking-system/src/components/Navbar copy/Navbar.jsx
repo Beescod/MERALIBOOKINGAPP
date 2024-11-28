@@ -100,11 +100,12 @@ const Navbar = () => {
           <div className="full-container">
             <div className="your-container">
               <div className="your-container2">
+                <div className="your1">
+                  <span className="text-style319">À Propos de Nous</span>
+                </div>
                 <div className="your21">
                   <div className="line-container1">
-                    <div className="your1">
-                      <span className="text-style3191">À Propos de Nous</span>
-                    </div>
+
                     <div className={`line1 ${isMenuOpen ? 'animate-line1' : ''}`}></div>
                   </div>
                   <div className="right">
@@ -125,6 +126,8 @@ const Navbar = () => {
                   </div>
 
                 </div>
+
+
                 <div className="your2">
                   <div className="line-container">
                     <div className="your">
@@ -178,13 +181,15 @@ const Navbar = () => {
                     <span
                       onMouseEnter={() => handleMouseEnter(Laser)}
                       onMouseLeave={handleMouseLeave}
-                      className={`text-style31 ${hoverClass} ${animationClass}`}
+                      className={`text-style3 ${hoverClass} ${animationClass}`}
                     >
                       Packs
                     </span>
                   </div>
 
                 </div>
+
+
                 <div className="menu-options">
                   <div className="menu-item">
                     <span className="line-divider">|</span>

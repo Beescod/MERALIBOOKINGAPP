@@ -286,7 +286,7 @@ body {
   .menu {
     height: 100vh;
     /* Ensure full height on all smaller screens */
-    width: 100vw;
+    width: 100%;
     /* Ensure full width on all smaller screens */
   }
 }
@@ -509,7 +509,6 @@ body {
   padding-right: 0;
 }
 .your1 {
-  text-align: center;
   height: inherit;
   padding-right: 0;
   width: 100%;
@@ -547,12 +546,13 @@ body {
 .your21 {
   flex: 1;
   text-align: right;
-  padding-right: 10px;
+  padding-right: 70px;
   color: black;
   height: 10vh;
   display: flex;
   align-items: center;
   margin-right: 35px;
+  padding-bottom: 10px;
 }
 
 .line-container {
@@ -586,7 +586,8 @@ body {
   height: 220px;
   background: transparent; /* Hide the main line */
   margin: 0 40px;
-  overflow: hidden; /* Ensures animation stays within bounds */
+  overflow: hidden;
+  font-weight: 700;
 }
 
 .line1 {
@@ -594,8 +595,8 @@ body {
   width: 1px;
   height: 80px;
   background: transparent; /* Hide the main line */
-  margin: 0 40px;
-  overflow: hidden; /* Ensures animation stays within bounds */
+  margin: 0 20px;
+  overflow: hidden;
 }
 
 .line::before {
@@ -695,8 +696,7 @@ body {
 .right span {
   margin: 5px 0;
   cursor: pointer;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  text-transform: uppercase;
 }
 
 .image-container {
@@ -768,7 +768,7 @@ body {
   .your21 {
     display: flex;
     align-items: center;
-    padding-right: 10px;
+    /* padding-right: 10px; */
     color: black;
     height: 40vh;
     font-size: 15px;
@@ -792,6 +792,7 @@ body {
     position: relative;
     justify-content: space-between;
     gap: 20px;
+    padding-right: 1px;
   }
 
   .your {
@@ -800,18 +801,10 @@ body {
     top: -40px;
     text-align: center;
   }
-  .your1 {
-    font-size: 1.2rem;
-    position: absolute;
-    top: -30px;
-    text-align: center;
-  }
 
   .line {
     width: 1px;
     background: black;
-    height: 230px;
-    /* Adjust height to match design */
     margin: 0 20px;
   }
 
@@ -829,7 +822,7 @@ body {
     align-items: center;
     font-family: 'serif';
     margin-top: 15px;
-    padding-right: 40px;
+    padding-right: 70px;
   }
 
   .menu-item {
@@ -848,6 +841,7 @@ body {
   cursor: pointer;
   transition: transform 0.3s ease, opacity 0.3s ease;
   animation: popIn 01s ease-out forwards;
+  font-weight: 400;
 }
 
 .text-style312 {
@@ -919,20 +913,13 @@ body {
 
 .line-divider {
   margin-right: 10px;
+  margin-bottom: 4px;
   font-size: 1.2rem;
   color: #000000;
+  font-weight: 800;
 }
 
-.text-style31 {
-  margin-right: 10px;
-  font-size: 1rem;
-  color: #000000;
-  /* font-family: "Roboto", sans-serif; */
-  cursor: pointer;
-  opacity: 0;
-  transform: translateX(100%);
-  animation: slideInFromRight 1s ease-out forwards;
-}
+
 
 
 
@@ -955,7 +942,6 @@ body {
   font-size: 1.2rem;
   color: #000000;
   font-family: "Roboto", sans-serif;
-
   opacity: 0;
   transform: translateX(-100%); /* Start off-screen to the left */
   animation: slideInFromLeft 1s ease-out forwards; /* Smooth animation */
@@ -995,13 +981,13 @@ body {
   }
   .text-style319 {
     margin-right: 10px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #000000;
     font-family: "Roboto", sans-serif;
   
     opacity: 0;
-    transform: translateX(-100%); /* Start off-screen to the left */
-    animation: slideInFromLeft 1s ease-out forwards; /* Smooth animation */
+    transform: translateX(-100%);
+    animation: slideInFromLeft 1s ease-out forwards;
   }
 }
 
@@ -1145,5 +1131,13 @@ body {
   visibility: visible;
   transition-delay: 0s; /* Show the dropdown immediately */
 }
+
+
+
+
+
+
+
+
 
 

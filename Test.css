@@ -8,21 +8,20 @@
   }
 }
 
-/* Apply the fade-in animation to content-overlay */
+
 .content-overlay {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute; /* Assuming this is positioned on top of the video */
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   animation: fadeIn 1s ease-out forwards;
-  animation-delay: 0.5s; /* Delay before the animation starts */
+  animation-delay: 0.5s;
 }
 
-/* Optional: Make sure that individual child elements fade in sequentially */
 .content-overlay .image-content, 
 .content-overlay .video-content {
   opacity: 0;

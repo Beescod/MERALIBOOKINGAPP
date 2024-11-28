@@ -19,16 +19,16 @@ body {
   animation: popIn 0.7s ease-out forwards;
 }
 
-@media (max-width: 412px) {
+@media (max-width: 512px) {
   .MobileBooking {
     display: flex;
     justify-content: space-between;
-    position: fixed; /* Sticks to the bottom */
+    position: fixed;
     bottom: 0;
-    width: 100%; /* Full screen width */
+    width: 100%;
     height: 50px;
     background-color: white;
-    z-index: 1000; /* Keeps it on top */
+    z-index: 1000;
   }
 
   .MAGAZINE-div, .RÉSERVER-div {
@@ -42,11 +42,13 @@ body {
     background-color: black;
   }
 
+  .RÉSERVER-text:hover {
+    color:  rgba(105, 95, 76, 0.8);
+  }
   .RÉSERVER-div {
     background-color: #757C46;
   }
 
-  /* Text Styling */
   .MAGAZINE-text, .RÉSERVER-text {
     color: white;
     font-weight: bold;
@@ -57,28 +59,23 @@ body {
     align-items: center;
   }
 
-  /* Booking Icon Styling */
   .booking-icon {
-    width: 20px; /* Adjust to make smaller */
+    width: 20px;
     height: auto;
-    filter: invert(1);
     margin-right: 2px;
     vertical-align: middle;
     padding-top: 2px;
-  }
+    opacity: 10;
+    filter: invert(1) brightness(2) contrast(1.2);
 
-  /* Hover Effects */
+  }
   .MAGAZINE-text:hover {
-    color: rgba(105, 95, 76, 0.8); /* Hover effect for text */
-  }
-
-  .RÉSERVER-text:hover {
-    color: rgba(28, 26, 21, 0.8); /* Hover effect for text */
+    color:  rgba(105, 95, 76, 0.8);
   }
 }
 
-/* Hide MobileBooking on larger screens */
-@media (min-width: 413px) {
+
+@media (min-width: 513px) {
   .MobileBooking {
     display: none;
   }
