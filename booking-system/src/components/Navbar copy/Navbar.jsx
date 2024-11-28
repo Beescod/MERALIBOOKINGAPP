@@ -9,6 +9,7 @@ import Aesthetics from '../../assets/images/Aesthetics.jpg';
 import Laser from '../../assets/images/Laser.jpg';
 import defaultImage from '../../assets/images/Default.jpg';
 import BDLogo from '../../assets/images/BDLogo.png';
+import downarrow from '../../assets/images/downarrow.png';
 
 
 const Navbar = () => {
@@ -217,7 +218,9 @@ const Navbar = () => {
             }}
           >
             FR/EN
-            <span className={`dropdown-icon ${showDropdown ? 'rotated' : ''}`}>V</span>
+            <span className={`dropdown-icon ${showDropdown ? 'rotated' : ''}`}>
+              <img src={downarrow} alt="Toggle Dropdown" />
+            </span>
           </a>
           {showDropdown && (
             <div className="dropdown-menu">

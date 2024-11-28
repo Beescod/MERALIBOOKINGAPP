@@ -85,7 +85,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 1rem 0.5rem;
   position: fixed;
   width: 100%;
   z-index: 100;
@@ -177,11 +177,11 @@ body {
   display: flex;
   align-items: center;
   cursor: pointer;
-  padding: 1rem;
+  padding-top: 1rem;
   margin-right: 10px;
   position: absolute;
   top: 0.1rem;
-  left: 1rem;
+  /* left: 1rem; */
 }
 
 .burger-menu,
@@ -1114,12 +1114,7 @@ body {
   background-color: #d0b581;
 }
 
-.dropdown-icon {
-  display: inline-block;
-  transition: transform 0.3s ease;
-  font-weight: 300;
-  padding-left: 4PX;
-}
+
 
 .rotated {
   display: inline-block;
@@ -1127,10 +1122,23 @@ body {
   display: inline-block;
   transition: transform 0.3s ease;
 }
+.dropdown-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-weight: 300;
+  padding-left: 4px;
+}
+
+.dropdown-icon img {
+  width: 13px;
+  height: auto;
+  filter: invert(1);
+}
 
 .dropdown-icon.rotated {
   transform: rotate(180deg); 
 }
+
 
 .language-options a:hover + .dropdown-menu {
   opacity: 1;

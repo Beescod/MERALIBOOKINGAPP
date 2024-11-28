@@ -1,12 +1,8 @@
 // import React, { useState } from 'react';
 import './MobileBooking.css';
-import { FaCalendarAlt } from 'react-icons/fa'; // Importing the calendar icon
-
+import booking from '../../assets/images/Booking.png';
 
 const MobileBooking = () => {
-
-
-
     return (
         <div className="MobileBooking">
             <div className="MAGAZINE-div">
@@ -14,8 +10,9 @@ const MobileBooking = () => {
             </div>
             <div className="RÉSERVER-div">
                 <a href="#Reservations" className="RÉSERVER-text">
-                <FaCalendarAlt /> {/* Calendar Icon */}
-                    BOOK</a>
+                    <img src={booking} alt="Booking Icon" className="booking-icon" />
+                    BOOK
+                </a>
             </div>
         </div>
     );
