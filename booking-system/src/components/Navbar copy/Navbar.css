@@ -285,9 +285,7 @@ body {
 (max-width: 480px) {
   .menu {
     height: 100vh;
-    /* Ensure full height on all smaller screens */
     width: 100%;
-    /* Ensure full width on all smaller screens */
   }
 }
 
@@ -394,7 +392,6 @@ body {
 .text-style {
   color: #fffefe;
   font-family: "Roboto", sans-serif;
-  /* Change to your desired text color */
   font-size: 1rem;
   /* Adjust the font size as needed */
   font-weight: normal;
@@ -512,6 +509,7 @@ body {
   height: inherit;
   padding-right: 0;
   width: 100%;
+  padding-bottom: 10px;
 }
 
 
@@ -746,6 +744,7 @@ body {
     /* flex-direction: column; */
     align-items: center;
     /* gap: 20px; */
+    padding-bottom: 20%;
   }
 
   .your-container2 {
@@ -938,13 +937,13 @@ body {
 }
 
 .text-style319 {
-  margin-right: 10px;
   font-size: 1.2rem;
   color: #000000;
   font-family: "Roboto", sans-serif;
   opacity: 0;
   transform: translateX(-100%); /* Start off-screen to the left */
-  animation: slideInFromLeft 1s ease-out forwards; /* Smooth animation */
+  animation: slideInFromLeft 1s ease-out forwards;
+  font-weight: 300;
 }
 
 .text-style3191 {
@@ -980,14 +979,13 @@ body {
     letter-spacing: 0.01em; 
   }
   .text-style319 {
-    margin-right: 10px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: #000000;
     font-family: "Roboto", sans-serif;
-  
     opacity: 0;
     transform: translateX(-100%);
     animation: slideInFromLeft 1s ease-out forwards;
+
   }
 }
 
