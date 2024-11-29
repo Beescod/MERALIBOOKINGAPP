@@ -82,19 +82,19 @@ const Navbar = () => {
             <div className="burger-bar middle-bar" style={{ width: '20px' }}></div>
             <div className={burgerClass}></div>
           </div>
-          <span className="menu-label text-style">Menu</span>
+          <span className="menu-label">Menu</span>
         </div>
       </nav>
 
       <div className={menuClass}>
-        <nav className="flex">
+        <nav className="navflex">
           <div className="burger-menu-container" onClick={updateMenu}>
             <div className="burger-menu2">
               <div className={burgerClass}></div>
               <div className={burgerClass}></div>
               <div className={burgerClass}></div>
             </div>
-            <span className="menu-label text-style2">Close</span>
+            <span className="menu-label-Close">Close</span>
           </div>
 
           <div className="full-container">
@@ -215,7 +215,7 @@ const Navbar = () => {
       </div>
 
       <div className={`navbar-container ${isScrolled ? 'navbar-scrolled' : ''}`}>
-        <div className="language-options" style={{ display: isScrolled ? 'none' : 'flex' }}>
+        <div className="language-options" style={{ display: isScrolled ? 'none' : 'navflex' }}>
           <a
             className="text-style1"
             href="#"

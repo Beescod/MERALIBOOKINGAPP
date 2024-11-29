@@ -325,8 +325,11 @@ body {
   transform: translateX(100%);
   animation: popIn 0.9s ease-out forwards;
   transition: transform 0.9s ease, color 0.5s ease;
-  white-space: normal; /* Allow text to wrap */
+  white-space: nowrap; /* Prevent text from wrapping */
+  display: inline-flex; /* Ensure the icon and text remain on the same line */
+  align-items: center; /* Align icon and text vertically */
 }
+
 
 
 .Heroline {

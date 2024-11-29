@@ -201,7 +201,7 @@ body {
   color: white;
 }
 
-.flex {
+.navflex {
   display: flex;
   /* flex-direction: column; */
   align-items: flex-start;
@@ -225,18 +225,72 @@ body {
 
 /* Menu Label */
 .menu-label {
-  color: #000;
+  color: #ffffff;
   font-size: 1rem;
   padding-left: 0.5rem;
   font-weight: 600;
-  font-family: 'Modern Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+.menu-label::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transform: translateX(-50%) scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.menu-label:hover {
+  color: #d0b581;
+  /* Change text color on hover */
+}
+
+.menu-label:hover::after {
+  background-color: #d0b581;
+}
+
+.menu-label-Close {
+  color: #363232;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+}
+
+.menu-label-Close::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transform: translateX(-50%) scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.menu-label-Close:hover {
+  color: #d0b581;
+  /* Change text color on hover */
+}
+
+.menu-label-Close:hover::after {
+  background-color: #d0b581;
 }
 
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 568px) {
   .menu-label {
+    display: none;
+  }
+  
+  .menu-label-Close {
     display: none;
   }
 }
@@ -626,7 +680,7 @@ body {
   position: relative;
   width: 1px;
   height: 80px;
-  background: transparent; /* Hide the main line */
+  background: transparent;
   margin: 0 20px;
   overflow: hidden;
 }

@@ -122,6 +122,7 @@ const Hero = () => {
                   className="button-icon"
                 />
               </button>
+              
               <div className="thetext">
                 <h2 className="TheSpa">Le Centre de Beauté & Bien-être</h2>
                 <div className="Heroline"></div>

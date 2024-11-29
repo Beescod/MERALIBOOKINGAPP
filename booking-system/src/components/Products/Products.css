@@ -142,13 +142,14 @@ p {
   font-weight: 400;
   color: #757C46;
   line-height: 1.28;
-  font-size: 1em;
+  font-size: 0.9em;
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
   position: relative;
   width: 100%;
   padding: 5vh 6vw;
   text-align: center;
+  text-transform: uppercase;
 }
 
 
@@ -239,7 +240,7 @@ p {
     
 .linksCollection-link {
   padding: 10px 2px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #757C46; /* Default text color */
   background: none;
   cursor: pointer;
