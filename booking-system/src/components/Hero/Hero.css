@@ -311,7 +311,7 @@ body {
   word-wrap: break-word;
   word-break: break-word;
   white-space: normal; /* Ensure text wraps */
-  padding: 0 10px; /* Add some padding for spacing on smaller screens */
+  /* padding: 0 10px; */
 }
 
 
@@ -398,6 +398,7 @@ body {
 .text-style001 .icon {
   font-size: 0.9rem;
   color: #d0b581; /* Diamond color */
+  padding-right: 5px;
 }
 
 @media (max-width: 1200px) {
