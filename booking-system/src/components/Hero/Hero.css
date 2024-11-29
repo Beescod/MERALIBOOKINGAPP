@@ -311,7 +311,7 @@ body {
   word-wrap: break-word;
   word-break: break-word;
   white-space: normal; /* Ensure text wraps */
-  /* padding: 0 10px; */
+  padding: 0 10px;
 }
 
 
