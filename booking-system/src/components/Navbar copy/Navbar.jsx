@@ -100,12 +100,15 @@ const Navbar = () => {
           <div className="full-container">
             <div className="your-container">
               <div className="your-container2">
-                <div className="your1">
+                <div className="your1M">
                   <span className="text-style319">À Propos de Nous</span>
                 </div>
                 <div className="your21">
                   <div className="line-container1">
 
+                    <div className="your1">
+                      <span className="text-style319">À Propos de Nous</span>
+                    </div>
                     <div className={`line1 ${isMenuOpen ? 'animate-line1' : ''}`}></div>
                   </div>
                   <div className="right">
@@ -186,7 +189,6 @@ const Navbar = () => {
                       Packs
                     </span>
                   </div>
-
                 </div>
 
 
