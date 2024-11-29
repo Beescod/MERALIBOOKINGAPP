@@ -215,7 +215,7 @@ const Navbar = () => {
       </div>
 
       <div className={`navbar-container ${isScrolled ? 'navbar-scrolled' : ''}`}>
-        <div className="language-options" style={{ display: isScrolled ? 'none' : 'navflex' }}>
+        <div className="language-options" style={{ display: isScrolled ? 'none' : 'flex' }}>
           <a
             className="text-style1"
             href="#"
