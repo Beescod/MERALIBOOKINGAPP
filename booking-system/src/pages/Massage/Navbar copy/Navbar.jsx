@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
 import './Navbar.css';
 import hairdressing from '../../assets/images/Hairdressing.jpg';
 import massages from '../../assets/images/Massages.jpg';
@@ -266,7 +265,7 @@ const Navbar = () => {
 
         <div className="nav-links">
           <a href="#Magazine" className="text-style2">LE MAGAZINE</a>
-          <Link to="/booking" className="text-style2">RÉSERVER</Link>
+          <a href="#Reservations" className="text-style2">RÉSERVER</a>
         </div>
       </div>
     </div>

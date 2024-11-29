@@ -17,6 +17,7 @@ import Cards from "./components/Cards/Cards";
 import Brands from "./components/brands/brands";
 import Mobilebrands from "./components/Mobilebrands/Mobilebrands";
 import MobileProducts from "./components/MobileProducts/MobileProducts";
+import Form from "./pages/booking/Form/Form";
 
 const App = () => {
     const [orderPopup, setOrderPopup] = useState(false);
@@ -81,6 +82,16 @@ const App = () => {
                                 <Banner />
                                 <Subscribe />
                                 <Products />
+                                <Testimonials />
+                            </>
+                        }
+                    />
+
+                    <Route
+                        path="/Booking"
+                        element={
+                            <>
+                                <Form />
                                 <Testimonials />
                             </>
                         }

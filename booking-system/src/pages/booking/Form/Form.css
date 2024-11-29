@@ -1,0 +1,62 @@
+.spa-form {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #f7f4ee;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .form-input, 
+  .form-textarea, 
+  .form-button, 
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  textarea.form-textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  .form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .form-link {
+    color: #b64d46;
+    text-decoration: underline;
+  }
+  
+  .form-button {
+    background-color: #b64d46;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .form-button:hover {
+    background-color: #a43e38;
+  }
+  

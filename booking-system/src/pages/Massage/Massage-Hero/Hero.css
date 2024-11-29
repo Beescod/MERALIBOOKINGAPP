@@ -1,0 +1,783 @@
+body {
+  margin: 0;
+  font-family: 'Modern Sans', sans-serif;
+}
+
+/* Add this to your CSS file or global stylesheet */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes for Slide from Top */
+@keyframes slideFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%); /* Start completely above the viewport */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at the original position */
+  }
+}
+/* Keyframes for sliding in */
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+    /* Start off-screen to the right */
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    /* At the final position */
+  }
+}
+
+/* Keyframes for sliding in from the left */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+    /* Start off-screen to the left */
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    /* At the final position */
+  }
+}
+
+
+
+.background-pattern {
+  position: absolute;
+  height: 700px;
+  width: 700px;
+  background-color: rgba(0, 123, 255, 0.4);
+  top: -50%;
+  right: 0;
+  border-radius: 48px;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.hero-content {
+  padding-bottom: 2rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* gap: 2rem; */
+}
+
+@media (min-width: 640px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* gap: 1rem; */
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .text-content {
+    text-align: left;
+  }
+}
+
+.hero-title {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: bold;
+}
+
+.hero-description {
+  font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+}
+
+.hero-button {
+  background: Herolinear-gradient(to right, #007bff, #6610f2);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  transition: transform 0.2s;
+}
+
+.hero-button:hover {
+  transform: scale(1.05);
+}
+
+.image-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.2s;
+}
+
+.hero-image:hover {
+  transform: scale(1.05);
+}
+
+.video-container {
+  /* position: relative; */
+  width: 100%;
+  height: auto;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 4;
+}
+
+
+
+.pause-button {
+  cursor: pointer;
+  z-index: 3;
+}
+
+.spa-section.playing .spa-section-in {
+  transition: transform 0.3s ease;
+}
+
+.play-button,
+.pause-button {
+  transition: opacity 0.3s ease;
+}
+
+.video-pause-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  cursor: pointer; /* Makes it clear the icon is clickable */
+  z-index: 2; /* Ensures the icon stays above the video */
+  /* opacity: 0.8;  */
+  transition: opacity 0.3s ease; /* Smooth fade-in/out effect */
+}
+
+.video-pause-icon:hover {
+  opacity: 1; /* Full opacity when hovered */
+}
+
+.spa-section {
+  position: relative;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  color: #fff;
+}
+
+
+.spa-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(46, 46, 46, 0.5);
+  /* Transparent black overlay */
+  z-index: 1;
+}
+
+/* Responsive styling for the spa-section */
+@media (max-width: 1024px) {
+  .spa-section {
+    position: relative;
+    text-align: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    color: #fff;
+  }
+}
+
+@media (max-width: 768px) {
+  .spa-section {
+    position: relative;
+    text-align: center;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    color: #fff;
+  }
+}
+
+
+
+
+.spa-section-in {
+  position: relative;
+  width: 100%;
+  height: 90%; /* Ensure it fills the parent */
+  /* max-width: 90%; */
+  max-width: 100%;
+  padding: 50px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Align children to the bottom */
+  align-items: center;
+  text-align: center;
+  /* gap: 5vw; */
+  overflow: hidden; /* Prevent content overflow */
+  box-sizing: border-box; /* Ensure padding and borders are included in width */
+}
+
+@media (max-width: 480px) {
+  .spa-section-in {
+    gap: 0px;
+    padding: 0px;
+  }
+}
+
+/* For tablets */
+/* For tablets */
+@media (max-width: 768px) {
+  .spa-section-in {
+    padding: 0 10px; /* Add padding for smaller screens */
+  }
+}
+
+/* For desktops */
+@media (min-width: 1024px) {
+  .spa-section-in {
+    gap: 100px; /* 100px gap for desktops */
+    padding: 30px; /* Increased padding for desktops */
+  }
+}
+
+/* For ultra-wide screens */
+@media (min-width: 1769px) {
+  .spa-section-in {
+    gap: 500px;
+    padding: 50px; /* Increased padding for ultra-wide screens */
+  }
+}
+
+
+.thetext {
+  max-width: 90%;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  position: relative;
+  z-index: 3;
+  bottom: 0; /* Fix the text at the bottom */
+  left: 0;
+    max-width: 100%; /* Ensure the container doesn't exceed the viewport */
+  overflow-wrap: break-word; /* Allow breaking long words */
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal; /* Ensure text wraps */
+  padding: 0 10px;
+}
+
+
+.text-style001 {
+  margin-right: 10px;
+  font-size: 1.5em;
+  color: #ffffff;
+  font-family: 'Modern Sans', sans-serif;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateX(100%);
+  animation: popIn 0.9s ease-out forwards;
+  transition: transform 0.9s ease, color 0.5s ease;
+  white-space: nowrap; /* Prevent text from wrapping */
+  display: inline-flex; /* Ensure the icon and text remain on the same line */
+  align-items: center; /* Align icon and text vertically */
+}
+
+
+
+.Heroline {
+  position: relative;  width: 80%; /* Use percentage width instead of fixed pixels */
+  max-width: 300px; /* Ensure it doesn't get too wide */
+  height: 1px;
+  background: transparent; /* Hide the main Heroline */
+  margin: 30px 40px;
+  overflow: hidden; /* Ensures animation stays within bounds */
+}
+
+.Heroline::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgb(255, 255, 255);
+  /* transform: translateY(-50%); */
+  animation: growLine 1s forwards;
+}
+
+.animate-Heroline::before {
+  animation: growLine 1s forwards;
+}
+
+@keyframes growLine {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 280px;
+  }
+}
+
+
+
+.text-style001::after {
+  content: '';
+  position: absolute;
+  background-color: #333;
+  transform: translateX(-50%) scaleX(0);
+  transition: transform 0.3s ease;
+  animation: popIn 0.7s ease-out forwards;
+}
+
+.text-style001:hover {
+  color: #d0b581;
+  transform: scale(1.1) translateY(-5px); /* Slightly enlarge and lift the text */
+}
+
+
+.TheSpa {
+  margin-right: 10px;
+  font-size: 2.4rem;
+  color: #ffffff;
+  font-family: 'Modern Sans', sans-serif;
+  opacity: 0;
+  transform: translateX(100%);
+  animation: popIn 0.7s ease-out forwards;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.text-style001 .icon {
+  font-size: 0.9rem;
+  color: #d0b581; /* Diamond color */
+  padding-right: 5px;
+}
+
+@media (max-width: 1200px) {
+  .TheSpa {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-family: 'Modern Sans', sans-serif;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: popIn 0.7s ease-out forwards;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    white-space: nowrap; /* Prevents text from wrapping to the next Heroline */
+  }
+  
+
+  .Heroline {
+    position: relative;
+    width: 250px; /* Adjust the length of the Heroline */
+    height: 1px;
+    background: #ffffff; /* Hide the main Heroline */
+    margin: 30px 40px;
+    overflow: hidden; /* Ensures animation stays within bounds */
+  }
+
+  .text-style001 {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+  
+}
+
+@media (max-width: 768px) {
+  .Heroline {
+    position: relative;
+    width: 200px; /* Adjust the length of the Heroline */
+    height: 1px;
+    margin: 0px 40px 3px 40px;
+    overflow: hidden; /* Ensures animation stays within bounds */
+  }
+
+  .text-style001 {
+    margin-right: 10px;
+    font-size: 0.8rem;
+
+  }
+  .TheSpa {
+    margin-right: 10px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    font-family: 'Modern Sans', sans-serif;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: popIn 0.7s ease-out forwards;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    white-space: nowrap; /* Prevents text from wrapping to the next Heroline */
+  }
+
+  .text-style001 .icon {
+    font-size: 0.6rem;
+    color: #d0b581; /* Diamond color */
+  }
+
+  .spa-nav {
+gap: 12px;
+  }
+}
+
+.spa-nav {
+  /* display: flex; */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.spa-section-logo.hidden1 {
+  opacity: 0;
+  transform: scale(0.5); /* You can control zooming with scale */
+  pointer-events: none; /* Optional: disables clicks when hidden */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.spa-section-logo.visible {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  animation: zoomIn 0.7s forwards;
+  z-index: 3;
+  height: 10vh;
+}
+
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+.spa-section-logo.hidden1 {
+  animation: zoomOut 0.7s forwards;
+}
+
+
+.play-video {
+  opacity: 1;
+  transform: scale(1); /* Original size */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 3;
+  animation: zoomIn 0.7s forwards;  /* Increased duration */
+  z-index: 3;
+  cursor: pointer;
+}
+
+.spa-section-logo img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  image-rendering: crisp-edges;
+  z-index: 3;
+  padding: 20px;
+}
+
+.spa-section-logo:hover img {
+  transform: scale(0.9); /* Zooms in to 120% */
+  transition: transform 0.3s ease; /* Makes the zoom animation smooth */
+}
+
+
+
+
+@media (max-width: 768px) {
+  .spa-section-logo img {
+    padding-top: 40px;
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      object-fit: contain;
+      image-rendering: crisp-edges;
+      z-index: 3;
+      padding: 8px 70px 0px 70px;
+  }
+}
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  color: #000;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.hero-container.dark {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+
+
+@media (max-width: 1024px) {
+  .hero-container {
+    min-height: 60vh;
+  }
+  .hero-background {
+    min-height: 50vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    min-height: 50vh;
+    background-attachment: scroll;
+    /* For mobile, it's common to set background-attachment to scroll */
+  }
+  .hero-background {
+    min-height: 30vh;
+    background-attachment: scroll;
+    /* For mobile, it's common to set background-attachment to scroll */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    min-height: 40vh;
+    background-position: top;
+  }
+  .hero-background {
+    min-height: 30vh;
+    background-position: top;
+  }
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 1.5s ease;
+  background-size: cover;
+  /* background-position: center; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+.hero-background-video,
+.hero-background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+/* .video-content {
+  position: absolute;
+  top: 93%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+} */
+
+.video-content h1,
+.image-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.video-content p,
+.image-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.toggle-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+.button-icon {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.7));
+}
+
+.Pause-toggle-button {
+  position: absolute;
+  bottom: 10px; /* Adjust the distance from the bottom edge */
+  left: 10px;   /* Adjust the distance from the left edge */
+  z-index: 5;   /* Ensure it's above other content */
+  background-color: transparent; /* Optional: Make the background transparent */
+  border: none; /* Remove any default button styles 
+  */
+  filter: brightness(0) invert(1); /* Make the icon white */
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.Pause-toggle-button img {
+  width: 45px;  /* Adjust icon size */
+  height: 45px; /* Adjust icon size */
+  transition: transform 0.3s ease; /* Add some interaction effect */
+}
+.volume-control-button img {
+  transition: transform 0.3s ease;
+}
+
+.Pause-toggle-button:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+.volume-control-button img:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+
+
+.play-toggle-button:hover img {
+  color: #d0b581;
+}
+
+
+.volume-control-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0; /* Remove extra padding */
+}
+
+.volume-icon{
+  width: 45px; /* Adjust the size of the icons */
+  height: 45px; /* Keep the icons proportional */
+  filter: brightness(0) invert(1); /* Make the icon white */
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.volume-icon{
+  position: absolute;
+  bottom: 10px; /* Adjust the distance from the bottom edge */
+  left: 65px;   /* Adjust the distance from the left edge */
+  z-index: 5;   /* Ensure it's above other content */
+  background-color: transparent; /* Optional: Make the background transparent */
+  border: none; /* Remove any default button styles 
+  */
+  filter: brightness(0) invert(1); /* Make the icon white */
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.volume-icon img:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+
+/* Pop-out Animation */
+@keyframes popOut {
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.content-overlay {
+  position: absolute;
+  top:50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+  
+}
+
