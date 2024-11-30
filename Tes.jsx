@@ -1,17 +1,25 @@
-<div className="menu-container">
-  <button onClick={toggleMenu} className="menu-toggle">Menu</button>
-  <div className={`navbar ${isMenuOpen ? 'open' : ''}`}>
-    <div className="line-container">
-      <div className={`line ${isMenuOpen ? 'grow-line' : ''}`}></div>
+import React from "react";
+import "./ReservationBanner.css";
+
+const ReservationBanner = () => {
+  return (
+    <div className="reservation-banner">
+      <div className="breadcrumb">
+        <a href="/">Home</a> &gt; <span>Reserve Your Care</span>
+      </div>
+      <div className="content">
+        <div className="title">
+          <h1>Reserve your care</h1>
+          <div className="decorative-icon">
+            <img src="path/to/icon.png" alt="Decorative Icon" />
+          </div>
+        </div>
+        <p className="subtitle">
+          PLEASE FILL OUT THIS FORM TO MAKE A RESERVATION REQUEST
+        </p>
+      </div>
     </div>
-    <div className="menu-items">
-      <span className={`menu-item ${isMenuOpen ? 'slide-up' : ''}`}>À Propos de Nous</span>
-      <span className={`menu-item ${isMenuOpen ? 'slide-up' : ''}`} style={{ animationDelay: "0.2s" }}>
-        Notre Philosophie
-      </span>
-      <span className={`menu-item ${isMenuOpen ? 'slide-up' : ''}`} style={{ animationDelay: "0.4s" }}>
-        Notre Équipe
-      </span>
-    </div>
-  </div>
-</div>
+  );
+};
+
+export default ReservationBanner;
