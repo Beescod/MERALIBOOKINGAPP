@@ -18,6 +18,8 @@ import Brands from "./components/brands/brands";
 import Mobilebrands from "./components/Mobilebrands/Mobilebrands";
 import MobileProducts from "./components/MobileProducts/MobileProducts";
 import Form from "./pages/booking/Form/Form";
+import bookingNavbar from "./pages/booking/booking-Navbar/booking-Navbar";
+
 
 const App = () => {
     const [orderPopup, setOrderPopup] = useState(false);
@@ -91,6 +93,7 @@ const App = () => {
                         path="/Booking"
                         element={
                             <>
+                            <bookingNavbar />
                                 <Form />
                                 <Testimonials />
                             </>

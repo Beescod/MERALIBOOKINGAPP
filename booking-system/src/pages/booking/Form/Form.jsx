@@ -37,7 +37,7 @@ const SpaForm = () => {
         <form className="spa-form">
             <div className="reservation-banner">
                 <div className="breadcrumb">
-                    <a href="/">Home</a> &gt; <span>Reserve Your Care</span>
+                    <a href="/">Home</a> &gt; <span className="breadcrumb-active">Reserve Your Care</span>
                 </div>
                 <div className="content">
                     <div className="title">

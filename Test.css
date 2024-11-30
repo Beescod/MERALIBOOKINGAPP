@@ -1,90 +1,44 @@
-/* General Styling */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Arial", sans-serif;
+.reservation-banner {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align content to the left */
+  padding: 20px; /* Add some padding for spacing */
+  background-color: #fdf4e3;
 }
 
-.reservation-banner {
-  background-color: #f5f1e7; /* Beige background */
-  background-image: url("path/to/pattern.png"); /* Background pattern */
-  background-repeat: repeat;
-  text-align: center;
-  padding: 40px 20px;
+@media (min-width: 768px) { /* For larger screens */
+  .reservation-banner {
+    flex-direction: row; /* Arrange items horizontally */
+    justify-content: space-between; /* Space between breadcrumb and content */
+    align-items: center; /* Vertically align the items */
+  }
 }
 
 .breadcrumb {
   font-size: 14px;
   color: #333;
-  margin-bottom: 20px;
+  white-space: nowrap; /* Prevents text wrapping */
+  overflow: hidden; /* Hides overflow if it extends beyond the container */
+  text-overflow: ellipsis; /* Adds "..." if text overflows */
+  margin-bottom: 20px; /* Spacing from other elements */
 }
 
-.breadcrumb a {
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.breadcrumb span {
-  color: #777;
-}
-
-/* Title Section */
 .content {
-  max-width: 800px;
-  margin: 0 auto;
+  text-align: center; /* Center-align text inside the content */
 }
 
 .title {
-  position: relative;
-}
-
-.title h1 {
-  font-size: 36px;
-  font-weight: bold;
-  color: #791313; /* Burgundy */
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align title and decorative icon */
 }
 
 .decorative-icon {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto 20px auto;
-}
-
-.decorative-icon img {
-  height: 50px;
-  width: 50px;
+  margin-bottom: 10px;
 }
 
 .subtitle {
-  font-size: 16px;
-  color: #333;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .title h1 {
-    font-size: 28px;
-  }
-
-  .subtitle {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .title h1 {
-    font-size: 24px;
-  }
-
-  .breadcrumb {
-    font-size: 12px;
-  }
-
-  .subtitle {
-    font-size: 12px;
-  }
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
 }

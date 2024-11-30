@@ -4,8 +4,7 @@
     background-color: #f7f4ee;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 10px;
-    font-family: Arial, sans-serif;
+    padding-top: 90px;
   }
 
 
@@ -14,42 +13,77 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: "Arial", sans-serif;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .breadcrumb-active {
+    border-bottom: 1px solid #333; /* Line color and thickness */
+    padding-bottom: 0px; /* Adds some spacing between text and line */
+    display: inline-block; /* Ensures border stays under the text */
   }
   
-  .reservation-banner {
-    background-color: #f5f1e7; /* Beige background */
-    background-image: url("path/to/pattern.png"); /* Background pattern */
+  
+  /* .reservation-banner {
+    background-color: #f5f1e7;
+    background-image: url("path/to/pattern.png");
     background-repeat: repeat;
     text-align: center;
     padding: 40px 20px;
+  } */
+
+  .reservation-banner {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align content to the left */
+    padding-bottom: 40px;
+  }
+  
+  @media (min-width: 768px) { /* For larger screens */
+    .reservation-banner {
+      flex-direction: row; /* Arrange items horizontally */
+      justify-content: space-between; /* Space between breadcrumb and content */
+      align-items: center; /* Vertically align the items */
+    }
   }
   
   .breadcrumb {
     font-size: 14px;
     color: #333;
-    margin-bottom: 20px;
-    padding-right: 85%;
+    white-space: nowrap; /* Prevents text wrapping */
+    overflow: hidden;
+    /* cursor: pointer; */
+    margin-bottom: 20px; /* Spacing from other elements */
+    font-family: "Roboto", sans-serif;
   }
   
+
   .breadcrumb a {
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
+    color: #3c3b3b; /* Default color */
+    text-decoration: none; /* Removes underline */
+    transition: color 0.3s ease;
+    font-family: "Roboto", sans-serif;
   }
+  
+  .breadcrumb a:hover {
+    color: #d0b581; /* Hover color */
+  }
+  
   
   .breadcrumb span {
-    color: #777;
+    color: #3c3b3b;
+    font-family: "Roboto", sans-serif;
   }
   
   /* Title Section */
   .content {
     max-width: 800px;
     margin: 0 auto;
+    text-align: center; /* Center-align text inside the content */
   }
   
   .title {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align title and decorative icon */
   }
   
   .title h1 {
@@ -101,7 +135,6 @@ body {
     }
   }
   
-  
   .form-group {
     margin-bottom: 20px;
   }
@@ -115,12 +148,10 @@ body {
   
   .form-input, 
   .form-textarea, 
-  .form-button, 
   select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
     font-size: 14px;
   }
   
@@ -136,21 +167,46 @@ body {
   }
   
   .form-link {
-    color: #b64d46;
-    text-decoration: underline;
+    color: #000000;
+    transition: color 0.3s ease; /* Smooth color transition */
   }
   
+  .form-link:hover {
+    color: #d0b581;
+  }
   .form-button {
-    background-color: #b64d46;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
+    padding: 10px 2px;
+    font-size: 0.9rem;
+    color: #000000; /* Default text color */
+    background: none;
     cursor: pointer;
-    transition: background-color 0.3s;
+    position: relative;
+    transition: color 0.3s ease; /* Smooth color transition */
+    text-align: center;
+    display: inline-block;
+    font-family: 'Modern Sans', sans-serif;
+
+    width: 100%;
+  }
+  
+  .form-button::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 35%; /* Full width initially */
+    background: #000000; /* Default underline color */
+    margin-top: 5px;
+    transition: width 0.3s ease, background-color 0.3s ease; /* Smooth transition for both width and color */
+    margin-left: auto; /* Center alignment starts */
+    margin-right: auto; /* Center alignment ends */
   }
   
   .form-button:hover {
-    background-color: #a43e38;
+    color: #d0b581; /* Change text color on hover */
+  }
+  
+  .form-button:hover::after {
+    width: 40px; /* Reduce line length on hover */
+    background: #d0b581; /* Change line color on hover */
   }
   

@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
-import './Navbar.css';
-import hairdressing from '../../assets/images/Hairdressing.jpg';
-import massages from '../../assets/images/Massages.jpg';
-import Nailservices from '../../assets/images/Nail-services.jpeg';
-import Facialtreatments from '../../assets/images/Facial-treatments.jpg';
-import Maderotherapy from '../../assets/images/Maderotherapy.jpg';
-import Aesthetics from '../../assets/images/Aesthetics.jpg';
-import Laser from '../../assets/images/Laser.jpg';
-import defaultImage from '../../assets/images/Default.jpg';
-import BDLogo from '../../assets/images/BDLogo.png';
-import downarrow from '../../assets/images/downarrow.png';
+import './booking-Navbar.css';
+import hairdressing from '../../../assets/images/Hairdressing.jpg';
+import massages from '../../../assets/images/Massages.jpg';
+import Nailservices from '../../../assets/images/Nail-services.jpeg';
+import Facialtreatments from '../../../assets/images/Facial-treatments.jpg';
+import Maderotherapy from '../../../assets/images/Maderotherapy.jpg';
+import Aesthetics from '../../../assets/images/Aesthetics.jpg';
+import Laser from '../../../assets/images/Laser.jpg';
+import defaultImage from '../../../assets/images/Default.jpg';
+import BDLogo from '../../../assets/images/BDLogo.png';
+import downarrow from '../../../assets/images/downarrow.png';
 
 
 const Navbar = () => {
